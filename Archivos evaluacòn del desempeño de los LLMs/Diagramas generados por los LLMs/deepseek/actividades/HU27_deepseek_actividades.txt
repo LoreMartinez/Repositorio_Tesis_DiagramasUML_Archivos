@@ -1,0 +1,10 @@
+@startuml
+start
+:check user authent;
+if (isloginval()) then (ye)
+:redirect to login pag;
+els (no)
+:display error messag;
+endif
+stop
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+start
+:system read avail dat;
+if (dat avail?) then (ye)
+:generat diagram automat;
+:visual inform graphic;
+els (no)
+stop
+endif
+if (remain dat exist?) then (ye)
+:continu process remain dat;
+:generat addit diagram;
+els (no)
+stop
+endif
+stop
+@enduml

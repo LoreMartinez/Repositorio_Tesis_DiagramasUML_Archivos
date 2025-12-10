@@ -1,0 +1,20 @@
+@startuml
+class play {
+- charact: charact
+- inputbox: inputbox
+- updatablesystem: updat
+}
+class inputbox {
+# input: list<string>
+}
+class updat {
+- gamest: gamest
+}
+class charact {
+- health: int
+}
+class gamest {
+- player1: play
+- player2: play
+}
+@enduml

@@ -1,0 +1,22 @@
+@startuml
+user -> system: enter credenti
+if (val?) then (ye)
+system: valid address
+if (validaddress?) then (ye)
+system: valid cred card
+if (validcreditcard?) then (ye)
+system: send confirm email
+system: prepar welcom packag
+system: deliv welcom packag
+els (no)
+system: show error
+endif
+els (no)
+system: show error
+endif
+els (no)
+system: show error
+endif
+user -> system: receiv visual confirm
+stop
+@enduml

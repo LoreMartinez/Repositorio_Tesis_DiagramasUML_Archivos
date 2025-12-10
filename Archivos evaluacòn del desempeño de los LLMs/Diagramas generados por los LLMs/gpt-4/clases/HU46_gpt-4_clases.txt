@@ -1,0 +1,26 @@
+@startuml
+class hospitaladministr {
++ registerus(): void
++ manageus(): void
+}
+class user {
+- nam: string
+- usertyp: string
++ getmedicalhistori(): medicalrecord
++ getallerg(): allergyrecord
++ getaccessrecord(): accessrecord
+}
+class medicalrecord {
+- histori: string
+}
+class allergyrecord {
+- allerg: string
+}
+class accessrecord {
+- accessinf: string
+}
+hospitaladministr "1" -- "*" user
+user "1" -- "1" medicalrecord
+user "1" -- "1" allergyrecord
+user "1" -- "1" accessrecord
+@enduml

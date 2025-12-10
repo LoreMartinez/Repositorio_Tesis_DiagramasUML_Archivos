@@ -1,0 +1,33 @@
+@startuml
+class applicationus {
+- user: string
+- nam: string
++ displaycont(content: textcont): void
++ customizepresent(content: textcont, styl: borderstyl): void
+}
+class textcont {
+- text: string
+- borderstyl: borderstyl
++ settext(text: string): void
++ setborderstyl(styl: borderstyl): void
++ getformattedcont(): string
+}
+class borderstyl {
+- styletyp: string
+- borderwidth: int
+- bordercolor: string
++ applystyl(): void
+}
+class sideborderstyl {
+- leftbord: bool
+- rightbord: bool
+}
+class fullborderstyl {
+- topbord: bool
+- bottombord: bool
+}
+applicationus --> textcont
+textcont --> borderstyl
+sideborderstyl --|> borderstyl
+fullborderstyl --|> borderstyl
+@enduml

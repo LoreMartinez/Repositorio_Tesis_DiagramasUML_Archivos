@@ -1,0 +1,13 @@
+@startuml
+start
+:check api status;
+if (api is offlin) then (ye)
+:stop api-relat process;
+endif
+:check mongodb status;
+if (mongodb is offlin) then (ye)
+:stop mongodb-relat process;
+endif
+:proc with normal oper;
+stop
+@enduml

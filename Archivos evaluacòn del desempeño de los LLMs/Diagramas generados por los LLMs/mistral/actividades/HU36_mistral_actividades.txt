@@ -1,0 +1,19 @@
+@startuml
+start
+:system read configur;
+:system initi intern variabl;
+:system wait for interact;
+if (user interact?) then (ye)
+repeat with a:action
+:system perform a;
+if (relev inform correct?) then (ye)
+continu with a;
+els (no)
+break repeat;
+endif
+until (inform organiz);
+els (no interact)
+stop;
+endif
+stop
+@enduml

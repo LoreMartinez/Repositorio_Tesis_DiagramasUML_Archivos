@@ -1,0 +1,25 @@
+@startuml
+class chessboard {
+- siz: string ("8x8")
+- squar: collect of squar
+- piec: collect of piec
+movepiec(from: squar, to: squar, piec: piec)
+containssquar(squar: squar)
+}
+class squar {
+- x: integ (1..8)
+- y: integ (1..8)
+isheldbi(piec: piec)
+}
+class piec {
+- typ: string ("pawn", "rook", etc.)
+- color: string ("whit" or "black")
+- posit: squar?
+mov(from: squar, to: squar)
+}
+class play {
+}
+play p "play" -- movepiec --> chessboard b
+chessboard b "--|>" squar s1 (a1) -- sourcesquar
+chessboard b "--|>" squar s2 (h8) -- destinationsquar
+@enduml

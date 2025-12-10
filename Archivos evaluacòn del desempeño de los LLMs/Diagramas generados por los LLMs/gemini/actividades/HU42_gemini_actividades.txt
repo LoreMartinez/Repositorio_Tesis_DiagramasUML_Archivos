@@ -1,0 +1,9 @@
+@startuml
+start
+:user add flashvar to kpplay;
+if (is verbos need?) then (ye)
+:user enabl verbos;
+endif
+:user execut command with the configur;
+stop
+@enduml

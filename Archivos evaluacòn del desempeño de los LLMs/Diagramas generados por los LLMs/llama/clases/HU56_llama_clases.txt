@@ -1,0 +1,25 @@
+@startuml
+class stringingmachin {
+- string: string
++ controlstr(): void
+}
+class racket {
+- materi: string
++ prepareracket(): void
+}
+class powersuppli {
+- voltag: numb
+- current: numb
++ chargebatteri(): void
+}
+class user {
+- usernam: string
+- stringingmachin: stringingmachin
++ usestringingmachin(): void
+}
+class racketcontrol {
+- user: user
++ controlracket(): bool
+}
+stringingmachin "1" -- "*" powersuppli
+@enduml

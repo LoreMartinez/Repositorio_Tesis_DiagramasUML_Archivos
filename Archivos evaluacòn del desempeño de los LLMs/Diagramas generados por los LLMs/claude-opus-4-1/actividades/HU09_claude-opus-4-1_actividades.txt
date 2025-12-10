@@ -1,0 +1,13 @@
+@startuml
+start
+:configur celeryd;
+:perform storag mount;
+:regist servic;
+if (configur success?) then (ye)
+:start system;
+:platform avail;
+els (no)
+:exit in control mann;
+endif
+stop
+@enduml

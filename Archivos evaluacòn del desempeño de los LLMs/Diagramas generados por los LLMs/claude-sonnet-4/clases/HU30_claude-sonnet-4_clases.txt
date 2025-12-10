@@ -1,0 +1,37 @@
+@startuml
+class formcreationsystemus {
+- usernam: string
++ addel(): void
++ renderform(): void
+}
+class form {
+- nam: string
+- element: list
++ addel(): void
++ rend(): void
+}
+class formel {
+- elementtyp: string
+- posit: int
++ rend(): void
+}
+class textel {
+- content: string
++ rend(): void
+}
+class inputel {
+- inputtyp: string
+- placehold: string
++ rend(): void
+}
+class subform {
+- subformnam: string
++ rend(): void
+}
+formcreationsystemus "1" --> "*" form
+form "1" *-- "*" formel
+formel <|-- textel
+formel <|-- inputel
+formel <|-- subform
+subform "1" *-- "*" formel
+@enduml

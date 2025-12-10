@@ -1,0 +1,16 @@
+@startuml
+class play {
+- nam: string
++ movepiec(piec: piec, fromsquar: squar, tosquar: squar) : void
+}
+class piec {
+- posit: squar
++ mov(): void
+}
+class squar {
+# occupiedbi: piec | null
++ isoccupi(): bool
+}
+play "1" --* piec
+piec "0..*" squar
+@enduml

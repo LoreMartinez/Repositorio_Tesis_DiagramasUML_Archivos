@@ -1,0 +1,20 @@
+@startuml
+class element {
+- typ: string
+}
+class form {
++ addel(): void
+}
+class textel extend element {
+- content: string
+}
+class inputel extend element {
+- valu: string
+}
+class subformel extend element {
+- content: string
+}
+form "1" *--|> textel
+form "1" *--|> inputel
+form "1" *--|> subformel
+@enduml

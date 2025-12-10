@@ -1,0 +1,48 @@
+@startuml
+class workgroupmemb {
+- nam: string
+- membershipd: dat
++ createproject(): project
++ proposesolu(): solut
++ recordfix(): fix
+}
+class workgroup {
+- nam: string
+- establishedd: dat
++ collabor(): void
++ evaluateresult(): void
++ meetobject(): bool
+}
+class project {
+- titl: string
+- descript: string
+- creationd: dat
+- deadlin: dat
++ getstatus(): string
+}
+class solut {
+- descript: string
+- proposald: dat
+- status: string
++ evalu(): bool
+}
+class fix {
+- descript: string
+- recordd: dat
+- status: string
++ appli(): void
+}
+class object {
+- descript: string
+- deadlin: dat
+- status: string
++ checkcomplet(): bool
+}
+workgroupmemb "1..*" -- "1" workgroup
+workgroupmemb "1" --> "*" project
+workgroupmemb "1" --> "*" solut
+workgroupmemb "1" --> "*" fix
+project "1" --> "*" solut
+project "1" --> "*" fix
+workgroup "1" --> "*" object
+@enduml

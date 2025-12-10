@@ -1,0 +1,13 @@
+@startuml
+start
+:user typ in mov search bar;
+:system search for match in real tim;
+if (match found?) then (ye)
+:system display mov result;
+:user view avail mov;
+:user select a mov;
+els (no)
+:system display "no match found" messag;
+endif
+stop
+@enduml

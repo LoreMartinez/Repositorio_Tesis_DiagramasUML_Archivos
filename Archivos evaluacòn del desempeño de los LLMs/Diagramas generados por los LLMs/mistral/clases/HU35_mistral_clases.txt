@@ -1,0 +1,9 @@
+@startuml
+class messagingserv {
+- messag: list<messag>
+}
+class structuredmessag {
+- messagecont: string
+}
+messagingserv "1" -- "*" structuredmessag
+@enduml

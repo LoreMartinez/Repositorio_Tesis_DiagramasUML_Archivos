@@ -1,0 +1,29 @@
+@startuml
+start
+:system check storag status;
+if (storag ok?) then (ye)
+els (no)
+:system display storag warn;
+:system start necessari servic;
+endif
+:system check orchestr linkag status;
+if (orchestr ok?) then (ye)
+els (no)
+:system display orchestr warn;
+:system start necessari servic;
+endif
+:system check mysql status;
+if (mysql ok?) then (ye)
+els (no)
+:system display mysql warn;
+:system start necessari servic;
+endif
+:system check apach 2 status;
+if (apach 2 ok?) then (ye)
+els (no)
+:system display apach 2 warn;
+:system start necessari servic;
+endif
+:system ensur oper status;
+stop
+@enduml

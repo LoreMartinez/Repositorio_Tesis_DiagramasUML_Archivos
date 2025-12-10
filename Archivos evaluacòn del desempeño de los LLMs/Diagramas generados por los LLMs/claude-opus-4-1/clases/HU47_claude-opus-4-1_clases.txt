@@ -1,0 +1,29 @@
+@startuml
+class softwaredevelop {
+- nam: string
++ selectstrategi(): void
++ executestrategi(): void
+}
+class context {
+- currentstrategi: strategi
++ setstrategi(strategi: strategi): void
++ performoper(): void
+}
+class strategi {
++ execut(): void
+}
+class concretestrategy {
++ execut(): void
+}
+class concretestrategyb {
++ execut(): void
+}
+class concretestrategyc {
++ execut(): void
+}
+softwaredevelop --> context
+context --> strategi
+concretestrategy --|> strategi
+concretestrategyb --|> strategi
+concretestrategyc --|> strategi
+@enduml

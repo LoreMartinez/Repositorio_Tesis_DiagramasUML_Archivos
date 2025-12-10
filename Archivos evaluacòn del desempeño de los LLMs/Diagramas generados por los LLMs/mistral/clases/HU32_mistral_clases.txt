@@ -1,0 +1,17 @@
+@startuml
+class chargingst {
+- id: int
+- locat: locat
+- connector: list[connector]
+- avail: bool[]
+}
+class connector {
+- id: int
+- typ: string
+}
+class locat {
+- id: int
+- latitud: float
+- longitud: float
+}
+@enduml

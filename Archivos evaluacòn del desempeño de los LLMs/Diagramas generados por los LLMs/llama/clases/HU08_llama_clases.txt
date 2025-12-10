@@ -1,0 +1,14 @@
+@startuml
+class nod {
+- id: integ
+}
+class updatesourc {
+- nam: string
+}
+class synchronizationsystem {
+- currentupd: updatesourc[]
++ syncupd(): void
+}
+nod "1" -- "*" synchronizationsystem
+synchronizationsystem "1" ..* updatesourc
+@enduml

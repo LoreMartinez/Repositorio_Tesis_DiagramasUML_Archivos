@@ -1,0 +1,57 @@
+@startuml
+class develop {
+- nam: string
+- employe: string
+}
+class protocolcontrol {
+- status: string
++ executescript(script: script): void
++ executeprotocol(protocol: protocol): void
++ processqueri(queri: queri): respons
++ performact(action: action): void
++ managecontext(context: context): void
+}
+class script {
+- nam: string
+- cod: string
+- executionord: integ
+}
+class protocol {
+- nam: string
+- descript: string
+}
+class context {
+- context: string
+- dat: string
+- timestamp: dat
++ updatedat(newdat: string): void
++ retriev(): string
+}
+class queri {
+- querytext: string
+- timestamp: dat
+}
+class respons {
+- responsedat: string
+- status: string
+}
+class action {
+- actiontyp: string
+- paramet: string
+}
+class workflow {
+- workflow: string
+- status: string
++ addprotocol(protocol: protocol): void
++ execut(): void
+}
+develop "1" --> "1" protocolcontrol
+protocolcontrol "1" --> "*" script
+protocolcontrol "1" --> "*" protocol
+protocolcontrol "1" --> "*" context
+protocolcontrol "1" ..> "*" queri
+protocolcontrol "1" ..> "*" respons
+protocolcontrol "1" --> "*" action
+protocol "*" --* "1" workflow
+script "*" --* "1" protocol
+@enduml

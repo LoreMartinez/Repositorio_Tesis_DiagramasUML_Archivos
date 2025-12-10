@@ -1,0 +1,8 @@
+@startuml
+class dataent {
+- attribut: map<string, object>
+- linkedent: dataent
++ setattribut(attribut: map<string, object>)
++ getlinkedent(): dataent
+}
+@enduml

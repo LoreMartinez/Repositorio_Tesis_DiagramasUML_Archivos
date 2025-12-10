@@ -1,0 +1,29 @@
+@startuml
+class gamecommunicationsystemadministr {
++ processmessag(): void
+}
+class messag {
+- typ: string
+}
+class hellomessag {
++ interpretinteract(): void
+}
+class inputmessag {
++ interpretinteract(): void
+}
+class timermessag {
++ interpretinteract(): void
+}
+class serv {
++ maintaingameflow(): void
+}
+class play {
++ performact(): void
+}
+gamecommunicationsystemadministr --> messag
+messag <|-- hellomessag
+messag <|-- inputmessag
+messag <|-- timermessag
+play -- serv
+gamecommunicationsystemadministr --> serv
+@enduml

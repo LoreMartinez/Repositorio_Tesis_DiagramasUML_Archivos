@@ -1,0 +1,15 @@
+@startuml
+class networkendpoint {
++ senddat(dat: dat): void
++ receivedat(): dat
+}
+class client {
+}
+class serv {
+}
+class dat {
+}
+client --|> networkendpoint
+serv --|> networkendpoint
+networkendpoint ..> dat
+@enduml

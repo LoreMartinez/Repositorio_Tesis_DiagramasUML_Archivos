@@ -1,0 +1,46 @@
+@startuml
+class glbuff {
+- buffer: int
+- typ: glenum  # vertex, textur, framebuff
+- vertexarrayobject: glvertexarrayobject?
+- textur: gltextur?
+- framebuff: glframebuff?
++ getbuffer(): int
+}
+class glvertexarrayobject {
+- buff: glbuff*
+- typ: glenum
++ createvertexarrayobject(): void
+}
+class glframebuff {
+- datapoint: uint32
+- width: int
+- height: int
+- pitch: int
+- textur: gltextur?
+- shaderprogram: glshaderprogram?
++ createframebuff(): void
+}
+class glshaderprogram {
+- programnam: map<string, gluint>
+- coeffici: float2d[]
+- uniform: map<string, gluint>
++ compileshad program: [string] = ["gl_posit", "gl mudad"]
+}
+class gltextur {
+- textur: int
+- width: int
+- height: int
+- pitch: int
+- dat: void*
++ gettextur(): int
+}
+class glenum {
+# a set of built-in valu use as possibl return valu for certain opengl function
+- nam: string
+}
+glbuff "1" -- "*" glvertexarrayobject
+glvertexarrayobject "1" -- "*" glbuff
+glframebuff "1" -- "*" glshaderprogram, gltextur
+glshaderprogram "1" :--* glframebuff
+@enduml

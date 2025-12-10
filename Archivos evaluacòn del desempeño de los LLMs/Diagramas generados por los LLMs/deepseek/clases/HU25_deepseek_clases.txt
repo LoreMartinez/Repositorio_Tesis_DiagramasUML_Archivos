@@ -1,0 +1,28 @@
+@startuml
+class job {
++ nam: string
+- inputpath: list of string
+- outputpath: string
+- status: string
+*# status can be "idl", "run", or "complet"
++ mapper: list of mapp
+}
+class mapp {
++ inputs: integ
++ map: function
+}
+class reduc {
++ reduc: function
+# combin: bool
+*# if combin is tru, it mean the reduc can support combin function
+}
+class combin {
++ nam: string?
++ combineandmaptocomputekey: function?
+}
+job "1" -- "*" mapp
+mapp "- mapper1"
+mapp "- mapper2"
+reduc "- reducer1" *# mani from mapper lik mapper1 and mapper2
+combin "- combiner1" *# if need, could be associ with reducer1
+@enduml

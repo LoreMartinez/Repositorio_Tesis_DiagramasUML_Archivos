@@ -1,0 +1,12 @@
+@startuml
+start
+:system check api status;
+if (api status is down) then (ye)
+:stop api process;
+endif
+:system check mongodb status;
+if (mongodb status is down) then (ye)
+:stop mongodb process;
+endif
+stop
+@enduml

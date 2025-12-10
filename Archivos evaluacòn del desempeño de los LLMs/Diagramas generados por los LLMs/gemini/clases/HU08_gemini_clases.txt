@@ -1,0 +1,14 @@
+@startuml
+class sharedobject {
++ updat()
+}
+class nod {
+}
+class specif {
+}
+class model {
+}
+sharedobject "*" --> "1" model
+sharedobject "*" --> "1" specif
+sharedobject "*" -- "*" nod
+@enduml

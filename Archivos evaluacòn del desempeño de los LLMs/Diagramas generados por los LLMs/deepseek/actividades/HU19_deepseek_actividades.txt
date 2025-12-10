@@ -1,0 +1,12 @@
+@startuml
+start
+:check if glu support exist;
+if (exist?) then (ye)
+:instal glusterf by download and configur;
+endif
+elseif (!exist)
+:show error messag and stop;
+stop
+:valid instal with
+stop
+@enduml

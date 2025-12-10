@@ -1,0 +1,24 @@
+@startuml
+class vehiclemonitoringsystem {
+- telemetrydatastorag: telemetrydat[]
+- commandhistori: command[]
+- gpssignalshistori: gpssignal[]
+- ultrasonicdataprocessor: ultrasonicdataprocessor
+}
+class telemetrydat {
+- sensordat: float[]
+}
+class command {
+- action: string
+}
+class gpssignal {
+- coordin: coordin
+}
+class ultrasonicdataprocessor {
+- processultrasonicdat(): void
+}
+class coordin {
+- latitud: float
+- longitud: float
+}
+@enduml

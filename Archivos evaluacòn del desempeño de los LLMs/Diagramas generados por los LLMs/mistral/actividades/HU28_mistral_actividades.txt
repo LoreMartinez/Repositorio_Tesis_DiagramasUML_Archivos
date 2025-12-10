@@ -1,0 +1,14 @@
+@startuml
+start
+:user_enters_movie_search_b;
+if (movies_found?) then (ye)
+repeat until (movie_select)
+:display_mov;
+:select_mov;
+endrepeat
+:redirect_to_movie_pag;
+els (no)
+:show_no_matches_messag;
+endif
+stop
+@enduml

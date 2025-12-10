@@ -1,0 +1,11 @@
+@startuml
+class client {
+- dat: string
++ send(): bool
+}
+class serv {
+- socket: socket
++ receiv(): bool
+}
+client "1" -- "*" serv
+@enduml

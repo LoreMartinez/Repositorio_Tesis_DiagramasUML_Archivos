@@ -1,0 +1,43 @@
+@startuml
+class user {
+- nam: string
+- user: string
++ interactwithquest(): void
++ answerquest(): void
++ receivefinalresult(): void
++ measureperform(): void
+}
+class question {
+- question: string
+- questiontext: string
+- questiontyp: string
++ displayquest(): void
+}
+class answer {
+- answer: string
+- answertext: string
+- iscorrect: bool
++ submitansw(): void
+}
+class assessmentresult {
+- result: string
+- scor: float
+- feedback: string
+- completiond: dat
++ calculatescor(): float
++ generatefeedback(): string
+}
+class assess {
+- assessment: string
+- titl: string
+- totalquest: int
++ startassess(): void
++ completeassess(): void
+}
+user "1" --> "*" question
+user "1" --> "*" answer
+user "1" --> "1" assessmentresult
+assess "1" --> "*" question
+assess "1" --> "1" assessmentresult
+question "1" --> "*" answer
+@enduml

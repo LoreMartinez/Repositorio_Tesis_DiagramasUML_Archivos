@@ -1,0 +1,9 @@
+@startuml
+start
+:system record log event;
+:macr invoc;
+:log oper;
+:format appli;
+:convers process;
+stop
+@enduml

@@ -1,0 +1,16 @@
+@startuml
+start
+:web develop request servlet execu;
+:servlet receiv request;
+:servlet check secur;
+if (secur check pass?) then (ye)
+fork
+:servlet process control;
+:servlet handl post/get;
+:servlet perform rend;
+endfork
+els (no)
+:servlet den request and return error;
+endif
+stop
+@enduml

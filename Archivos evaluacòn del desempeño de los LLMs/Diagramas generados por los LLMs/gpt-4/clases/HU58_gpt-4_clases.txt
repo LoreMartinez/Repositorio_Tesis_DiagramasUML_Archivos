@@ -1,0 +1,18 @@
+@startuml
+class vehiclemonitoringsystemus {
++ sendtelemetrydat(): void
++ receivetelemetrydat(): void
++ sendcommand(): void
++ receivecommand(): void
++ sendgpssign(): void
++ receivegpssign(): void
++ processultrasonicdat(): void
+}
+class vehicl {
++ gettelemetrydat(): void
++ executecommand(): void
++ getgpssign(): void
++ generateultrasonicdat(): void
+}
+vehiclemonitoringsystemus --> vehicl
+@enduml

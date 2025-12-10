@@ -1,0 +1,9 @@
+@startuml
+start
+:system initi process;
+:execut initi phas;
+:execut transf phas;
+:execut termin phas;
+:oper complet in order mann;
+stop
+@enduml

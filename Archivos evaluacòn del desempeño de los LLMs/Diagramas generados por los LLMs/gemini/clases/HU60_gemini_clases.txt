@@ -1,0 +1,22 @@
+@startuml
+class network {
++ calculateperformancemetr(scenari: trafficscenari): performancemetr
+}
+class nod {
+}
+class flow {
+}
+class trafficscenari {
+}
+class performancemetr {
++ worstcaseendtoendrespons: float
++ minimumtim: float
++ maximumtim: float
++ flowmetr: string
+}
+network "1" *-- "*" nod
+network "1" *-- "*" flow
+flow -- "2..*" nod
+network ..> trafficscenari
+network ..> performancemetr
+@enduml

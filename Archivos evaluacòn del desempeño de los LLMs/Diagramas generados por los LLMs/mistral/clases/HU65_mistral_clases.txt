@@ -1,0 +1,24 @@
+@startuml
+class canv {
+- x: int
+- y: int
+- path: list<path>
++ drawlabel(label: labelviewhelp): void
+}
+class path {
+- point: list<point>
++ addpoint(point: point): void
+}
+class labelviewhelp {
+- text: string
+- styl: styl
+- canv: canv
++ drawoncanv(): void
+}
+class styl {
+- fontsiz: int
+- fontcolor: color
+- fillcolor: color
+- ...
+}
+@enduml

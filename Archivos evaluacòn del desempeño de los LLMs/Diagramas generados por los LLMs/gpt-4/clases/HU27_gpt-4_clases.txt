@@ -1,0 +1,27 @@
+@startuml
+class cashi {
+- nam: string
++ recordpurch(): void
++ updatecashregist(): void
++ repeatpurch(): void
+}
+class cashmanag {
+- nam: string
++ recordpurch(): void
++ updatecashregist(): void
++ repeatpurch(): void
+}
+class purch {
+- itemnam: string
+- pric: doubl
+}
+class cashregist {
+- totalbal: doubl
++ updatebal(): void
+}
+cashi --|> cashmanag
+purch "1" <-- "*" cashi : record
+purch "1" <-- "*" cashmanag : record
+cashregist "1" <-- "*" cashi : updat
+cashregist "1" <-- "*" cashmanag : updat
+@enduml

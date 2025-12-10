@@ -1,0 +1,30 @@
+@startuml
+class robotoper {
+- arduin: arduin
+- manipul: list<manipul>
+- motor: list<motor>
+- powersuppli: powersuppli
++ controlrobot()
++ coordinatemov()
+}
+class arduin {
+# attribut hidd
++ executecommand(command: command)
+}
+class manipul {
+# attribut hidd
++ mov(direct: direct)
+}
+class motor {
+# attribut hidd
++ rotat(angl: angl)
+}
+class powersuppli {
+# attribut hidd
++ providepow()
+}
+robotoper --> arduin
+robotoper *-- collect of manipul
+robotoper *-- collect of motor
+robotoper --> powersuppli
+@enduml

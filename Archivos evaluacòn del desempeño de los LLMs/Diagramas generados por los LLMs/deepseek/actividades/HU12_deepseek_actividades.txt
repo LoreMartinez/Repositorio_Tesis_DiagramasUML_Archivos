@@ -1,0 +1,12 @@
+@startuml
+start
+:user send a secur request;
+system perform secur check (includ busi rul);
+system initi servic or retriev dat bas on user rol;
+system render appropri pag for get request and display result for post;
+system handl redirect if necessari after process;
+system destroy the current context or pag after respons;
+system ensur correct respons typ is return;
+system process ani error that occur dure request handl;
+stop
+@enduml

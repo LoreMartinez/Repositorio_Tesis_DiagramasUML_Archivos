@@ -1,0 +1,18 @@
+@startuml
+start
+:user enter dat;
+:system valid address;
+if (address val?) then (ye)
+:system valid cred card;
+if (cred card val?) then (ye)
+:system send confirm email;
+:system send welcom packag;
+:user receiv visual confirm;
+els (no)
+:system show cred card error;
+endif
+els (no)
+:system show address error;
+endif
+stop
+@enduml

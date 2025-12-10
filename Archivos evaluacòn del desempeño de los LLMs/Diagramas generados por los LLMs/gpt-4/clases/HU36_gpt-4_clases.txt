@@ -1,0 +1,13 @@
+@startuml
+class play {
++ rolldic(): int
++ participateingam(): void
++ determineresult(): void
++ continueplay(): void
+}
+class dic {
+- facevalu: int
++ roll(): int
+}
+play "2" -- "*" dic
+@enduml

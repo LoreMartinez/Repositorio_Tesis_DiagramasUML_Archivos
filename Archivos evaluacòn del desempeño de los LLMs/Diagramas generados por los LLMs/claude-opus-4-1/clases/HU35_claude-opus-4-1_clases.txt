@@ -1,0 +1,39 @@
+@startuml
+class messageserv {
+- servernam: string
+- port: integ
+- status: string
++ start(): void
++ stop(): void
++ routemessag(messag: messag): void
+}
+class administr {
+- admin: string
+- nam: string
++ sendmessag(messag: messag): void
++ receivemessag(): messag
++ configureserv(serv: messageserv): void
+}
+class messag {
+- messag: string
+- timestamp: datetim
+- send: string
+- receiv: string
+- payl: string
+- messagetyp: string
++ valid(): bool
++ serial(): string
+}
+class systemcompon {
+- component: string
+- componentnam: string
+- status: string
++ processmessag(messag: messag): void
++ sendrespons(messag: messag): void
+}
+administr "1" --> "*" messag
+administr "1" --> "1" messageserv
+messageserv "1" --> "*" messag
+systemcompon "*" --> "*" messag
+messageserv "1" --> "*" systemcompon
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+user -> "system" : submit credenti
+if ("credenti are val?") then (ye)
+"system" : send password reset email
+els (no)
+"system" : display error messag
+endif
+@enduml

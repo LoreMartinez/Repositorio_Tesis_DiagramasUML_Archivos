@@ -1,0 +1,13 @@
+@startuml
+start
+:system initi process;
+:begin initi phas;
+:complet initi task;
+:begin transf phas;
+:execut transf oper;
+:complet transf task;
+:begin termin phas;
+:execut termin oper;
+:complet termin task;
+stop
+@enduml

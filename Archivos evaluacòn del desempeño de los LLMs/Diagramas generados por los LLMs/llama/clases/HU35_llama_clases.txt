@@ -1,0 +1,14 @@
+@startuml
+class messagingserv {
+- administr: person
+}
+class messag {
+- content: string
+- send: person
+}
+class servic {
+- messagequeu: messag[]
+}
+messagingserv "1" --> "*" servic
+servic ..> "*" messag
+@enduml

@@ -1,0 +1,44 @@
+@startuml
+class eventorgan {
+- nam: string
+- email: string
++ createpl(): plan
++ managepl(): void
+}
+class plan {
+- titl: string
+- descript: string
+- eventd: dat
++ addtask(): void
++ createschedul(): schedul
++ allocatemateri(): void
+}
+class task {
+- task: string
+- descript: string
+- prioriti: string
+- status: string
++ complet(): void
++ updatestatus(): void
+}
+class schedul {
+- starttim: tim
+- endtim: tim
+- durat: int
++ addtimeslot(): void
++ updateschedul(): void
+}
+class materi {
+- material: string
+- nam: string
+- quantiti: int
+- status: string
++ alloc(): void
++ checkavail(): bool
+}
+eventorgan "1" --> "*" plan
+plan "1" *-- "*" task
+plan "1" *-- "1" schedul
+plan "1" --> "*" materi
+schedul "1" --> "*" task
+@enduml

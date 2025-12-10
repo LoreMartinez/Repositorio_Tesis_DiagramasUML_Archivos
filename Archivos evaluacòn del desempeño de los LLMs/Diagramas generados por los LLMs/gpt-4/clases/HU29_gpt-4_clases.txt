@@ -1,0 +1,27 @@
+@startuml
+class librarysystemus {
++ registerbook(): void
++ registerauthor(): void
++ registerpublish(): void
+}
+class book {
+- titl: string
++ settitl(titl: string): void
++ gettitl(): string
+}
+class author {
+- nam: string
++ setnam(nam: string): void
++ getnam(): string
+}
+class publish {
+- nam: string
++ setnam(nam: string): void
++ getnam(): string
+}
+librarysystemus --> book: regist
+librarysystemus --> author: regist
+librarysystemus --> publish: regist
+book --> author: writt by
+book --> publish: releas by
+@enduml

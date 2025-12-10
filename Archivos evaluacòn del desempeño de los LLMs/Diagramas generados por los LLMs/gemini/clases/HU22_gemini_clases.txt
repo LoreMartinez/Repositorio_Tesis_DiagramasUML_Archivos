@@ -1,0 +1,20 @@
+@startuml
+class documentmanagementsystemus {
++ createdocu()
++ createcollect()
++ search()
+}
+class docu {
+- titl: string
+- content: string
+}
+class documentcollect {
+- nam: string
++ adddocu(docu: docu)
++ addcollect(collect: documentcollect)
+}
+documentmanagementsystemus --> docu
+documentmanagementsystemus --> documentcollect
+documentcollect "1" o-- "*" docu
+documentcollect "1" o-- "*" documentcollect
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+class carown {
+- nam: string
+- identif: string
++ registerc(): bool
+}
+class car {
+- licensepl: string
+- model: string
+- brand: string
+- wheel: int
+- ownernam: string
++ confirmwheel(): bool
++ isregist(): bool
+}
+carown "1" --> "*" car
+@enduml

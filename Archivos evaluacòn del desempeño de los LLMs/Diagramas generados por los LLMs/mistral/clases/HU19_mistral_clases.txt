@@ -1,0 +1,18 @@
+@startuml
+class product {
+- metadat: map[string, string]
+- page_cont: string
+- step: list[step]
++ build(): void
++ addstep(step: step): void
+}
+class step {
+- definedmethod: list[method]
++ definemethod(method: method): void
+}
+class method {
+- nam: string
+- returntyp: string
++ execut(): string
+}
+@enduml

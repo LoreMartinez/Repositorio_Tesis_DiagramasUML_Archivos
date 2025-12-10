@@ -1,0 +1,12 @@
+@startuml
+start
+:platform user typ in the search bar;
+:system search for mov;
+if (are mov found?) then (ye)
+:system display match mov;
+:platform user select a mov;
+els (no)
+:system display
+endif
+stop
+@enduml

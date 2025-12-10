@@ -1,0 +1,50 @@
+@startuml
+class iotdevicedevelop {
+- nam: string
+- devic: string
++ senddat(): bool
++ receivedat(): bool
+}
+class meshnetworkinterfac {
+- interfac: string
+- status: string
++ configureprotocol(): void
++ managerflay(): void
++ establishconnect(): bool
+}
+class protocol {
+- protocoltyp: string
+- version: string
++ initi(): void
++ transm(): bool
+}
+class lowpanprotocol {
+- compressionen: bool
++ compresshead(): void
+}
+class threadprotocol {
+- meshlocalprefix: string
++ formnetwork(): void
+}
+class rfphysicallay {
+- frequenc: doubl
+- pow: integ
+- channel: integ
++ configurepow(): void
++ setchannel(): void
++ getsignalstrength(): integ
+}
+class meshnod {
+- nod: string
+- posit: string
+- isact: bool
++ joinnetwork(): bool
++ leavenetwork(): void
+}
+iotdevicedevelop --> meshnetworkinterfac
+meshnetworkinterfac --> protocol
+protocol <|-- lowpanprotocol
+protocol <|-- threadprotocol
+meshnetworkinterfac --> rfphysicallay
+meshnetworkinterfac "1" --> "*" meshnod
+@enduml

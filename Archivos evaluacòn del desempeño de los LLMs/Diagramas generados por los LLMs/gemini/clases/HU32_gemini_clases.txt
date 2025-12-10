@@ -1,0 +1,20 @@
+@startuml
+class chargingstationmanag {
++ registerloc(): void
++ addchargingst(): void
++ addconnector(): void
++ checkconnectoravail(): void
+}
+class locat {
+}
+class chargingst {
+}
+class connector {
+- status: string
+}
+chargingstationmanag ..> locat
+chargingstationmanag ..> chargingst
+chargingstationmanag ..> connector
+locat "1" *-- "*" chargingst
+chargingst "1" *-- "*" connector
+@enduml

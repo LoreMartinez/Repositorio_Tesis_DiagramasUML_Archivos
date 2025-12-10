@@ -1,0 +1,25 @@
+@startuml
+class formallogicsystemus {
+}
+class formul {
++ evalu(): bool
+}
+class atomicformul {
+}
+class temporaryformul {
+}
+class implicationformul {
+}
+class axiom {
+}
+class axiomcontain {
++ addaxiom(axiom: axiom): void
++ removeaxiom(axiom: axiom): void
+}
+formallogicsystemus --> formul
+formallogicsystemus --> axiomcontain
+atomicformul --|> formul
+temporaryformul --|> formul
+implicationformul --|> formul
+axiomcontain "1" *-- "*" axiom
+@enduml

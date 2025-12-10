@@ -1,0 +1,22 @@
+@startuml
+class user {
++ id: integ
+- usernam: string
+- password: string
+- createdat: dat
+- updatedat: dat
++ creat(): void
++ getuserbyusernam(usernam: string): void
++ updateus(usernam: string, newpassword: string): void
+- deleteus(usernam: string): void
+}
+class websocketserv {
++ serverport: integ
+- onstartcli(): void
+}
+class btsuserrepositori {
+- user: collect of user
+}
+user "1" <-> websocketserv vi creat, read, updat, delet
+user "-usernam" -- "*" btsuserrepositori
+@enduml

@@ -1,0 +1,25 @@
+@startuml
+class docu {
+- content: string
+- activeborderstyl: integ
++ show(): void
++ setborderstyl(integ newstyl): void
++ clearborderstyl(): void
+}
+class borderstyl {
++ availablestyl = ["full", "sid", "non"]
+method selectborderstyl() return integ
+cho a styl from the list bas on som criteri or input
+end
+}
+class control {
+- activedocu: docu
++ managedocu(docu newdoc): void
++ selectborderstyl(integ newstyl): void
+}
+control "1" -- "*" docu d
+control "1" -- "*" borderstyl b
+d "1" -- ">" show(): void
+d "1" -- ">" setborderstyl(1): void
+d "1" -- ">" clearborderstyl(): void
+@enduml

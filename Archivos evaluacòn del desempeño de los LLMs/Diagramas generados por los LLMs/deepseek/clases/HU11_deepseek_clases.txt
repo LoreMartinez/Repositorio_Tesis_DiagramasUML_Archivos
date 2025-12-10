@@ -1,0 +1,29 @@
+@startuml
+class control {
+# protect
++ script: script!
+- public
+list<script> script
+method performtask(): task
+}
+class protocol {
+- public extend control
+list<script> script
+}
+class applicationus {
+- usernam: string
++ performtask(): void
+@applicationus "1" -- "*" control
+}
+class script {
++ execut(): void
++ queri(): void
+}
+# relationship betw protocol and script
+protocol "1" -.* list<script> script
+# relationship betw control and script
+control "1" --.* list<script> script
+# oper on script
+script #-> script "1" : execut()
+script #-> script "2" : queri()
+@enduml

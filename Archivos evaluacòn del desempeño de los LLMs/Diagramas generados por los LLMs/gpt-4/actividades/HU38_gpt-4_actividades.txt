@@ -1,0 +1,12 @@
+@startuml
+start
+:platform user decid to delet a review;
+:user select the review;
+:user request delet of select review;
+if (delet success?) then (ye)
+:user receiv confirm of success delet;
+els (no)
+:user notifi about delet failur;
+endif
+stop
+@enduml

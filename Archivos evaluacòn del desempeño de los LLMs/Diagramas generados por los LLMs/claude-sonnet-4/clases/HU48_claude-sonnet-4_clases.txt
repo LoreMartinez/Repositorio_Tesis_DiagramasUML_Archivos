@@ -1,0 +1,50 @@
+@startuml
+class vehicledesign {
+- nam: string
+- experi: int
++ designpropulsionsystem(): propulsionsystem
++ configurethrust(): void
+}
+class propulsionsystem {
+- system: string
+- isact: bool
++ activatesystem(): void
++ deactivatesystem(): void
++ controlmov(direct: string): void
+}
+class thrust {
+- thruster: string
+- thrustpow: doubl
+- isoper: bool
++ generatethrust(): void
++ adjustpow(pow: doubl): void
+}
+class rearthrust {
+- forwardthrust: doubl
++ propelforward(): void
++ propelbackward(): void
+}
+class lateralthrust {
+- sidewaysthrust: doubl
++ propelleft(): void
++ propelright(): void
+}
+class vehicl {
+- vehicl: string
+- currentposit: string
++ mov(direct: string): void
++ changedirect(): void
+}
+class spacecraft {
+- spacecraft: string
+- altitud: doubl
++ navig(): void
++ adjustorient(): void
+}
+vehicledesign --> propulsionsystem
+propulsionsystem *-- thrust
+thrust <|-- rearthrust
+thrust <|-- lateralthrust
+vehicl --> propulsionsystem
+spacecraft --> propulsionsystem
+@enduml

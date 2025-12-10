@@ -1,0 +1,20 @@
+@startuml
+class student {
+- usernam: string
+- password: string
++ enrol(): bool
+}
+class cours {
+- nam: string
+- id: integ
++ enrollstud(student): bool
+}
+class enrol {
+- cours: cours
+- student: student
++ cancelenrol(): bool
+}
+student "1" -- "*" cours
+cours "1" -- "*" enrol
+student "1" -- "*" enrol
+@enduml

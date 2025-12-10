@@ -1,0 +1,11 @@
+@startuml
+start
+:dat exist?
+if (ye) then
+process dat into diagram;
+:display diagram;
+els
+:display error messag;
+endif
+stop
+@enduml

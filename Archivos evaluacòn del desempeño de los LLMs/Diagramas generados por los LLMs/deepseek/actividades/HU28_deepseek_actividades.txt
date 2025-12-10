@@ -1,0 +1,11 @@
+@startuml
+start
+:user enter mov titl;
+:system receiv queri for avail mov with "{titl}";
+if (moviesavail?) then (ye)
+:display dashboard show avail mov titl;
+els (no)
+:display messag indic no match found;
+endif
+stop
+@enduml

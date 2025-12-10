@@ -1,0 +1,17 @@
+@startuml
+class labelviewhelp {
++ drawoncanv(): void
+}
+class canv {
+- width: int
+- height: int
++ rend(): void
+}
+class path {
+- coordin: string
++ createpath(): void
+}
+labelviewhelp --> canv
+labelviewhelp --> path
+canv --> path
+@enduml

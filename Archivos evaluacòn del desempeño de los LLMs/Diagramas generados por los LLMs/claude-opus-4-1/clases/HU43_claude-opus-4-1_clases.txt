@@ -1,0 +1,35 @@
+@startuml
+class networkapplicationdevelop {
+- applicationnam: string
++ receiverespons(): respons
++ processrespons(respons: respons): void
++ handlepartialrespons(chunk: responsechunk): void
+}
+class respons {
+- statuscod: int
+- header: string
+- bodi: string
+- iscomplet: bool
++ getstatus(): int
++ gethead(): string
++ getbodi(): string
+}
+class responsechunk {
+- chunkdat: string
+- sequencenumb: int
+- isfinalchunk: bool
++ getdat(): string
++ getsequ(): int
+}
+class serv {
+- serveraddress: string
+- port: int
++ sendrespons(respons: respons): void
++ sendchunkedrespons(chunk: responsechunk): void
+}
+networkapplicationdevelop --> respons
+networkapplicationdevelop --> responsechunk
+serv --> respons
+serv --> responsechunk
+respons "1" *-- "*" responsechunk
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+start
+:user_edits_com;
+if (validation_success?) then (ye)
+:system_updates_com;
+:system_records_modification_tim;
+els (no)
+:system_handles_error;
+endif
+stop
+@enduml

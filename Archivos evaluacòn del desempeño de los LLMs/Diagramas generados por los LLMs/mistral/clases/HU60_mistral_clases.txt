@@ -1,0 +1,19 @@
+@startuml
+class networkengin {
+- networkdat: list[networknod]
+}
+class networknod {
+- id: int
+- connect: list[networkflow]
+}
+class networkflow {
+- sourc: networknod
+- target: networknod
+- traffic: trafficmetr
+}
+class trafficmetr {
+- worstcaserespons: float
+- mintim: float
+- maxtim: float
+}
+@enduml

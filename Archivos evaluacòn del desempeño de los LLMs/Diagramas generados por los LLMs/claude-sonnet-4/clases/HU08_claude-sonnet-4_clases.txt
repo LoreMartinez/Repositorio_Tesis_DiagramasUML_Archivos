@@ -1,0 +1,54 @@
+@startuml
+class distributedapplicationdevelop {
+- developer: string
+- nam: string
++ createappl(): bool
++ configuresync(): bool
+}
+class synchronizationsystem {
+- system: string
+- isact: bool
++ synchronizeobject(): bool
++ maintainconsist(): bool
++ processupd(): bool
+}
+class specif {
+- spec: string
+- content: string
+- version: string
++ valid(): bool
+}
+class model {
+- model: string
+- structur: string
+- version: string
++ updat(): bool
+}
+class sharedobject {
+- object: string
+- dat: string
+- lastmodifi: dat
+- isconsist: bool
++ synchron(): bool
++ updatedat(): bool
+}
+class nod {
+- nod: string
+- address: string
+- status: string
++ receiveupd(): bool
++ sendupd(): bool
+}
+class updatesourc {
+- sourc: string
+- prioriti: int
++ generateupd(): bool
+}
+distributedapplicationdevelop --> synchronizationsystem
+synchronizationsystem --> specif
+synchronizationsystem --> model
+synchronizationsystem "1" --> "*" sharedobject
+synchronizationsystem "1" --> "*" nod
+nod "1" --> "*" sharedobject
+updatesourc "1" --> "*" sharedobject
+@enduml

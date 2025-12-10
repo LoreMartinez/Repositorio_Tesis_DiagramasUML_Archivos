@@ -1,0 +1,39 @@
+@startuml
+class networkapplicationdevelop {
+- nam: string
++ createcli(): client
++ createserv(): serv
+}
+class baseclass {
+# socketconfigur: string
++ initi(): void
++ configur(): void
+}
+class client {
+- serveraddress: string
+- port: int
++ senddat(dat: string): bool
++ connect(): bool
++ disconnect(): void
+}
+class serv {
+- port: int
+- maxconnect: int
++ receivedat(): string
++ startlisten(): bool
++ stoplisten(): void
+}
+class networkappl {
+- nam: string
+- ismodul: bool
++ build(): bool
++ deploy(): bool
+}
+networkapplicationdevelop --> client
+networkapplicationdevelop --> serv
+networkapplicationdevelop --> networkappl
+client --|> baseclass
+serv --|> baseclass
+networkappl o-- client
+networkappl o-- serv
+@enduml

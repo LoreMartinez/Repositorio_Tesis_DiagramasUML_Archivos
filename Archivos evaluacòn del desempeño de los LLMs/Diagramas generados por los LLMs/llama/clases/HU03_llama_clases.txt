@@ -1,0 +1,14 @@
+@startuml
+class system {
+- command: list of command
+}
+class command {
+- text: string
++ execut(): bool
+}
+class receiverobject {
+- stat: string
+}
+command "1" ..> receiverobject (default)
+receiverobject "1" --> command
+@enduml

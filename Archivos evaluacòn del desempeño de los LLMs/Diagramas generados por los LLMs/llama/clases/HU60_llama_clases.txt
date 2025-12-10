@@ -1,0 +1,20 @@
+@startuml
+class network {
+- nam: string
+}
+class nod {
+- id: integ
+}
+class flow {
+- sourcenod: nod
+- destinationnod: nod
+- weight: float
+}
+class algorithm {
+- nam: string
+}
+network "1" -- "*" algorithm
+algorithm --> "*"
+network *-- "1*" flow
+flow *--> "1*" nod
+@enduml

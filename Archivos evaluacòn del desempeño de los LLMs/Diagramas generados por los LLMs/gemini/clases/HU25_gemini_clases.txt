@@ -1,0 +1,21 @@
+@startuml
+class dataprocessingsystemus {
+}
+class mapreducejob {
++ defin()
++ run()
+}
+class mapp {
++ transform()
+}
+class reduc {
++ aggreg()
+}
+class combin {
++ combin()
+}
+dataprocessingsystemus --> "*" mapreducejob
+mapreducejob "1" *-- "1" mapp
+mapreducejob "1" *-- "1" reduc
+mapreducejob "1" *-- "0..1" combin
+@enduml

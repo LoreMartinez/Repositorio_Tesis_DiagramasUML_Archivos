@@ -1,0 +1,51 @@
+@startuml
+class parallelcomputingapplicationdevelop {
+- platform: platform[]
+- devic: devic[]
+- context: context[]
+- program: program[]
+- kernel: kernel[]
+- memori: memori
++ executeparallelcomput()
+}
+class platform {
+- hardwareresourc: hardwareresourc[]
+}
+class devic {
+- hardwarespecif: hardwarespecif
+}
+class context {
+- environmentvari: environmentvari[]
+}
+class program {
+- programkernel: kernel
+}
+class kernel {
+- parallelcomputationalgorithm: parallelcomputationalgorithm
+}
+class memori {
+- memoryusag: memoryusag
+}
+class hardwareresourc {
+- hardwaretyp: hardwaretyp
+}
+class hardwarespecif {
+- cpucount: int
+- gpucount: int
+- ramsiz: int
+}
+class environmentvari {
+- key: string
+- valu: string
+}
+class parallelcomputationalgorithm {
+}
+class memoryusag {
+}
+hardwareresourc "1" --> platform
+devic "1" --> parallelcomputingapplicationdevelop
+context "1" --> parallelcomputingapplicationdevelop
+program "1" --> parallelcomputingapplicationdevelop
+kernel "1" --> program
+memori "1" --> parallelcomputingapplicationdevelop
+@enduml

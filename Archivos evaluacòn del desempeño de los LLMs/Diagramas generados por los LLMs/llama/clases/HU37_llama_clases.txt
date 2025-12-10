@@ -1,0 +1,17 @@
+@startuml
+class piec {
+- squar: squar
+- color: color
+}
+class squar {
+- x: integ
+- y: integ
+- piec: piec
+}
+class play {
++ movepiec(piec): void
++ executestrategi(): void
+}
+play "1" -- "*" squar
+squar "1" -- "-" piec
+@enduml

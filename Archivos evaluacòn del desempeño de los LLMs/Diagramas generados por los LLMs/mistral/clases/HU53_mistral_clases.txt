@@ -1,0 +1,38 @@
+@startuml
+class globject {
+- vertic: array[glvertex]
+- buffer: array[glbuff]
+- textur: array[gltextur]
+- framebuff: array[glframebuff]
+- shader: array[glshaderprogram]
++ rend(): void
+}
+class glvertex {
+- x: float
+- y: float
+- z: float
++ getx(): float
++ geti(): float
++ getz(): float
+}
+class glbuff {
+- dat: array[byt]
++ bind(): void
+}
+class glva {
+- vertexarray: int
++ bind(): void
+}
+class gltextur {
+- id: int
++ bind(): void
+}
+class glframebuff {
+- id: int
++ bind(): void
+}
+class glshaderprogram {
+- program: int
++ use(): void
+}
+@enduml

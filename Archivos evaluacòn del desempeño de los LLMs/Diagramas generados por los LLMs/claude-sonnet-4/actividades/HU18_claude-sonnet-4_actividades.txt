@@ -1,0 +1,12 @@
+@startuml
+start
+:user provid input to system;
+:system analyz input;
+if (input requir verbos?) then (ye)
+:system enabl verbos mod;
+:system execut command with detail inform;
+els (no)
+:system execut command normal;
+endif
+stop
+@enduml

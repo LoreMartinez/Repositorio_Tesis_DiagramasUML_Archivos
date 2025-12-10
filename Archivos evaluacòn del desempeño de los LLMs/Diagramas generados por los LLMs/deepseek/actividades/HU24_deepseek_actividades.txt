@@ -1,0 +1,11 @@
+@startuml
+start
+:user enter credenti;
+:system valid input;
+if (form val?) then (ye)
+:redirect to hom pag;
+els (no)
+:display "registr fail" messag;
+endif
+stop
+@enduml

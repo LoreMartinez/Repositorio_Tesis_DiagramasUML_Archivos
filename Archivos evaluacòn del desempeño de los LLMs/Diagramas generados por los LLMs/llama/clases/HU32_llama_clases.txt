@@ -1,0 +1,21 @@
+@startuml
+class chargingst {
+- nam: string
+- locat: string
+}
+class connector {
+- typ: string
+- capac: integ
+}
+class chargingloc {
+- nam: string
++ registerchargingst(): bool
++ registerconnector(): bool
+}
+class electricvehicl {
+- brand: string
+- model: string
+}
+chargingst -- "*" chargingloc
+electricvehicl -- "*" connector
+@enduml

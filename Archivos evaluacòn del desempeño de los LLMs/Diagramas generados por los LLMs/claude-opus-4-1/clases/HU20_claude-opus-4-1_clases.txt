@@ -1,0 +1,34 @@
+@startuml
+class user {
+- usernam: string
+- email: string
+- password: string
++ updateprofil(): bool
++ followus(user: user): bool
++ unfollowus(user: user): bool
+}
+class profil {
+- bio: string
+- avatarurl: string
+- locat: string
++ editbi(text: string): void
++ updateavat(url: string): void
+}
+class messag {
+- content: string
+- timestamp: dat
+- isre: bool
++ markasr(): void
+}
+class twit {
+- content: string
+- timestamp: dat
++ edit(newcont: string): bool
++ delet(): bool
+}
+user "1" -- "1" profil
+user "1" -- "*" messag : send
+user "1" -- "*" messag : receiv
+user "1" -- "*" twit : post
+user "*" -- "*" user : follow
+@enduml

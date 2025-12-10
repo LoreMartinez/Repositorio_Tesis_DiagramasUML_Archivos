@@ -1,0 +1,16 @@
+@startuml
+class dataent {
+- nam: string
+- attribut: set<attribut>
+- referenceent: dataent
++ setattribut(attribut: attribut): void
++ removeattribut(attribut: attribut): void
++ setreferenceent(dataent: dataent): void
+}
+class attribut {
+- nam: string
+- valu: string
+}
+dataent *-- attribut: contain >
+dataent o-- dataent: refer >
+@enduml

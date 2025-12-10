@@ -1,0 +1,29 @@
+@startuml
+class systemus {
+- user: string
+- nam: string
++ managetest(): void
++ organizetest(): void
+}
+class test {
+- test: string
+- nam: string
+- descript: string
++ linktotest(test: test): void
++ getrelatedtest(): list
+}
+class othertest {
+- othertest: string
+- nam: string
+- specificdat: string
+}
+class thirdtest {
+- thirdtest: string
+- nam: string
+- additionalinf: string
+}
+systemus "1" --> "*" test
+test --|> othertest
+test --|> thirdtest
+test "1" --> "*" test
+@enduml

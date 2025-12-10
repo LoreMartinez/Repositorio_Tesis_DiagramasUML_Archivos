@@ -1,0 +1,10 @@
+@startuml
+start
+:system read avail dat;
+whil (dat remain?) is (ye)
+:system process dat;
+:system generat diagram;
+:system display diagram graphic;
+endwhil (no)
+stop
+@enduml

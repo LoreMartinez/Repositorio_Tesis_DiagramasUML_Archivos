@@ -1,0 +1,16 @@
+@startuml
+start
+:system administr initi system check;
+:check storag status;
+:check orchestr linkag status;
+:check mysql status;
+:check apach 2 status;
+if (all servic oper?) then (ye)
+:display system oper messag;
+els (no)
+:display warn for fail servic;
+:start necessari servic;
+:verifi servic are run;
+endif
+stop
+@enduml

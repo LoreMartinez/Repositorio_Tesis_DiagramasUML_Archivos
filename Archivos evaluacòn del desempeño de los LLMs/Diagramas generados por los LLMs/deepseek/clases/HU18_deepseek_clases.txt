@@ -1,0 +1,31 @@
+@startuml
+class student {
+- usernam: string
+- email: string
+- password: string
+- cours: collect<cours>
++ enrol(cours cours)
+- drop(cours cours)
++ getenrol()
+- isenrol(cours cours)
+}
+class cours {
+- titl: string
+- descript: string
+- credithour: int
+- difficulti: string
+- enrolledstud: collect<student>
+- docu: collect<docu>
++ addstud(student student)
++ managedocumentsubmiss()
+}
+class enrol {
+- student: student
+- cours: cours
++ getenrol(status status)
+- isenrol(status status)
++ toggleenrol()
+- getstatus(status status)
+}
+student "1" -- "*" enrol -- "*" cours
+@enduml

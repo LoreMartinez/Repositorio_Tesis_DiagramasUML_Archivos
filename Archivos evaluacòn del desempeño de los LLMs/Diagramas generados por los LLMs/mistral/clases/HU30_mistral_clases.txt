@@ -1,0 +1,23 @@
+@startuml
+class formcreationsystem {
+- storedform: list<form>
++ createform()
++ addel(element: element)
+}
+abstract class element {
+- label: string
++ rend()
+}
+class textel extend element {
+- content: string
+}
+class inputel extend element {
+- inputtyp: string
+}
+class subform extend form {
+- subform: list<form>
+}
+form "1" --> "*" textel
+form "1" --> "*" inputel
+subform "1" -- "*" form
+@enduml

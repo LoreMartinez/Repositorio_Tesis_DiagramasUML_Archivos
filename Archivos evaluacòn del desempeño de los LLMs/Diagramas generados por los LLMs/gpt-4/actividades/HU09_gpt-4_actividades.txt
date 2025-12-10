@@ -1,0 +1,13 @@
+@startuml
+start
+:system administr want servic to configur celeryd;
+:system perform storag mount;
+:system perform servic registr;
+if (error occur?) then (ye)
+:system exit in a control mann;
+stop
+els (no)
+:system start;
+stop
+endif
+@enduml

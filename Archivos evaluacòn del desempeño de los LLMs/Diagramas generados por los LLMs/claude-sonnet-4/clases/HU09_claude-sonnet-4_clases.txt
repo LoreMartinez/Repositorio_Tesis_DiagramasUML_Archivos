@@ -1,0 +1,30 @@
+@startuml
+class systemus {
+- usernam: string
+- perm: list<string>
++ accessent(entity: string): entiti
++ vieweventf(entity: string): list<event>
+}
+class entiti {
+- entity: string
+- nam: string
+- descript: string
++ geteventf(): list<event>
+}
+class event {
+- event: string
+- timestamp: datetim
+- descript: string
+- entity: string
++ getchronologicalord(): datetim
+}
+class permiss {
+- permissiontyp: string
+- entity: string
++ validateaccess(): bool
+}
+systemus "1" --> "*" permiss
+systemus "1" --> "*" entiti
+entiti "1" --> "*" event
+permiss "*" --> "1" entiti
+@enduml

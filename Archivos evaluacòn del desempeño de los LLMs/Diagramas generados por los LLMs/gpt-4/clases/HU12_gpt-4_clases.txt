@@ -1,0 +1,27 @@
+@startuml
+class applicationus {
+- usernam: string
++ createcompon(): void
++ modifycompon(): void
++ viewcompon(): void
+}
+class hierarchicalstructur {
+- compon: list<compon>
++ buildstructur(): void
++ analyzestructur(): dat
+}
+class compon {
++ create3dscen(): 3DScene
++ createorganizationalchart(): organizationalchart
+}
+class 3DScene {
+- object: list<3DObject>
+}
+class organizationalchart {
+- element: list<element>
+}
+applicationus --> hierarchicalstructur
+hierarchicalstructur --> compon
+compon --> 3DScene
+compon --> organizationalchart
+@enduml

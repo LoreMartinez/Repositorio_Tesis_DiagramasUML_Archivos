@@ -1,0 +1,7 @@
+@startuml
+class labelviewhelp
+# canv relationship
+*-- canv
+# path relationship
+*-- path
+@enduml

@@ -1,0 +1,7 @@
+@startuml
+start
+:execut initi phas;
+:execut transf phas;
+:execut termin phas;
+stop
+@enduml

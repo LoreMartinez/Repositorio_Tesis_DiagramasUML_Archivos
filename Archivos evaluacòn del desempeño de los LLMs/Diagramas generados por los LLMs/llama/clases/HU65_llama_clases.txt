@@ -1,0 +1,14 @@
+@startuml
+class labelviewhelp {
+- canv: canv
++ drawoncanvasusingpath(): bool
+}
+class canv {
+# hidd (assum it's not part of the visibl interface)
+}
+class path {
+# privat or intern implement detail (not part of the public api)
+}
+labelviewhelp "1" --> canv
+canv *-- path
+@enduml

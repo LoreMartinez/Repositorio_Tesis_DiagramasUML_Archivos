@@ -1,0 +1,48 @@
+@startuml
+class teach {
+- nam: string
+- email: string
++ generateexam(): pdf
++ selecttop(): void
++ setquestioncount(): void
++ setvariantcount(): void
+}
+class exam {
+- titl: string
+- dat: dat
+- questioncount: int
+- variantcount: int
++ addquest(): void
++ generatevari(): void
++ exporttopdf(): pdf
+}
+class question {
+- text: string
+- point: int
+- difficulti: string
++ createvari(): question
+}
+class topic {
+- nam: string
+- descript: string
++ getquest(): list
+}
+class pdf {
+- filenam: string
+- content: string
+- creationd: dat
++ sav(): void
++ print(): void
+}
+class student {
+- nam: string
+- student: string
++ receiveexam(): void
++ submitexam(): void
+}
+teach "1" --> "*" exam
+exam "1" *-- "*" question
+question "*" -- "1" topic
+exam --> pdf
+teach --> student
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+class cashi {
++ recordpurch(): void
++ repeatpurch(purch: purch): void
+}
+class purch {
+- amount: doubl
+- dat: dat
+}
+class cashregist {
+- balanc: doubl
++ addpurch(purch: purch): void
+}
+cashi "1" -- "1" cashregist
+cashregist "1" -- "*" purch
+cashi "1" -- "*" purch
+@enduml

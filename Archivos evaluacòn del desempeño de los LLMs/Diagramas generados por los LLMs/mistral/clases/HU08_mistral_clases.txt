@@ -1,0 +1,31 @@
+@startuml
+class distributedapplicationdevelop {
+- applic: distributedappl
+}
+class distributedappl {
+- synchronizationsystem: synchronizationsystem
+}
+class synchronizationsystem {
+- specif: specif
+- model: model
+}
+class specif {
+# sharedobject: set[sharedobject]
+}
+class model {
+- realtimeconsist: realtimeconsist
+}
+class realtimeconsist {
+- updat: updat
+}
+class updat {
+# multiplesourc: set[sourc]
+}
+class sharedobject {
+- consist: bool
+- uptod: bool
+}
+class sourc {
+# updat: updat
+}
+@enduml

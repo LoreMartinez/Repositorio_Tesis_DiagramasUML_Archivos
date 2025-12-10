@@ -1,0 +1,18 @@
+@startuml
+start
+:system administr request to stop apach 2;
+:system attempt to stop apach 2;
+if (apach 2 stop success?) then (ye)
+:apach 2 is stop;
+els (no)
+:handl apach 2 fail to stop error;
+endif
+:system administr request to stop mysql servic;
+:system attempt to stop mysql servic;
+if (mysql stop success?) then (ye)
+:mysql is stop;
+els (no)
+:handl mysql fail to stop error;
+endif
+stop
+@enduml

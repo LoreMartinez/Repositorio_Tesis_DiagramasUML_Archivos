@@ -1,0 +1,52 @@
+@startuml
+class networkengin {
+- nam: string
++ definenetwork(): void
++ runalgorithm(): void
++ analyzeperform(): void
+}
+class network {
+- network: string
+- configur: string
++ calculateworstcaserespons(): doubl
++ calculateminimumtim(): doubl
++ calculatemaximumtim(): doubl
++ getflowmetr(): flowmetr
+}
+class nod {
+- nod: string
+- capac: int
+- locat: string
+}
+class flow {
+- flow: string
+- bandwidth: doubl
+- prioriti: int
+- sourcenod: string
+- destinationnod: string
+}
+class algorithm {
+- algorithmtyp: string
+- paramet: string
++ execut(): void
+}
+class flowmetr {
+- throughput: doubl
+- latenc: doubl
+- packetloss: doubl
+- util: doubl
+}
+class trafficscenari {
+- scenari: string
+- descript: string
+- loadlevel: string
+}
+networkengin --> network
+network "1" *-- "*" nod
+network "1" *-- "*" flow
+networkengin --> algorithm
+algorithm --> flowmetr
+network --> trafficscenari
+flow --> nod : sourc
+flow --> nod : destin
+@enduml

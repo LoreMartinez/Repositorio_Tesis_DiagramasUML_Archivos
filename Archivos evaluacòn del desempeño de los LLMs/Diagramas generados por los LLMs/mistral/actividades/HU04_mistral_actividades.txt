@@ -1,0 +1,8 @@
+@startuml
+start
+:system configur serv;
+:system instal ffmpeg;
+:system instal celeri;
+:serv is readi for deploy;
+stop
+@enduml

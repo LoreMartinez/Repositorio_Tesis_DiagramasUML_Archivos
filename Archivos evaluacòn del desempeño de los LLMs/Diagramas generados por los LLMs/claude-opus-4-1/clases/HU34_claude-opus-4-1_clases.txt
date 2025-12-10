@@ -1,0 +1,44 @@
+@startuml
+class dataprocessingus {
+- user: string
+- nam: string
++ executeoper(): void
++ selectoper(): void
+}
+class dataset {
+- dataset: string
+- nam: string
+- siz: long
+- format: string
++ getdat(): object
+}
+class oper {
+- operator: string
+- nam: string
+- typ: string
++ process(dataset: dataset): dataset
+}
+class customscript {
+- scriptcod: string
+- languag: string
++ execut(dataset: dataset): dataset
+}
+class keybasedaggreg {
+- key: string
+- aggregationtyp: string
++ aggreg(dataset: dataset): dataset
+}
+class oper {
+- operation: string
+- starttim: dat
+- endtim: dat
+- status: string
++ run(): void
++ getresult(): dataset
+}
+dataprocessingus "1" --> "*" oper
+oper "*" --> "1..*" dataset
+oper "*" --> "1" oper
+customscript --|> oper
+keybasedaggreg --|> oper
+@enduml

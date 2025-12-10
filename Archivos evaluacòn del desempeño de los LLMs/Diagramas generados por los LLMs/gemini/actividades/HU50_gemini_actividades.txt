@@ -1,0 +1,13 @@
+@startuml
+start
+fork
+:design user interface;
+fork again
+:design system architectur;
+fork again
+:generat develop plan;
+fork again
+:generat test plan;
+end fork
+stop
+@enduml

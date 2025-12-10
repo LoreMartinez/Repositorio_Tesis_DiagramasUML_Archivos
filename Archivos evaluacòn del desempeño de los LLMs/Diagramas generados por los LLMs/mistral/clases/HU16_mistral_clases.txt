@@ -1,0 +1,25 @@
+@startuml
+class test {
+- id: int
+- creator: string
+- creationd: dat
+- nam: string
++ getrelatedtest(othertesttyp: string): list<test>
+}
+class othertest {
+- id: int
+- creator: string
+- creationd: dat
+- nam: string
++ isrelatedt(test: test): bool
+}
+class thirdtest {
+- id: int
+- creator: string
+- creationd: dat
+- nam: string
++ isrelatedt(test: test, othertesttyp: string): bool
+}
+test "1" --> othertest
+test "1" --> thirdtest
+@enduml

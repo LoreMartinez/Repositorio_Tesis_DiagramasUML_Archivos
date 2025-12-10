@@ -1,0 +1,14 @@
+@startuml
+class configurationfil {
+file_path: string
+creator: stringread
+modification_d: dat
++ load(): iter<atomicimplicationformul>
+return collect of stat
+}
+# export might be handl outsid this class, but repres as a relationship
+configurationfil -|> docu
+# relationship betw fil and other configur not explicit defin her
+# could includ inherit if ther's a hierarchi, but no explic dat for that
+classdiagramus | configurationfil
+@enduml

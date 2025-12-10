@@ -1,0 +1,11 @@
+@startuml
+start
+:gath requir;
+:creat design;
+:develop system;
+:conduct test;
+:perform verif;
+:deploy to product;
+:begin oper;
+stop
+@enduml

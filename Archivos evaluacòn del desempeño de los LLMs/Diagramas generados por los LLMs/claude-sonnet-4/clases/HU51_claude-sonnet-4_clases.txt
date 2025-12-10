@@ -1,0 +1,41 @@
+@startuml
+class logg {
+- severitylevel: string
++ log(messag: string): void
++ setfilt(level: string): void
++ configur(): void
+}
+class outputtarget {
+- targettyp: string
++ writ(messag: string): void
+}
+class filetarget {
+- filepath: string
++ writ(messag: string): void
+}
+class consoletarget {
++ writ(messag: string): void
+}
+class androidtarget {
++ writ(messag: string): void
+}
+class messageformat {
+- formattyp: string
++ format(messag: string): string
+}
+class textconvert {
++ convert(text: string): string
+}
+class logmessag {
+- content: string
+- sever: string
+- timestamp: string
+}
+logg "1" --> "*" outputtarget
+logg "1" --> "1" messageformat
+logg "1" --> "*" logmessag
+messageformat "1" --> "1" textconvert
+filetarget --|> outputtarget
+consoletarget --|> outputtarget
+androidtarget --|> outputtarget
+@enduml

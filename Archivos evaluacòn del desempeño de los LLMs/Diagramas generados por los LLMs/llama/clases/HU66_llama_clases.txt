@@ -1,0 +1,13 @@
+@startuml
+class concretecompon {
+- function: function
+}
+class decor {
++ addbehavior(function): function
+}
+class user {
+- usernam: string
+- password: string
+}
+decor "1" -- "*" user
+@enduml

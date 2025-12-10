@@ -1,0 +1,54 @@
+@startuml
+class develop {
+- nam: string
+- nod: string
++ deployappl(): void
++ monitorsynchron(): void
+}
+class nod {
+- nod: string
+- ipaddress: string
+- status: string
++ connect(): bool
++ disconnect(): void
++ sendupd(): void
++ receiveupd(): void
+}
+class sharedobject {
+- object: string
+- version: int
+- dat: string
+- lastmodifi: datetim
++ updat(): void
++ getvers(): int
++ synchron(): void
+}
+class specif {
+- spec: string
+- rul: string
+- constraint: string
++ valid(): bool
++ applyrul(): void
+}
+class model {
+- model: string
+- structur: string
+- relationship: string
++ definestructur(): void
++ validateconsist(): bool
+}
+class synchronizationmanag {
+- manager: string
++ synchronizeobject(): void
++ resolveconflict(): void
++ trackupd(): void
++ maintainconsist(): void
+}
+develop "1" --> "*" nod
+nod "*" --> "*" sharedobject
+synchronizationmanag "1" --> "*" sharedobject
+synchronizationmanag "1" --> "*" nod
+synchronizationmanag "1" --> "*" specif
+synchronizationmanag "1" --> "*" model
+develop "1" --> "1" synchronizationmanag
+@enduml

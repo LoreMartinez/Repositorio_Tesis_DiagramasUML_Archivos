@@ -1,0 +1,16 @@
+@startuml
+start
+:user access review section;
+:system display user's review;
+:user select review to delet;
+:system show delet confirm;
+if (confirm delet?) then (ye)
+:system remov review;
+:system updat review list;
+:user se success messag;
+els (no)
+:system cancel delet;
+:user return to review list;
+endif
+stop
+@enduml

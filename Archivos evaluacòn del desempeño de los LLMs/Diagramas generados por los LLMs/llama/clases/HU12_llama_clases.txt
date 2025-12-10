@@ -1,0 +1,22 @@
+@startuml
+class applicationus {
+- usernam: string
+- password: string
+}
+class activityschedul {
++ addtask(task): void
+}
+class protocolautomationsystem {
++ startworkflow(): void
+}
+class control {
++ manageexecu(): void
+- workflowstatus: bool
+}
+class hierarchicalstructur {
++ createhierarchi(): void
+}
+class 3DScene {
++ loadmesh(mesh): void
+}
+@enduml

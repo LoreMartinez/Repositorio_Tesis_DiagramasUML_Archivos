@@ -1,0 +1,12 @@
+@startuml
+class carown {
+- nam: string
+- car: car
++ registerc(): void
+}
+class car {
+- wheel: int
++ hasfourwheel(): bool
+}
+carown "1" --* car
+@enduml

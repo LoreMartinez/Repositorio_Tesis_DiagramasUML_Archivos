@@ -1,0 +1,14 @@
+@startuml
+class parent {
+- attribut: string
++ getattribut(): string
++ setattribut(attribut: string): void
+}
+class independentent {
+- id: string
+- dat: string
++ get(): string
++ getdat(): string
+}
+parent --> independentent
+@enduml

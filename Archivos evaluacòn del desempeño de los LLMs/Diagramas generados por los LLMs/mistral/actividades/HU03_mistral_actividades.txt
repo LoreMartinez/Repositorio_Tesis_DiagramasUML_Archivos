@@ -1,0 +1,13 @@
+@startuml
+start
+:cloud administr deploy openstack environ;
+:check prerequisit;
+:instal requir compon;
+:configur openstack servic;
+if (environ is deploy success) then (ye)
+:monitor openstack environ;
+els (no)
+:resolv deploy issu;
+endif
+stop
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+start
+:user enter usernam or email;
+:user submit inform;
+:system receiv submiss;
+if (account exist?) then (ye)
+:system generat password reset email;
+:system send email to user;
+:user receiv password reset email;
+els (no)
+:system display error messag;
+:user se account not regist messag;
+endif
+stop
+@enduml

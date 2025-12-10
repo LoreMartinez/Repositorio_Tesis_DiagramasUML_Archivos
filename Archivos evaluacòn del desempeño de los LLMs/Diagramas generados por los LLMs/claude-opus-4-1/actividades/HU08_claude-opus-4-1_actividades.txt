@@ -1,0 +1,17 @@
+@startuml
+start
+:develop run unit test;
+:system execut test suit;
+:system analyz cod coverag;
+:system calcul coverag metric;
+if (coverag meet threshold?) then (ye)
+:system generat coverag report;
+:develop review cover are;
+els (no)
+:system generat coverag report;
+:system highlight uncov are;
+:develop identif are need test;
+endif
+:develop analyz test gap;
+stop
+@enduml

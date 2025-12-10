@@ -1,0 +1,21 @@
+@startuml
+class examgener {
+- specificnumb: int
+- question: list<question>
+- vari: list<list<string>>
+- topic: list<string>
+- teach: teach
++ generateexam(): void
++ addquest(question: question): void
+}
+class question {
+- questiontext: string
+- answer: string
+- vari: list<string>
++ getquestiontext(): string
+}
+class teach {
+- nam: string
++ generateexam(): void
+}
+@enduml

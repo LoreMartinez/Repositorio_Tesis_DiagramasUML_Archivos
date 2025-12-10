@@ -1,0 +1,13 @@
+@startuml
+class play {
++ rolldic(): int
+}
+class di {
+- valu: int
++ roll(): int
+}
+class gam {
+}
+gam "1" -- "*" play
+play "1" ..> "2" di
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class decor {
+- compon: concretecompon
+}
+class concretecompon {
+}
+decor "1" --> concretecompon
+@enduml

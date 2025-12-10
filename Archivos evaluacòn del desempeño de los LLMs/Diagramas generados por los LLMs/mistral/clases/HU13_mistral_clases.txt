@@ -1,0 +1,22 @@
+@startuml
+class play {
+- statist: statist
+- possessionsship: list<ship>
+- compan: list<charact>
+- combatcap: combatcap
++ getsummari(): string
+}
+class charact {
+- nam: string
+}
+class ship {
+- nam: string
+}
+class combatcap {
+- strength: int
+- defens: int
+}
+play "1" --> statist
+play "--*" possessionship
+play "--*" compan
+@enduml

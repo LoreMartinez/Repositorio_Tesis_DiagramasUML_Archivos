@@ -1,0 +1,19 @@
+@startuml
+class assessmentsystemus {
+}
+class assess {
+- finalresult: string
+- feedback: string
++ measureperform()
+}
+class question {
+- text: string
+}
+class answer {
+- content: string
+}
+assessmentsystemus "1" -- "*" assess
+assess "1" *-- "1..*" question
+assess "1" *-- "0..*" answer
+answer "1" -- "1" question
+@enduml

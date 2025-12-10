@@ -1,0 +1,21 @@
+@startuml
+skinparam packagestyl rectangul
+start
+:system perform system updat;
+:system instal mysql;
+:system configur mysql;
+:system perform error handl (mysql);
+:system instal glusterf;
+:system configur glusterf;
+:system perform error handl (glusterf);
+:system instal apache2;
+:system configur apache2;
+:system perform error handl (apache2);
+:system instal php;
+:system configur php;
+:system perform error handl (php);
+:system instal web ui cod;
+:system configur web ui cod;
+:system perform error handl (web ui cod);
+stop
+@enduml

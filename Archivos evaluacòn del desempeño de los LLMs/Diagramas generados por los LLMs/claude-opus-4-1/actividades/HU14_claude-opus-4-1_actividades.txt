@@ -1,0 +1,26 @@
+@startuml
+start
+:system administr initi status check;
+:system check api status;
+if (api is run?) then (ye)
+:system check mongodb status;
+if (mongodb is run?) then (ye)
+:system confirm servic are oper;
+els (no)
+:system stop mongodb process;
+:system manag mongodb servic;
+endif
+els (no)
+:system stop api process;
+:system manag api servic;
+:system check mongodb status;
+if (mongodb is run?) then (ye)
+:system stop mongodb process;
+:system manag mongodb servic;
+els (no)
+:system confirm mongodb alreadi stop;
+endif
+endif
+:system report servic manag complet;
+stop
+@enduml

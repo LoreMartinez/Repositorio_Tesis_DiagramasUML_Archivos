@@ -1,0 +1,20 @@
+@startuml
+class configurationsystemus {
++ loadconfigurationfil(): void
++ processstat(): void
++ exportconfigur(): configurationfil
+}
+class configurationfil {
+- stat: stat[]
++ addstat(stat: stat): void
++ deletestat(stat: stat): void
++ getstat(): stat[]
+}
+class stat {
+- instruct: string
++ setinstruct(instruct: string): void
++ getinstruct(): string
+}
+configurationsystemus --> configurationfil
+configurationfil *-- stat
+@enduml

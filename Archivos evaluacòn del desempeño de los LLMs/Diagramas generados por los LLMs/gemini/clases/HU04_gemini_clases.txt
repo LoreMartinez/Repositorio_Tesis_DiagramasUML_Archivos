@@ -1,0 +1,9 @@
+@startuml
+class parentent {
+- integralattribut: string
+}
+class reusableent {
+- reusableinform: string
+}
+parentent --> "0..1" reusableent
+@enduml

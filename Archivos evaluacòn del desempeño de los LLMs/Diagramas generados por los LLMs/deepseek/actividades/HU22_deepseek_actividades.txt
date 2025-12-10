@@ -1,0 +1,39 @@
+@startuml
+start
+check outstand updat request?
+ye
+instal mysql
+check mysql configur is correct and not in critic stat
+ye
+proc with mysql instal
+no
+show error messag for mysql issu
+instal glusterf
+check storag configur is correct
+ye
+proc with glusterf instal
+no
+show error messag for glusterf issu
+instal apache2
+check web serv is configur correct
+ye
+proc with apache2 instal
+no
+show error messag for apache2 issu
+instal php
+check php configur is correct and not in critic stat
+ye
+proc with php instal
+no
+show error messag for php issu
+instal web ui cod
+verifi web serv can accept request
+ye
+run web ui cod
+log complet of system updat
+no
+show error messag for web ui instal issu
+no
+end
+stop
+@enduml

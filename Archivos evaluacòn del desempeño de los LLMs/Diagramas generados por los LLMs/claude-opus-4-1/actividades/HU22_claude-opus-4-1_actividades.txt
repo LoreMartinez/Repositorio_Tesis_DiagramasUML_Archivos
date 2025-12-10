@@ -1,0 +1,47 @@
+@startuml
+start
+:administr initi system setup;
+:system perform automat updat;
+:system instal mysql;
+if (mysql instal success?) then (ye)
+:system configur mysql;
+els (no)
+:system log mysql instal error;
+stop
+endif
+:system instal glusterf;
+if (glusterf instal success?) then (ye)
+:system configur glusterf;
+els (no)
+:system log glusterf instal error;
+stop
+endif
+:system instal apache2;
+if (apache2 instal success?) then (ye)
+:system configur apache2;
+els (no)
+:system log apache2 instal error;
+stop
+endif
+:system instal php;
+if (php instal success?) then (ye)
+:system configur php;
+els (no)
+:system log php instal error;
+stop
+endif
+:system instal web ui cod;
+if (web ui instal success?) then (ye)
+:system configur web ui;
+els (no)
+:system log web ui instal error;
+stop
+endif
+:system verif all servic are oper;
+if (all servic oper?) then (ye)
+:system confirm success setup;
+els (no)
+:system report servic verif error;
+endif
+stop
+@enduml

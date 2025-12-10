@@ -1,0 +1,25 @@
+@startuml
+class configurationsystemus {
+- user: string
+- nam: string
++ loadconfigurationfil(): configurationfil
++ processstat(): void
++ exportconfigur(): void
+}
+class configurationfil {
+- filenam: string
+- filepath: string
+- content: string
++ getstat(): stat[]
++ isval(): bool
+}
+class stat {
+- content: string
+- linenumb: int
+- typ: string
++ process(): void
++ valid(): bool
+}
+configurationsystemus --> configurationfil
+configurationfil "1" --> "*" stat
+@enduml

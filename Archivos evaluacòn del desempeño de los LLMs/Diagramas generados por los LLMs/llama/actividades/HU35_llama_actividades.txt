@@ -1,0 +1,10 @@
+@startuml
+start
+:stop scre and apach 2
+if (servic are proper shut down)
+:handl error
+els
+:notifi administr
+endif
+stop
+@enduml

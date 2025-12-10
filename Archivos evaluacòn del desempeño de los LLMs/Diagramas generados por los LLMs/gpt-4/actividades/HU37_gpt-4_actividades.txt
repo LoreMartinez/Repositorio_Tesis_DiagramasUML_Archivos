@@ -1,0 +1,20 @@
+@startuml
+start
+:system administr verif storag mount;
+if (storag mount?) then (ye)
+fork
+:start apache2 servic;
+end fork
+fork
+:start celeryd servic;
+end fork
+if (servic start correct?) then (ye)
+:system run essenti servic;
+els (no)
+:handl servic startup error;
+endif
+els (no)
+:report storag mount failur;
+endif
+stop
+@enduml

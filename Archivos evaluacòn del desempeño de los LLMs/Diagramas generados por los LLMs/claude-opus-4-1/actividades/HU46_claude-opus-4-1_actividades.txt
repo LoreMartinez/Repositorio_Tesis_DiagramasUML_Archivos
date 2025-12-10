@@ -1,0 +1,16 @@
+@startuml
+start
+:play navig gam menu;
+:play select stag;
+:play select charact;
+:play initi connect to serv;
+if (connect success?) then (ye)
+:play connect to serv;
+:play receiv serv inform;
+:play join multiplay match;
+:play play in real tim;
+els (no)
+:play receiv connect error;
+endif
+stop
+@enduml

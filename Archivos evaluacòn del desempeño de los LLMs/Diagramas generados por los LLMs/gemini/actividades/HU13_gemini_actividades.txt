@@ -1,0 +1,13 @@
+@startuml
+start
+:organiz edit workshop inform on the modif pag;
+:organiz submit the chang for valid;
+:system valid the inform;
+if (inform is val?) then (ye)
+:system updat the workshop dat;
+:system confirm the updat;
+els (no)
+:system show valid error messag;
+endif
+stop
+@enduml

@@ -1,0 +1,27 @@
+@startuml
+start
+:enter credenti;
+if (permiss to stop apach 2 and mysql?) then (ye)
+:log in success;
+if (permiss to stop apach 2?) then (ye)
+:stop apach 2;
+:wait for apach 2 to shut down;
+els (no)
+:log error: insuffici perm for apach 2 shutdown;
+endif
+if (permiss to stop mysql?) then (ye)
+:stop mysql;
+:wait for mysql to shut down;
+els (no)
+:log error: insuffici perm for mysql shutdown;
+endif
+els (no)
+:display error messag indic insuffici perm;
+endif
+if (apach shutdown fail or mysql shutdown fail?)
+:log final error: servic could not be stop as expect;
+els
+:continu with other task;
+endif
+stop
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+start
+:user submit comment;
+:system valid comment;
+if (val?) then (ye)
+:comment post success;
+els (no)
+:display error;
+endif
+stop
+@enduml

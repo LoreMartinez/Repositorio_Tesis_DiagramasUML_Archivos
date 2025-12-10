@@ -1,0 +1,13 @@
+@startuml
+start
+:app user navig to post;
+:app user writ comment;
+:app user submit comment;
+if (comment val?) then (ye)
+:system post comment success;
+:system provid feedback confirm;
+els (no)
+:system display error messag;
+endif
+stop
+@enduml

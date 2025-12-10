@@ -1,0 +1,8 @@
+@startuml
+start
+:system check the status of the api and mongodb;
+if (is shutdown necessari?) then (ye)
+:system stop the correspond process;
+endif
+stop
+@enduml

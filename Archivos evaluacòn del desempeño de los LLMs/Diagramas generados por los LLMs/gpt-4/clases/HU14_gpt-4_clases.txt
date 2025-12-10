@@ -1,0 +1,16 @@
+@startuml
+class applicationus {
+- borderstyl: string
++ displaytextwithborderstyl(): void
+}
+class textcont {
+- borderstyl: string
++ display(): void
+}
+class messag {
+- borderstyl: string
++ display(): void
+}
+applicationus --> textcont
+applicationus --> messag
+@enduml

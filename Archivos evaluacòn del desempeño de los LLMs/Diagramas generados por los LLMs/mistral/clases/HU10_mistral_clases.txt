@@ -1,0 +1,33 @@
+@startuml
+class activityschedul {
+- scheduledev: list[event]
+- session: list[session]
+- venu: venu
+- starttim: datetim
+- endtim: datetim
+}
+class event {
+- nam: string
+- starttim: datetim
+- endtim: datetim
+- venu: venu
+}
+class session {
+- titl: string
+- starttim: datetim
+- endtim: datetim
+- locat: locat
+}
+class venu {
+- nam: string
+- address: address
+}
+class locat {
+- street: string
+- citi: string
+- stat: string
+- countri: string
+}
+activityschedul "1" -- "*" event
+activityschedul "1" -- "*" session
+@enduml

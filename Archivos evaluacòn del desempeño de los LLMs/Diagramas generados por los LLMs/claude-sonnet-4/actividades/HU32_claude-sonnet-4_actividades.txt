@@ -1,0 +1,16 @@
+@startuml
+start
+:system administr initi servic shutdown;
+:attempt to stop apach 2 servic;
+if (apach 2 stop success?) then (ye)
+:attempt to stop mysql servic;
+if (mysql stop success?) then (ye)
+:servic proper shut down;
+els (no)
+:handl mysql servic failur;
+endif
+els (no)
+:handl apach 2 servic failur;
+endif
+stop
+@enduml

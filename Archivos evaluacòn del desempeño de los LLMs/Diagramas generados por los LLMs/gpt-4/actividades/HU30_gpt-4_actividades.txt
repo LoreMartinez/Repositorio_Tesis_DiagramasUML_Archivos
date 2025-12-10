@@ -1,0 +1,9 @@
+@startuml
+start
+:analys team memb set goal;
+:generat hypothes;
+:collect dat;
+:visual dat;
+:analyz dat systemat;
+stop
+@enduml

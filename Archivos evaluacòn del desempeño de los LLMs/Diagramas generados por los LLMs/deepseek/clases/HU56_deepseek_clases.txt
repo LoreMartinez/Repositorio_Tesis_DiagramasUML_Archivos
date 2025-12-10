@@ -1,0 +1,28 @@
+@startuml
+class user {
+- usernam: string
+- email: string
+- age: integ
+}
+class racket {
++ id: string
+- age: integ
+}
+class powersuppli {
++ voltag: string
+# voltag can be 120V or 240V depend on countri standard
+}
+class stringingmachin {
+* connectiontoracket: racket
+* connectiontopowersuppli: powersuppli
+- maintenanceport: string
+}
+class serv {
+-- stringingmachin: stringingmachin
+-- powersuppli: powersuppli
+-- user: user
+}
+user -> stringingmachin
+racket "age" --> stringingmachin.maintenanceport
+stringingmachin -> powersuppli
+@enduml

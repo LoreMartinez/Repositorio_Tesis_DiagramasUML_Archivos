@@ -1,0 +1,33 @@
+@startuml
+:check if all depend are met;
+if (dependenciesmet?) then (ye)
+:configur celeryd;
+if (celeryconfigur?) then (ye)
+:mount storag success;
+if (storagemount?) then (ye)
+:regist servic;
+if (servicesregist?) then (ye)
+:initi datab;
+:start the system;
+if (systemstart)
+;success messag;
+els
+;error messag;
+endif
+els
+log error;
+stop;
+endif
+els
+log error;
+stop;
+endif
+els
+log error;
+stop;
+endif
+els
+log error;
+stop;
+endif
+@enduml

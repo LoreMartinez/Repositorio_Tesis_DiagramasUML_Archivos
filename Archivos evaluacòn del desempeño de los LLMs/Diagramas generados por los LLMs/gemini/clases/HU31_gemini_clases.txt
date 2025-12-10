@@ -1,0 +1,29 @@
+@startuml
+class systemus {
+}
+class devic {
++ executecommand(command: command): void
+}
+class command {
+- instruct: string
+}
+class sensor {
++ capturedat(): threeddat
+}
+class kinectsensor {
+}
+class flightsensor {
+}
+class threeddat {
++ process(): void
++ visual(): void
+}
+systemus ..> command
+systemus ..> devic
+systemus ..> threeddat
+devic "1" o-- "*" sensor
+command "1" --> "1" devic
+sensor ..> threeddat
+kinectsensor --|> sensor
+flightsensor --|> sensor
+@enduml

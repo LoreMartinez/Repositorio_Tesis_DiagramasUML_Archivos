@@ -1,0 +1,23 @@
+@startuml
+class dataset {
+- id: integ
+- dat: string
+}
+class oper {
+- typ: string
+- script: string
+}
+class dataprocessor {
++ executeoper(dataset): bool
++ performaggreg(dataset): string
+}
+class user {
+- usernam: string
+- password: string
+- prefer: dataset
++ login(): bool
++ processdataset(dataset): void
+}
+user "1" -- "*" dataprocessor
+dataprocessor "1" -->* dataprocessor
+@enduml

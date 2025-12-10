@@ -1,0 +1,17 @@
+@startuml
+class stringingmachineus {
+}
+class stringingmachin {
++ stringracket(): void
+}
+class racket {
+}
+class string {
+}
+class powersuppli {
+}
+stringingmachineus --> stringingmachin
+stringingmachin "1" *-- "1" powersuppli
+stringingmachin --> racket
+stringingmachin --> string
+@enduml

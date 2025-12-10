@@ -1,0 +1,15 @@
+@startuml
+start
+:system perform system updat;
+:system instal and configur mysql;
+:system instal and configur glusterf;
+:system instal and configur apache2;
+:system instal and configur php;
+:system instal and configur web ui cod;
+if (error encount) then (ye)
+:system handl error;
+els (no)
+:system complet instal and configur;
+endif
+stop
+@enduml

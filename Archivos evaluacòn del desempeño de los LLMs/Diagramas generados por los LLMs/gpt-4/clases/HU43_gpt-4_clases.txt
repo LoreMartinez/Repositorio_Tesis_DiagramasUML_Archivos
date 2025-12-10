@@ -1,0 +1,13 @@
+@startuml
+class networkapplicationdevelop {
+}
+class serverrespons {
+- completedat: string
+- chunkeddat: string
+- header: string
+- status: string
++ processcompleterespons(): void
++ processchunkedrespons(): void
+}
+networkapplicationdevelop -- serverrespons
+@enduml

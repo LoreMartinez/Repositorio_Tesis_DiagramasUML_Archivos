@@ -1,0 +1,24 @@
+@startuml
+class applicationus {
+- usernam: string
+- profil: profil
++ manageprofil(): void
++ sendmessag(): void
++ receivemessag(): void
++ followus(): void
++ posttw(): void
+}
+class profil {
+- detail: string
+}
+class messag {
+- content: string
+}
+class twit {
+- post: string
+}
+applicationus "1" --> "*" messag
+applicationus "1" --> "*" applicationus : follow
+applicationus "1" --> "*" twit
+applicationus "1" --> "1" profil
+@enduml

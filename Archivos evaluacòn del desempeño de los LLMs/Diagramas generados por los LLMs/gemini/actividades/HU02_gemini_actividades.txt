@@ -1,0 +1,14 @@
+@startuml
+start
+:administr revok a set of entitl;
+fork
+:system remov depend;
+fork again
+:system updat pool;
+fork again
+:system regener certif;
+fork again
+:system verif complianc;
+end fork
+stop
+@enduml

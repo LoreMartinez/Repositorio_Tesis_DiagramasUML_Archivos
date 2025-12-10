@@ -1,0 +1,42 @@
+@startuml
+class datasystemadministr {
+- usernam: string
+- password: string
+- zonet: zonet[]
+- datainmemori: dat[]
+- datainstorag: dat[]
+- cach: cach
+- securitymanag: securitymanag
++ authent(usernam: string, password: string): bool
++ manageconfigurablecli(): void
++ accesszonet(): zonet[]
++ updatezonet(zonet: zonet[]): void
++ loaddatainmemori(dat: dat[]): void
++ maintaindatainmemori(): void
++ loaddatainstorag(dat: dat[]): void
++ maintaindatainstorag(): void
++ optimizeaccesswithcach(): void
++ controlloadoper(): void
++ controlupdateoper(): void
+}
+class zonet {
+- zon: string[]
++ getzon(): string[]
++ updatezon(zon: string[]): void
+}
+class dat {
+- metadat: metadat
+- datacont: string
++ getmetadat(): metadat
++ setdatacont(datacont: string): void
+}
+class cach {
+- cacheddat: map<string, dat>
++ getcacheddat(key: string): dat
++ putcacheddat(key: string, dat: dat): void
+}
+class securitymanag {
+- user: user[]
++ authenticateus(usernam: string, password: string): bool
+}
+@enduml

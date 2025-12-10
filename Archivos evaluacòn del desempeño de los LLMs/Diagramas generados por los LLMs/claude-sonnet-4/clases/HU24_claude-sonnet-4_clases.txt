@@ -1,0 +1,43 @@
+@startuml
+class user {
+- usernam: string
+- systemaccess: bool
++ connecttodevic(): bool
++ controldevic(): void
++ monitoroper(): void
+}
+class liberabrillianceplusdevic {
+- devic: string
+- status: string
+- connectionstatus: bool
++ connect(): bool
++ disconnect(): void
++ getstatus(): string
+}
+class deviceattribut {
+- nam: string
+- valu: string
+- datatyp: string
++ read(): string
++ writ(valu: string): bool
+}
+class signal {
+- signal: string
+- timestamp: datetim
+- valu: string
+- signaltyp: string
++ captur(): bool
++ updat(valu: string): void
+}
+class historicaldat {
+- record: string
+- timestamp: datetim
+- dat: string
++ record(signal: signal): void
++ retriev(): string
+}
+user --> liberabrillianceplusdevic
+liberabrillianceplusdevic "1" -- "*" deviceattribut
+liberabrillianceplusdevic "1" -- "*" signal
+signal --> historicaldat
+@enduml

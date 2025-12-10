@@ -1,0 +1,31 @@
+@startuml
+class cashi {
+- employe: string
+- nam: string
++ recordpurch(purch: purch): void
++ repeatpurch(purchas: string): void
+}
+class purch {
+- purchas: string
+- dat: dat
+- totalamount: doubl
+- item: list<purchaseitem>
++ calculatetot(): doubl
++ duplic(): purch
+}
+class purchaseitem {
+- productnam: string
+- quantiti: integ
+- unitpric: doubl
++ getsubtot(): doubl
+}
+class cashregist {
+- currentbal: doubl
+- registernumb: string
++ updatebal(amount: doubl): void
++ getbal(): doubl
+}
+cashi --> purch
+purch *-- purchaseitem
+cashi --> cashregist
+@enduml

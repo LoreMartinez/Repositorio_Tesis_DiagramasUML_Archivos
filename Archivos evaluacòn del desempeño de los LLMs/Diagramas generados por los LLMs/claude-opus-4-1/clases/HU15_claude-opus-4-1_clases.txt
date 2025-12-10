@@ -1,0 +1,41 @@
+@startuml
+class datasystemadministr {
+- usernam: string
+- password: string
++ authent(): bool
++ managecli(): void
++ loaddatatomemori(): void
++ updatedat(): void
+}
+class configurablecli {
+- client: string
+- nam: string
+- configur: string
++ updateconfigur(): void
+}
+class zonet {
+- zon: string
+- zonenam: string
+- dat: string
++ getdat(): string
++ updatedat(dat: string): void
+}
+class datastorag {
+- storagetyp: string
+- capac: long
++ stor(dat: string): bool
++ retriev(key: string): string
++ clearcach(): void
+}
+class datacach {
+- caches: integ
+- cacheddat: string
++ load(dat: string): void
++ refresh(): void
++ optim(): void
+}
+datasystemadministr "1" --> "*" configurablecli
+datasystemadministr "1" --> "*" zonet
+datasystemadministr "1" --> "1" datastorag
+datastorag "1" *-- "1" datacach
+@enduml

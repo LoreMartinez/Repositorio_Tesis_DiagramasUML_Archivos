@@ -1,0 +1,18 @@
+@startuml
+class applicationus {
+- usernam: string
+- profil: profil
+- messag: list[messag]
+- follow: set[applicationus]
+- twit: list[twit]
+}
+class profil {
+- metadat: map[string, string]
+}
+class messag {
+- send: applicationus
+- receiv: applicationus
+- content: string
+}
+applicationus "1" -- "*" profil
+@enduml

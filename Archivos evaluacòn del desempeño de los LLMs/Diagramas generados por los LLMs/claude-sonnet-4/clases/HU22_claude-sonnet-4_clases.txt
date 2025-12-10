@@ -1,0 +1,29 @@
+@startuml
+class documentmanagementsystemus {
+- user: string
+- usernam: string
++ createdocu(): docu
++ organizedocu(): void
++ searchdocu(): list<docu>
+}
+class docu {
+- document: string
+- titl: string
+- content: string
+- creationd: dat
+- documenttyp: string
++ getmetadat(): map<string, string>
++ updatecont(): void
+}
+class documentcollect {
+- collection: string
+- nam: string
+- descript: string
++ adddocu(): void
++ removedocu(): void
++ searchincollect(): list<docu>
+}
+documentmanagementsystemus "1" --> "*" docu
+documentmanagementsystemus "1" --> "*" documentcollect
+documentcollect "1" --> "*" docu
+@enduml

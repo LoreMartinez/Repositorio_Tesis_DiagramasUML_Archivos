@@ -1,0 +1,40 @@
+@startuml
+class testprotocolmanag {
+- protocollist: list<testprotocol>
+- contextmap: map<string, object>
+- scriptrepositori: scriptrepositori
+- resultcollector: resultcollector
+- queryprocessor: queryprocessor
++ manageprotocol(): void
++ executescript(script: script): void
++ maintaincontext(contextnam: string, contextdat: object): void
+}
+class testprotocol {
+- protocol: uuid
+- testc: list<testc>
++ runtest(): void
+}
+class script {
+- scriptnam: string
+- command: list<command>
++ execut(): void
+}
+class command {
+- commandtyp: commandtyp
+- argument: map<string, object>
++ execut(): void
+}
+class testc {
+- test: uuid
+- queri: queri
+- expectedresult: object
++ runtest(): bool
+}
+class queri {
+- querytext: string
++ execut(): object
+}
+class resultcollector {
+- result: list<testresult>
++ collectresult(): void
+@enduml

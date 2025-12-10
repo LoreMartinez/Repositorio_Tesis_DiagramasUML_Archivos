@@ -1,0 +1,27 @@
+@startuml
+class dataprocessingsystemus {
+- usernam: string
++ definejob(): void
++ runjob(): void
+}
+class mapreducejob {
+- map: mapp
+- reduc: reduc
+- combin: combin
++ configurejob(map: mapp, reduc: reduc, combin: combin): void
++ process(): void
+}
+class mapp {
+- mapfunct: function
+}
+class reduc {
+- reducefunct: function
+}
+class combin {
+- combinefunct: function
+}
+dataprocessingsystemus "1" -- "*" mapreducejob
+mapreducejob "1" -- "1" mapp
+mapreducejob "1" -- "1" reduc
+mapreducejob "1" -- "0..1" combin
+@enduml

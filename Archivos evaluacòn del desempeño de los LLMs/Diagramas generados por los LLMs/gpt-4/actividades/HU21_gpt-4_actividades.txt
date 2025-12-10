@@ -1,0 +1,13 @@
+@startuml
+start
+:system administr want to launch celeryd;
+:system check storag;
+:system check configur;
+:system check scre status;
+if (ani issu?) then (ye)
+:system show warn/error;
+els (no)
+:start celeryd servic;
+endif
+stop
+@enduml

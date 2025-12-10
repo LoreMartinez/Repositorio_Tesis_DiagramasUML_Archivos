@@ -1,0 +1,38 @@
+@startuml
+class networkappl {
+# stat
+- activ: bool
+# attribut repres interface to serv
++ receiverespons(completerespons)
++ sendrequest(request)
+# action
+action sendrequest {
+:method, :url, :header, :payl
+sendrequest()
+}
+action processrespons {
+handlerespons(:respons)
+}
+# chunk respons handl
+class completerespons {
+- statuscod: int
+- head: string
+- dat: string
+}
+# chunk respons handl
+class chunkedrespons {
+- chunkcount: int
+- siz: int
+- totalbyt: int
+- currentposit: int
+- chunk: list[chunk]
+}
+# request handl
+interface request {
+- method: string
+- url: string
+- header: map<string, string>
+- payl: string
+}
+}
+@enduml

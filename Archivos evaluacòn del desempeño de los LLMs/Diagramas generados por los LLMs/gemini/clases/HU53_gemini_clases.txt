@@ -1,0 +1,28 @@
+@startuml
+class globject {
+}
+class glbuff {
+}
+class glva {
+}
+class gltextur {
+}
+class glframebuff {
+}
+class glshad {
+}
+class glshaderprogram {
+}
+class scen {
++ rend()
+}
+glbuff --|> globject
+glva --|> globject
+gltextur --|> globject
+glframebuff --|> globject
+scen o-- "*" globject
+scen o-- "1" glshaderprogram
+glshaderprogram *-- "*" glshad
+glframebuff *-- "*" gltextur
+glframebuff *-- "*" glbuff
+@enduml

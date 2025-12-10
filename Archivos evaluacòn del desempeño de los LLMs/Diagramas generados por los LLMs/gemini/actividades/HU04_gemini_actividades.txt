@@ -1,0 +1,13 @@
+@startuml
+start
+:system administr initi serv configur;
+:instal ffmpeg depend;
+:instal celeri depend;
+:verifi environ is complet;
+if (environ is readi for deploy?) then (ye)
+:confirm environ is readi;
+els (no)
+:report configur error;
+endif
+stop
+@enduml

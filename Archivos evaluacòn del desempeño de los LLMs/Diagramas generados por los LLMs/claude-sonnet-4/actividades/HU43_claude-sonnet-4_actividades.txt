@@ -1,0 +1,17 @@
+@startuml
+start
+:student complet quiz;
+:student submit answer;
+:system process answer;
+:system calcul result;
+:system display result to student;
+if (student want to retak?) then (ye)
+:student retak quiz;
+:student submit new answer;
+:system process new answer;
+:system calcul new result;
+:system display improv result;
+els (no)
+endif
+stop
+@enduml

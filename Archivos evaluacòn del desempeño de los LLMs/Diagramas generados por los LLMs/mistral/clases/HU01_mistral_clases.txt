@@ -1,0 +1,23 @@
+@startuml
+class eventorgan {
+- eventpl: plan
+- task: list[task]
+- schedul: schedul
+- materi: list[materi]
+}
+class plan {
+- task: list[task]
+- schedul: schedul
+- materi: list[materi]
+}
+class task {
+- descript: string
+}
+class schedul {
+- task: list[task]
+- session: list[session]
+}
+class materi {
+- nam: string
+}
+@enduml

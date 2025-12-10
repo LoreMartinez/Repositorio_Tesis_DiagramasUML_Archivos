@@ -1,0 +1,11 @@
+@startuml
+start
+:platform user typ in the mov search bar;
+if (match are found?) then (ye)
+:display real-tim search result;
+:user select a mov direct;
+els (no)
+:display
+endif
+stop
+@enduml

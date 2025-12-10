@@ -1,0 +1,30 @@
+@startuml
+class racketstringingmachin {
+- string: string
+- racket: racket
+- powersuppli: powersuppli
+- stringingmachin: stringingmachin
++ stringracket()
+}
+class racket {
+- fram: fram
++ getfram() : fram
+}
+class fram {
+# part: list<part>
++ addpart(part: part)
+}
+class powersuppli {
+- powerlevel: int
++ setpowerlevel(level: int)
+}
+class stringingmachin {
+- status: status
++ start()
++ stop()
+}
+enum status { avail, occupi }
+racketstringingmachin "1" --> racket
+racketstringingmachin "1" --> powersuppli
+racketstringingmachin "1" --> stringingmachin
+@enduml

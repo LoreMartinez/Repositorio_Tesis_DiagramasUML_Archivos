@@ -1,0 +1,22 @@
+@startuml
+start
+:request;
+if (secur?) then (ye)
+:show homepag;
+els
+:display dashboard;
+endif
+if (!fileupl) then (ye)
+:process form dat for search term;
+elseif (formsubm) then (ye)
+:rend result pag;
+elseif (dataurl) then (ye)
+:rend set pag;
+els
+:redirect to login pag;
+endif
+if (error) then
+:display error messag;
+endif
+stop
+@enduml

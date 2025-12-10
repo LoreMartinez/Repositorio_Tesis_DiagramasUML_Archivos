@@ -1,0 +1,15 @@
+@startuml
+start
+:platform user select comment to edit;
+:user modif comment content;
+:user submit edit comment;
+if (post success?) then (ye)
+:updat comment content;
+:record modif tim;
+:show success confirm;
+els (no)
+:handl error;
+:show error messag;
+endif
+stop
+@enduml

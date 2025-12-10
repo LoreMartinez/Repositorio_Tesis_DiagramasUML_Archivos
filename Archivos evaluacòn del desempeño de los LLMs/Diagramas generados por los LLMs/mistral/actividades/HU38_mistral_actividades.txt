@@ -1,0 +1,14 @@
+@startuml
+start
+:platform user request review delet
+:system check if user has entitl to delet review
+if (has entitl?) then (ye)
+:system display confirm
+:user confirm review delet
+:system delet review from datab
+:system return success messag
+els (no)
+:system return error messag
+endif
+stop
+@enduml

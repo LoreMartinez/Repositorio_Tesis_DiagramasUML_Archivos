@@ -1,0 +1,37 @@
+@startuml
+class user {
+- usernam: string
+- email: string
++ createdocu(): docu
++ searchdocu(criteri: string): list<docu>
++ organizecollect(): void
+}
+class docu {
+- titl: string
+- content: string
+- creationd: dat
+- typ: string
++ edit(): void
++ delet(): void
++ addtocollect(collect: documentcollect): void
+}
+class documentcollect {
+- nam: string
+- descript: string
+- creationd: dat
++ adddocu(docu: docu): void
++ removedocu(docu: docu): void
++ searchwithincollect(criteri: string): list<docu>
+}
+class directori {
+- nam: string
+- path: string
++ createsubdirectori(): directori
++ movecollect(collect: documentcollect): void
+}
+user "1" --> "*" docu
+user "1" --> "*" documentcollect
+documentcollect "1" *-- "*" docu
+directori "1" *-- "*" documentcollect
+directori "1" *-- "*" directori
+@enduml

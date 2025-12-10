@@ -1,0 +1,11 @@
+@startuml
+start
+:system read avail dat;
+if (dat present?) then (ye)
+:system generat diagram;
+:user view generat diagram;
+els (no)
+:system display no dat messag;
+endif
+stop
+@enduml

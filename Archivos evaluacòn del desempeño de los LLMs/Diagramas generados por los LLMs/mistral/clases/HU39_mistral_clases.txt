@@ -1,0 +1,11 @@
+@startuml
+class play {
+- team: team
+- robot: robot
+}
+class team {
+- player: list<play>
+}
+class robot {
+}
+@enduml

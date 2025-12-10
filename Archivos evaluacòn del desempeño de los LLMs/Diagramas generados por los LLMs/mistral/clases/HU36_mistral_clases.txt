@@ -1,0 +1,9 @@
+@startuml
+class play {
+- id: int
+- dice1: int
+- dice2: int
++ rolldic(): void
+}
+play "1" --> "2" di
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+start
+:platform user select comment to edit;
+:platform user modif comment content;
+:platform user submit updat comment;
+:system record modif tim;
+if (updat success?) then (ye)
+:system sav updat comment;
+:system display success messag;
+els (no)
+:system display error messag;
+:platform user review error;
+endif
+stop
+@enduml

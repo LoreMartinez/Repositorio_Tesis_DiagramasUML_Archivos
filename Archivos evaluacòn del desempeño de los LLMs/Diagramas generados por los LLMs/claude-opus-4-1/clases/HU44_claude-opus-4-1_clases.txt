@@ -1,0 +1,64 @@
+@startuml
+class airesearch {
+- nam: string
+- researcher: string
++ createneuralnetwork(): neuralnetwork
++ trainnetwork(network: neuralnetwork): void
++ savenetworkst(network: neuralnetwork): void
++ restorenetworkst(network: string): neuralnetwork
+}
+class neuralnetwork {
+- network: string
+- architectur: string
+- currentepoch: int
+- trainingstatus: string
++ addlay(lay: lay): void
++ setactivationfunct(function: activationfunct): void
++ train(dat: trainingdat): void
++ predict(input: dat): dat
++ savest(): networkst
++ loadstat(stat: networkst): void
+}
+class lay {
+- layer: string
+- layertyp: string
+- numberofneuron: int
+- weight: dat
+- bias: dat
++ initi(): void
++ forward(input: dat): dat
++ backward(gradient: dat): dat
+}
+class activationfunct {
+- functionnam: string
+- functiontyp: string
++ activ(input: dat): dat
++ deriv(input: dat): dat
+}
+class networkst {
+- stat: string
+- timestamp: dat
+- epoch: int
+- layerst: dat
+- performancemetr: dat
+}
+class trainingdat {
+- dataset: string
+- inputdat: dat
+- targetdat: dat
+- batchsiz: int
+}
+class dat {
+- valu: array
+- shap: array
+}
+airesearch "1" --> "*" neuralnetwork
+neuralnetwork "1" *-- "*" lay
+neuralnetwork "1" --> "1" activationfunct
+neuralnetwork "1" --> "*" networkst
+neuralnetwork "1" --> "1" trainingdat
+lay "1" --> "*" dat
+activationfunct "1" --> "*" dat
+networkst "1" --> "*" dat
+trainingdat "1" *-- "*" dat
+@enduml

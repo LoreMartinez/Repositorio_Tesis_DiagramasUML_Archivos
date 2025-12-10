@@ -1,0 +1,26 @@
+@startuml
+start
+:workshop organiz access modif pag;
+:workshop organiz select workshop to edit;
+:workshop organiz modif workshop inform;
+:workshop organiz submit chang;
+:system valid workshop inform;
+if (inform val?) then (ye)
+:system updat workshop dat;
+:system confirm success updat;
+:workshop list display updat inform;
+els (no)
+:system show valid error;
+:workshop organiz correct error;
+:workshop organiz resubmit chang;
+:system valid workshop inform;
+if (inform val?) then (ye)
+:system updat workshop dat;
+:system confirm success updat;
+:workshop list display updat inform;
+els (no)
+:system show valid error;
+endif
+endif
+stop
+@enduml

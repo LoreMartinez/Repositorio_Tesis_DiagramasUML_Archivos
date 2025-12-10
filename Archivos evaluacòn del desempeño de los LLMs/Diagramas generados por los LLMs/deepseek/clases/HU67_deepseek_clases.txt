@@ -1,0 +1,29 @@
+@startuml
+++class abstractclust {
+nam: string
+visibl: -bool = tru
+parent: #string
+element: block*
++addel(block)
++removeel(block)
+visual()
+}
++++ class block {
+typ: string
+x: float
+y: float
+z: float
+rx: float
+ry: float
+rz: float
+sx: float
+sy: float
+sz: float
++setposit(x,y,z)
++rotat(rx,ry,rz)
++scal(sx,sy,sz)
++computeposit()
+}
+abstractclust --|> block (1)
+block o-> abstractclust
+@enduml

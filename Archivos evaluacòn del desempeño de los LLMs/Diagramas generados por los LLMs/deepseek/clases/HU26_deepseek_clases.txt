@@ -1,0 +1,35 @@
+@startuml
+class model {
+id: string
+titl: string
+descript: string
+}
+class method {
+nam: string
+paramet: [paramet]
+returntyp: string
+}
+class project {
+id: string
+titl: string
+creator: string
+sourc: string
+creationd: dat
+}
+class packag {
+nam: string
+version: string
+author: string
+project: (mani): project
+}
+class attribut {
+id: string
+nam: string
+typ: string
+}
+model ++ attribut
+project --|> packag
+method ..> Class
+project "1" -- "*" packag
+method "+ calculatetot( - paramet ) : string"
+@enduml

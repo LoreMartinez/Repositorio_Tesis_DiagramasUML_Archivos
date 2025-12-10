@@ -1,0 +1,31 @@
+@startuml
+class systemus {
+- user: string
+- usernam: string
++ managetest(): bool
++ organizetest(): bool
++ linktest(): bool
+}
+class test {
+- test: string
+- nam: string
+- identifi: string
++ getrelatedinform(): string
++ maintainidentifi(): bool
+}
+class othertest {
+- test: string
+- nam: string
+- identifi: string
++ getrelatedinform(): string
+}
+class thirdtest {
+- test: string
+- nam: string
+- identifi: string
++ getrelatedinform(): string
+}
+systemus --> test
+test --> othertest
+test --> thirdtest
+@enduml

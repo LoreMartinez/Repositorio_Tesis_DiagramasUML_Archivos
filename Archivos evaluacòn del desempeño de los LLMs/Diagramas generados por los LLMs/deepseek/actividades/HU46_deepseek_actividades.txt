@@ -1,0 +1,28 @@
+@startuml
+start
+:play enter usernam;
+:system valid usernam and password;
+if (val) then
+:play select stag;
+if (stag select) then
+:play cho charact;
+if (charact select) then
+:play decid to join match or creat one;
+if (join match) then
+:serv confirm connect;
+:play receiv match detail;
+:play connect to serv success;
+els
+:play creat a new match;
+:serv assign uniqu id;
+:play send invit;
+:serv accept invit;
+endif
+endif
+endif
+endif
+els (inval credenti)
+:system show error messag;
+endif
+stop
+@enduml

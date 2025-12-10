@@ -1,0 +1,38 @@
+@startuml
+class user {
+- nam: string
++ operatestringingmachin(): void
++ stringracket(): void
+}
+class stringingmachin {
+- model: string
+- status: string
++ start(): void
++ stop(): void
++ controlstr(): void
+}
+class string {
+- typ: string
+- tension: doubl
+- length: doubl
++ applytens(): void
+}
+class racket {
+- brand: string
+- model: string
+- isstrung: bool
++ prepareforstring(): void
++ completestring(): void
+}
+class powersuppli {
+- voltag: doubl
+- ison: bool
++ turnon(): void
++ turnoff(): void
++ providepow(): void
+}
+user --> stringingmachin
+stringingmachin --> string
+stringingmachin --> racket
+stringingmachin --> powersuppli
+@enduml

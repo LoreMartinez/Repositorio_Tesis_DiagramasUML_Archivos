@@ -1,0 +1,22 @@
+@startuml
+start
+:enter dataset sourc (local or url);
+fork
+select local fil
+:brows fil;
+:uplo to system;
+end fork
+select from url
+:enter url;
+:uplo dat from url;
+end select
+:perform dat clean action;
+:conduct eda on clean dat;
+:model user behavior bas on dat;
+:creat segment of user into group;
+:segment analys for cluster and segment;
+:advanc eda to explor metric distribu;
+:generat report in pdf format with key insight;
+export report
+stop
+@enduml

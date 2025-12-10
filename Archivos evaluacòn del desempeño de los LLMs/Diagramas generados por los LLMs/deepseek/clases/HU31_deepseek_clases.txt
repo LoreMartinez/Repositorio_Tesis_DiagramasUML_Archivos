@@ -1,0 +1,22 @@
+@startuml
+class devic {
+- id: string
+}
+class command {
+- id: string
+}
+class sensordat {
+- id: string
+}
+class user {
+- id: string
+}
+class environmentst {
+- id: string
+}
+devic "1" -- "*" command (action: command)
+devic *-- sensordat (sourc: dat)
+sensordat "-->" control (sourc: dat)
+user .->> sensordat (aggreg/composit)
+environmentst <;"- updatedenvironmentstatus">- updatedenvironmentstatus (action: status updat)
+@enduml

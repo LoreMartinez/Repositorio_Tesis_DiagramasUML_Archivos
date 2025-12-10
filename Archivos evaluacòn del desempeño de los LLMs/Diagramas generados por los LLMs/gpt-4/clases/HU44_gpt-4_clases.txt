@@ -1,0 +1,21 @@
+@startuml
+class airesearch {
++ createneuralnetwork(): neuralnetwork
++ trainneuralnetwork(neuralnetwork): void
++ saveneuralst(neuralnetwork): void
++ restoreneuralst(): neuralnetwork
+}
+class neuralnetwork {
+- activationfunct: string
+- layercomplex: integ
++ changeactivationfunct(function: string): void
++ modifylayercomplex(complex: integ): void
+}
+class neuralst {
+- neuralconfigur: configurationfil
++ savest(neuralnetwork): void
++ restorest(): neuralnetwork
+}
+airesearch -- neuralnetwork
+neuralnetwork -- neuralst
+@enduml

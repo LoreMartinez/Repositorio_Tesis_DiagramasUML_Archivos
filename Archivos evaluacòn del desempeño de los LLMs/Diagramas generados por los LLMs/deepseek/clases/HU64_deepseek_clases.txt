@@ -1,0 +1,39 @@
+@startuml
+class docu {
+- produc: string
+- creator: string
+- creationd: string
+- sourc: string
+- file_path: string
+- total_pag: integ
+- format: string
+- titl: string
+- subject: string
+- keyword: string
+- moddat: string
+- encrypt: string
++ createcontain(): contain
+}
+class contain {
++ lifetim: ani
+* particl: particl
+* mesh: mesh
+* lattic: lattic
+}
+class particl {
+# count: integ
+}
+class mesh {
+# resolu: integ
+}
+class lattic {
+# dimens: array(integ)
+}
+class h5cudscontain : contain {
+}
+class eventorgan {
++ organizeev(): ani
+}
+docu "1" -- "*" h5cudscontain
+h5cudscontain --|> docu
+@enduml

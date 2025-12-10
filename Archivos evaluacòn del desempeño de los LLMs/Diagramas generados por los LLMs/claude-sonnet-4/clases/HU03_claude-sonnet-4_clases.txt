@@ -1,0 +1,22 @@
+@startuml
+class systemus {
+- user: string
+- usernam: string
++ executecommand(command: command): void
++ undocommand(): void
+}
+class command {
+- command: string
+- execut: bool
++ execut(): void
++ undo(): void
+}
+class receiverobject {
+- object: string
+- stat: string
++ performoper(): void
++ restorest(): void
+}
+systemus --> command
+command --> receiverobject
+@enduml

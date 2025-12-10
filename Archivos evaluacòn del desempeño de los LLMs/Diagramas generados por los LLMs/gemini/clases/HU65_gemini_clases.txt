@@ -1,0 +1,14 @@
+@startuml
+class labelviewhelp {
++ draw(label: label, canv: canv): void
+}
+class canv {
+}
+class path {
+}
+class label {
+}
+labelviewhelp ..> canv
+labelviewhelp ..> label
+label "1" *-- "1" path
+@enduml

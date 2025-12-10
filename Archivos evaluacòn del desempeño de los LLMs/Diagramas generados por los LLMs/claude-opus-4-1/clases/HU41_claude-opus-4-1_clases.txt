@@ -1,0 +1,56 @@
+@startuml
+class testengin {
+- nam: string
+- employe: string
++ manageprotocol(): void
++ executescript(): void
++ maintaincontext(): void
++ processquer(): void
++ controlresult(): void
+}
+class testprotocol {
+- protocol: string
+- nam: string
+- descript: string
+- creationd: dat
++ valid(): bool
++ updat(): void
+}
+class script {
+- script: string
+- nam: string
+- content: string
+- languag: string
++ run(): void
++ valid(): bool
+}
+class executioncontext {
+- context: string
+- environ: string
+- paramet: string
+- starttim: dat
++ initi(): void
++ termin(): void
+}
+class queri {
+- query: string
+- stat: string
+- timestamp: dat
++ execut(): void
+}
+class result {
+- result: string
+- status: string
+- output: string
+- timestamp: dat
++ analyz(): void
++ export(): void
+}
+testengin "1" --> "*" testprotocol
+testprotocol "1" --> "*" script
+testengin "1" --> "*" executioncontext
+script "*" --> "1" executioncontext
+executioncontext "1" --> "*" queri
+executioncontext "1" --> "*" result
+queri "1" --> "1" result
+@enduml

@@ -1,0 +1,16 @@
+@startuml
+class devic {
+- nam: string
+# hidd attribut and method for technic implement detail
+}
+class signal {
+- signaltyp: string
+}
+class user {
++ connecttodevic(): void
++ readsign(): signal
++ updatesign(): void
+}
+devic *-- user
+user --> signal
+@enduml

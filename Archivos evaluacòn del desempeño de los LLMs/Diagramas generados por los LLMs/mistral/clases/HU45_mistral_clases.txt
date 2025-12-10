@@ -1,0 +1,29 @@
+@startuml
+class meshnetworkinterfac {
+- protocol: list<string>
+- rfphysicallayermanag: rfphysicallayermanag
+- nod: list<nod>
++ senddat(dat: dat): void
++ receivedat(): dat
+}
+class nod {
+- id: int
+- databuff: databuff
++ senddat(dat: dat): void
++ receivedat(): dat
+}
+class rfphysicallayermanag {
+- ...
++ transm(dat: dat): void
++ receiv(): dat
+}
+class dat {
+- datacont: string
++ getdatacont(): string
+}
+class databuff {
+- buff: list<dat>
++ adddat(dat: dat): void
++ removedat(): dat
+}
+@enduml

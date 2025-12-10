@@ -1,0 +1,10 @@
+@startuml
+start
+:system user submit usernam or email;
+if (account exist?) then (ye)
+:send password reset email;
+els (no)
+:show error messag;
+endif
+stop
+@enduml

@@ -1,0 +1,63 @@
+@startuml
+class play {
+- nam: string
+- level: int
++ assignmiss(mission: mission): void
++ performact(action: action): void
++ evaluateoutcom(mission: mission): result
+}
+class card {
+- nam: string
+- typ: string
+- cost: int
++ use(): void
+}
+class charact {
+- nam: string
+- health: int
+- strength: int
++ mov(environ: environ): void
++ attack(): void
+}
+class resourc {
+- typ: string
+- quantiti: int
++ consum(amount: int): void
++ replenish(amount: int): void
+}
+class mission {
+- nam: string
+- object: string
+- reward: string
+- status: string
++ start(): void
++ complet(): void
+}
+class environ {
+- nam: string
+- terrain: string
++ applyeffect(): void
+}
+class planet {
+- nam: string
+- climat: string
+}
+class action {
+- typ: string
+- target: string
++ execut(): void
+}
+class result {
+- success: bool
+- scor: int
+- reward: string
+}
+play "1" --> "*" card
+play "1" --> "*" charact
+play "1" --> "*" resourc
+play "1" --> "*" mission
+charact "*" --> "1" environ
+environ "*" --> "1" planet
+play "1" --> "*" action
+mission "1" --> "1" result
+@enduml

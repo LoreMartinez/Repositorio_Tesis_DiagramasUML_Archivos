@@ -1,0 +1,12 @@
+@startuml
+start
+: system administr enter configur detail.
+: system automat configur celeryd.
+: system perform requir storag mount and servic registr.
+if (configur success) then (ye)
+:start system for prop prepar and avail.
+els (error detect)
+:stop system in a control mann.
+endif
+stop
+@enduml

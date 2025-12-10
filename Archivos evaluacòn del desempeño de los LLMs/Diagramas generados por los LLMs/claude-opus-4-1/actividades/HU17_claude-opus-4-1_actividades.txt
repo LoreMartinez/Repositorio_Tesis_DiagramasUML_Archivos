@@ -1,0 +1,15 @@
+@startuml
+start
+:defin requir;
+:creat design;
+:develop system;
+:execut test;
+:perform verif;
+if (all phas complet correct?) then (ye)
+:launch to product;
+els (no)
+:review and fix issu;
+:return to fail phas;
+endif
+stop
+@enduml

@@ -1,0 +1,62 @@
+@startuml
+class play {
+- player: string
+- nam: string
++ viewcharactersummari(): charactersummari
++ assesssitu(): void
++ decidemiss(): void
++ upgraderesourc(): void
+}
+class charact {
+- character: string
+- nam: string
++ getstatist(): statist
++ getpossess(): list<possess>
++ getcombatcap(): combatcap
++ generatesummari(): charactersummari
+}
+class statist {
+- health: int
+- strength: int
+- spe: int
+- intellig: int
++ calculateoverallr(): int
+}
+class possess {
+- possession: string
+- nam: string
+- typ: string
+- valu: int
+}
+class ship {
+- ship: string
+- shiptyp: string
+- weaponpow: int
+- shieldstrength: int
+- spe: int
+}
+class companion {
+- companion: string
+- companiontyp: string
+- loyaltylevel: int
+- special: list<string>
+}
+class combatcap {
+- overallpow: int
+- attackr: int
+- defenser: int
++ calculatecombateffect(): int
+}
+class charactersummari {
+- summary: string
+- generatedd: dat
++ displaysummari(): void
+}
+play "1" --> "1" charact
+charact "1" --> "1" statist
+charact "1" --> "*" possess
+charact "1" --> "1" combatcap
+charact "1" --> "1" charactersummari
+possess <|-- ship
+possess <|-- companion
+@enduml

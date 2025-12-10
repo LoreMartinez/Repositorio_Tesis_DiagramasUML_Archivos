@@ -1,0 +1,10 @@
+@startuml
+start
+:set analys goal;
+:defin dat collect requir;
+:collect dat systemat;
+:visual collect dat;
+:analyz dat pattern;
+:generat hypothes bas on analys;
+stop
+@enduml

@@ -1,0 +1,25 @@
+@startuml
+class testdevelop {
+- implement: h5cudscontain
+- testc: list[flashcard]
+- applic: applic
++ loadimplement(): void
++ runtestc(): void
+}
+class applic {
+- chapter: list[chapt]
++ getchapt(id: integ): chapt
+}
+class chapt {
+- cas: list[cas]
++ getc(id: integ): cas
+}
+class cas {
+- test: list[test]
++ gettest(id: integ): test
+}
+class test {
+- question: question
+- answer: answer
+}
+@enduml

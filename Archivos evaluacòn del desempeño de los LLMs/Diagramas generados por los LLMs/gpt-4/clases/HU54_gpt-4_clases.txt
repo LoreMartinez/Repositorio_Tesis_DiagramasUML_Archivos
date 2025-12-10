@@ -1,0 +1,14 @@
+@startuml
+class person {
++ nam: string
++ regist(): void
+}
+class student {
++ registerasstud(): void
+}
+class professor {
++ registerasprofessor(): void
+}
+student --|> person
+professor --|> person
+@enduml

@@ -1,0 +1,26 @@
+@startuml
+class usbdevicetestengin {
++executesynchronoustest(): result
++executeasynchronoustest(): result
+}
+class test {
+-dat: dat
+-procedur: procedur
++run(): result
++closecommun(): void
+}
+class dat {
++simul(): void
+}
+class procedur {
++run(): void
+}
+class result {
+-result: array
++getresult(): array
+}
+usbdevicetestengin o-- test
+test --> dat
+test --> procedur
+test --> result
+@enduml

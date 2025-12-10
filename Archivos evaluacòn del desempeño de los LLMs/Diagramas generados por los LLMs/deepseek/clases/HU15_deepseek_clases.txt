@@ -1,0 +1,38 @@
+@startuml
+class system {
++ authent: string
++ datahandl: bool
++ zonetableaccess: bool
+- storagetyp: collect[storagetyp]
+method login(): void
+method authenticateus(string usernam, string password): void
+method retrievedat(bool cach = fals): ani
+method managezonet(zonet zonet): void
+}
+class user {
+- usernam: string
+- password: string
++ login(): bool
+}
+class zonet {
+- column: collect[storagetyp]
+}
+class storagetyp {
+interface storagetyp: object {
+method read(storageinterfac storag, string columnnam): string
+method writ(string dat, storageinterfac storag)
+}
+class inmemorystorag implement storagetyp {
+method read(storageinterfac storag, string columnnam): string
+method writ(string dat, storageinterfac storag)
+}
+class persistentstorag implement storagetyp {
+method read(storageinterfac storag, string columnnam): string
+method writ(string dat, storageinterfac storag)
+}
+}
+system "1" -- "*" user
+user "1" -- "*" zonet
+zonet "1" -- "*" storagetyp
+system "1" -- "*" storagetyp
+@enduml

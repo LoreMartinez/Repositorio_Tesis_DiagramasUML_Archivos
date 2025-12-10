@@ -1,0 +1,12 @@
+@startuml
+start
+:user access kpplay configur;
+:add flashvar to kpplay;
+if (verbos need?) then (ye)
+:enabl verbos;
+els (no)
+endif
+:execut command with configur;
+:get inform output;
+stop
+@enduml

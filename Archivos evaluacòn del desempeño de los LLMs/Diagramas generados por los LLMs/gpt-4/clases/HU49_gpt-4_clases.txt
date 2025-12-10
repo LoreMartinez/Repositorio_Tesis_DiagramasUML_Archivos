@@ -1,0 +1,17 @@
+@startuml
+class workgroup {
++ createproject(): project
++ proposesolu(): solut
++ recordfix(): fix
+}
+class project {
+- projectdeadlin: dat
+}
+class solut {
+}
+class fix {
+}
+workgroup "1" -> "*" project
+workgroup "1" -> "*" solut
+workgroup "1" -> "*" fix
+@enduml

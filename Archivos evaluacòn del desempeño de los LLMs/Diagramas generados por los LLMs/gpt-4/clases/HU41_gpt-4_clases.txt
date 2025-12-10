@@ -1,0 +1,28 @@
+@startuml
+class testengin {
++ managetestprotocol(): void
++ executescript(): void
++ maintainexecutioncontext(): void
++ automatetest(): void
++ processquer(): void
++ controlresult(): void
+}
+class testprotocol {
+}
+class script {
+}
+class executioncontext {
+}
+class test {
+}
+class queri {
+}
+class result {
+}
+testengin --> testprotocol
+testengin --> script
+testengin --> executioncontext
+testengin --> test
+testengin --> queri
+testengin --> result
+@enduml

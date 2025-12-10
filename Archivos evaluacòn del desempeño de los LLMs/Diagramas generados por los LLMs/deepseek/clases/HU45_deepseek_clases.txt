@@ -1,0 +1,16 @@
+@startuml
+class meshnetworkinterfac {
+# rfphysicallay: string
++ supportedprotocol: [string]
+}
+class supportedprotocol {
+# id: string
+}
+class meshnod {
+locat: string
+nodedat: string
+}
+meshnod "nod" --|> meshnetworkinterfac
+supportedprotocol "protocol1" <|-- meshnod "nod"
+supportedprotocol "protocol2" <|-- meshnod "nod"
+@enduml

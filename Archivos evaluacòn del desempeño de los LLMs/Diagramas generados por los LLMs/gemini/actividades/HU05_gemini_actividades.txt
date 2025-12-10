@@ -1,0 +1,9 @@
+@startuml
+start
+:an event occur in the system;
+:system automat record the event;
+:system process the event use macr, formatt, and convert;
+:system generat cle and structur inform;
+:develop use inform to monitor and debug the system;
+stop
+@enduml

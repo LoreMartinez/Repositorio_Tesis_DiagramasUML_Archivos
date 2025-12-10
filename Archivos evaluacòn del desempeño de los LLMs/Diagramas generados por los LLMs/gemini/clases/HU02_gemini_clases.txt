@@ -1,0 +1,16 @@
+@startuml
+class student {
+}
+class flashcard {
+}
+class question {
+- text: string
+}
+class answer {
+- text: string
+- iscorrect: bool
+}
+student -- "*" flashcard
+flashcard "1" *-- "1" question
+flashcard "1" *-- "1..*" answer
+@enduml

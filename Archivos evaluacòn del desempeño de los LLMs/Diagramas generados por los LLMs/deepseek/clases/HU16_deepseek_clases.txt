@@ -1,0 +1,16 @@
+@startuml
+class test {
+- id: string
+- nam: string
+- creator: string
+- creationd: dat
++ iscreat: bool
+}
+class othertest extend test {
+}
+class thirdtest extend test, othertest {
+}
+test "--->" othertest
+test "--->" thirdtest
+othertest "--->" thirdtest
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+class executionstrategi {
+# eventorgan: eventorgan
+- plan: plan
+- schedul: schedul
+- materi: materi
+- task: task
+- systemus: systemus
+}
+class flexiblecod {
+- executionstrategi: executionstrategi
++ execut(): void
+}
+@enduml

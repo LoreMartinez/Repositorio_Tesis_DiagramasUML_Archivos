@@ -1,0 +1,10 @@
+@startuml
+start
+:student submit answer after finish quiz;
+:system display result immedi;
+if (student want to retak quiz?) then (ye)
+:student retak quiz;
+els (no)
+endif
+stop
+@enduml

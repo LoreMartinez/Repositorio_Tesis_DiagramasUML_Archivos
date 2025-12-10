@@ -1,0 +1,18 @@
+@startuml
+class gamecommunicationsystemadmin {
+- gameserv: gameserv
+- messag: list<messag>
++ processmessag()
++ addmessag(messag: messag)
+}
+abstract class messag {
+- typ: string
++ gettyp(): string
+}
+class hell extend messag {}
+class input extend messag {}
+class tim extend messag {}
+gamecommunicationsystemadmin "1" --> "*" hell
+gamecommunicationsystemadmin "1" --> "*" input
+gamecommunicationsystemadmin "1" --> "*" tim
+@enduml

@@ -1,0 +1,21 @@
+@startuml
+class applicationus {
+- usernam: string
+- accesslevel: integ
+- activityschedul: activityschedul
+- protocolautomationsystem: protocolautomationsystem
+}
+class activityschedul {
+- task: list<task>
+- materi: list<materi>
+}
+class task {
+- nam: string
+- descript: string
+}
+class materi {
+- nam: string
+- quantiti: integ
+}
+applicationus "1" -- "*" activityschedul
+@enduml

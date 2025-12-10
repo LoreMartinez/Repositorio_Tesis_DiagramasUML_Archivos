@@ -1,0 +1,10 @@
+@startuml
+start
+:system receiv revoc request;
+:system locat entitl to revok;
+:system remov depend;
+:system updat pool;
+:system regener certif;
+:system verif complianc;
+stop
+@enduml

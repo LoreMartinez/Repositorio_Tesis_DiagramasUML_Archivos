@@ -1,0 +1,13 @@
+@startuml
+start
+:goal set
+:memb of the analys team generat hypothes
+:dat collect
+:dat is collect systemat
+if dat is val then (ye)
+:visual dat
+els (no)
+:alert for inval dat
+endif
+stop
+@enduml

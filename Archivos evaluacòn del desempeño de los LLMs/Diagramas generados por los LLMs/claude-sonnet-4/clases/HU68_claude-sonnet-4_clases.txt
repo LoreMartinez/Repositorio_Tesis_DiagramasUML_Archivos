@@ -1,0 +1,30 @@
+@startuml
+class entiti {
+- id: string
+- dat: string
++ stor(): bool
++ updat(): bool
++ delet(): bool
+}
+class dataaccessobject {
++ sav(entiti: entiti): bool
++ updat(entiti: entiti): bool
++ findby(id: string): entiti
++ delet(id: string): bool
+}
+class jpadataaccessobject {
++ sav(entiti: entiti): bool
++ updat(entiti: entiti): bool
++ findby(id: string): entiti
++ delet(id: string): bool
+}
+class xmldataaccessobject {
++ sav(entiti: entiti): bool
++ updat(entiti: entiti): bool
++ findby(id: string): entiti
++ delet(id: string): bool
+}
+jpadataaccessobject --|> dataaccessobject
+xmldataaccessobject --|> dataaccessobject
+dataaccessobject --> entiti
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+start
+:administr select entitl to revok;
+:system initi revoc process;
+:system remov depend;
+:system updat pool;
+:system regener certif;
+:system perform complianc verif;
+if (all oper success?) then (ye)
+:system updat licens stat;
+:system confirm revoc complet;
+els (no)
+:system report error;
+:system maintain previous stat;
+endif
+stop
+@enduml

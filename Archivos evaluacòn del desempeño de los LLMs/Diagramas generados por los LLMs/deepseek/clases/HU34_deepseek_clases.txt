@@ -1,0 +1,26 @@
+@startuml
+class dataprocessor {
++ nam: string
+- dataset: [dataset]
+- oper: [oper]
++ startprocess(): void
++ addoper(oper oper): void
++ processoper(oper oper): void
++ validateinput(paramet paramet): bool
++ stopprocess(): void
+class dataset {
+- nam: string
+}
+class oper {
++ nam: string
++ typ: string
+- paramet: [paramet]
+}
+}
+class paramet {
++ nam: string
++ valu: ani
+}
+dataprocessor "1" -- "*" dataset
+dataprocessor "2" -- "*" oper
+@enduml

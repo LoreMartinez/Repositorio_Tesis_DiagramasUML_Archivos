@@ -1,0 +1,14 @@
+@startuml
+start
+:user navig to the content;
+:user select a review to delet;
+:user request to delet the review;
+:system ask for confirm;
+if (user confirm delet?) then (ye)
+:system delet the review;
+:system display a confirm messag;
+els (no)
+:system cancel the delet;
+endif
+stop
+@enduml

@@ -1,0 +1,19 @@
+@startuml
+class oper {
++ execut(): void
+}
+class dataset {
+}
+class oper {
+}
+class customscript {
+- scriptcont: string
+}
+class keybasedaggreg {
+- aggregationkey: string
+}
+oper "1" -- "1" dataset
+oper "1" -- "1" oper
+customscript --|> oper
+keybasedaggreg --|> oper
+@enduml

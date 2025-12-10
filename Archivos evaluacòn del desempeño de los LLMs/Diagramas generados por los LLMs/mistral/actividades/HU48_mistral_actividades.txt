@@ -1,0 +1,10 @@
+@startuml
+start
+:system receiv request;
+if (request typ == get || request typ == post) then (ye)
+:process pag secur;
+els (no)
+:return error messag;
+endif
+stop
+@enduml

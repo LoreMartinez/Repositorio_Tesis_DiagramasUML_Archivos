@@ -1,0 +1,12 @@
+@startuml
+start
+:user enter credenti;
+if (val?) then (ye)
+fork
+:redirect to hom pag;
+end fork
+els (no)
+:display error messag;
+endif
+stop
+@enduml

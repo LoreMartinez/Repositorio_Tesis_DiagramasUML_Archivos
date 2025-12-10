@@ -1,0 +1,47 @@
+@startuml
+class neuralnetwork {
++ layerslist: lay[]
++ activationfunct: string[]
++ nam: string
++ descript: string
++ creationd: string
+}
+class lay {
+- layer: string
+- typ: string
+- unit: integ
+- activationfunct: activationfunct
+- inputcount: integ
+- outputcount: integ
+- neuralnetworkref: neuralnetwork
+}
+class activationfunct {
+abstract + appli(variabl): variabl
+}
+class relu extend activationfunct {
+}
+class sigm extend activationfunct {
+}
+class user {
+- user: string
+- usernam: string
+- email: string
+- savedmodel: list<model>
+}
+model {
++ model: string
++ modelnam: string
++ descript: string
++ architectur: neuralnetwork
++ layer: lay[]
++ activationfunctionsus: set<string>
+}
+user "1" -- "*" neuralnetwork
+neuralnetwork "-->" user
+lay "--*" neuralnetwork
+activationfunct "--> relu
+sigm "--> sigm
+user "--*" savedmodel
+model "--> user
+user "--*" model
+@enduml

@@ -1,0 +1,28 @@
+@startuml
+class workgroupmemb {
++ createproject()
++ proposesolu()
++ recordfix()
+}
+class workgroup {
++ collabor()
++ evaluateresult()
+}
+class project {
+- object: string
+- deadlin: dat
+}
+class solut {
+- descript: string
+}
+class fix {
+- descript: string
+}
+workgroup "1" -- "*" workgroupmemb
+workgroup "1" -- "*" project
+workgroupmemb -- "*" project
+workgroupmemb -- "*" solut
+workgroupmemb -- "*" fix
+project "1" -- "*" solut
+project "1" -- "*" fix
+@enduml

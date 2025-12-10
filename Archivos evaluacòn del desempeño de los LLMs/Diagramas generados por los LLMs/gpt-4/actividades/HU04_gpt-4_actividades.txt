@@ -1,0 +1,9 @@
+@startuml
+start
+:system administr configur serv;
+:system administr instal ffmpeg;
+:system administr instal celeri;
+:ensur environ complet;
+:prepar for main applic deploy;
+stop
+@enduml

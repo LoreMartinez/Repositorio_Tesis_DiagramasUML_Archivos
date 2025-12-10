@@ -1,0 +1,41 @@
+@startuml
+class user {
+- usernam: string
++ organizeel(): void
++ generatediagram(): void
+}
+class clust {
+- nam: string
+- posit: string
++ addtohierarchi(): void
+}
+class block {
+- nam: string
+- posit: string
++ addtohierarchi(): void
+}
+class path {
+- connection: string
++ connect(): void
+}
+class hierarchicalstructur {
+- level: int
++ organiz(): void
++ distribut(): void
+}
+class diagram {
+- layout: string
+- compon: string
++ generat(): void
++ display(): void
+}
+user --> hierarchicalstructur
+hierarchicalstructur "1" *-- "*" clust
+hierarchicalstructur "1" *-- "*" block
+clust --> path
+block --> path
+path --> clust
+path --> block
+user --> diagram
+hierarchicalstructur --> diagram
+@enduml

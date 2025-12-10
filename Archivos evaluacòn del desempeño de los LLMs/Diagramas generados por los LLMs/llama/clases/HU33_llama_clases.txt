@@ -1,0 +1,41 @@
+@startuml
+class play {
+- nam: string
+- possess: possess
++ managecard(): void
+}
+class card {
+- typ: enum
+- valu: integ
++ tostr(): string
+}
+class charact {
+- nam: string
+- attribut: attribut
++ tostr(): string
+}
+class resourc {
+- typ: enum
+- quantiti: integ
++ tostr(): string
+}
+class environ {
+- nam: string
+- planet: planet[]
++ explor(): void
+}
+class planet {
+- nam: string
+- mission: mission[]
+}
+class mission {
+- nam: string
+- object: string
++ assignplay(): void
+}
+play "1" -- "*" charact
+charact "1" -- "*" resourc
+resourc *-- environ
+environ *-- planet
+planet *-- mission
+@enduml

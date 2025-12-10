@@ -1,0 +1,15 @@
+@startuml
+start
+:dat analyst upload or open dataset;
+:execut dat clean;
+:execut dat model;
+:execut segment;
+:execut eda (exploratori dat analys);
+:generat report;
+if (need for furth use?) then (ye)
+:export report;
+els (no)
+:use report as need local;
+endif
+stop
+@enduml

@@ -1,0 +1,18 @@
+@startuml
+class thrust {
+- nam: string
++ calculatetotalpropellantusag(): bool
+}
+class rearthrust extend thrust {
+}
+class lateralthrust extend thrust {
+}
+class thrustmanag {
+- thruster: collect<thrust>
++ startrearthrust(): void
++ startlateralthrust(): void
++ calculatetotalpropellantusag(): bool
+- totalpropellantus: integ
+@thrustmanag "1" *-- thrust
+}
+@enduml

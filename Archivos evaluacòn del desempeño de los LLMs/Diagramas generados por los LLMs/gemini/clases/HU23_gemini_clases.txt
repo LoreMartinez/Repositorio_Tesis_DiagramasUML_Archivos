@@ -1,0 +1,12 @@
+@startuml
+class configurationsystemus {
+}
+class configurationfil {
++ processstat(): void
++ exportconfigur(): void
+}
+class stat {
+}
+configurationsystemus --> "*" configurationfil
+configurationfil "1" *-- "*" stat
+@enduml

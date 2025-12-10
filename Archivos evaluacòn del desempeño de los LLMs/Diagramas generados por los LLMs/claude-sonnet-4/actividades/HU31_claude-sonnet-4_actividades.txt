@@ -1,0 +1,11 @@
+@startuml
+start
+:user enter usernam and password;
+:system valid credenti;
+if (credenti val?) then (ye)
+:system redirect to hom pag;
+els (no)
+:system display error messag;
+endif
+stop
+@enduml

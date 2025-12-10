@@ -1,0 +1,24 @@
+@startuml
+class neuralnetwork {
+- activationfunct: list<activationfunct>
+- layer: list<lay>
+- stat: stat
++ train()
++ savest()
++ restorest()
+}
+class activationfunct {
+- nam: string
+}
+class lay {
+- neuron: list<neuron>
+}
+class neuron {
+- weight: list<doubl>
+}
+class stat {
+- activationfunct: list<activationfunct>
+- layer: list<lay>
+- neuronweight: map<string, list<doubl>>
+}
+@enduml

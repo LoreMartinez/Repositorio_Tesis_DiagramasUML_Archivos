@@ -1,0 +1,12 @@
+@startuml
+start
+:logev;
+if (error check) then (ye)
+:handleerror;
+els (no)
+:formatdat;
+:storedat;
+endif
+:system log dat into structur inform and mak it avail for monitor, debug, or mainten purp.
+stop
+@enduml

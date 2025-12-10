@@ -1,0 +1,13 @@
+@startuml
+start
+:new user visit hom pag;
+:new user navig to registr form;
+:user enter credenti;
+if (val credenti?) then (ye)
+:system creat account;
+:system redirect to hom pag;
+els (no)
+:system display error messag;
+endif
+stop
+@enduml

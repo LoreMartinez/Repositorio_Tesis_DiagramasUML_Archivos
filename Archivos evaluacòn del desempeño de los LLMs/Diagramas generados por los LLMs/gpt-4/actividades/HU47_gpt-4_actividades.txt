@@ -1,0 +1,10 @@
+@startuml
+start
+:system user enter dat;
+:system valid address;
+:system valid cred card;
+:system send confirm email;
+:system send welcom packag;
+:system confirm the process;
+stop
+@enduml

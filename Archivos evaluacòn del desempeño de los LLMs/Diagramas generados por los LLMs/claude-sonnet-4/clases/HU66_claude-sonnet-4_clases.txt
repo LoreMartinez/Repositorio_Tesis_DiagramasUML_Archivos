@@ -1,0 +1,9 @@
+@startuml
+class decor {
++ extend(): void
+}
+class concretecompon {
++ oper(): void
+}
+decor --> concretecompon
+@enduml

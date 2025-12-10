@@ -1,0 +1,19 @@
+@startuml
+class mapp {
+- jobnam: string
+- mapperfunct: string
+}
+class reduc {
+- jobnam: string
+- reducerfunct: string
+}
+mapp "1" -- "*" reduc
+class mapreducejob {
+- job: integ
++ configuremapp(): void
++ configurereduc(): void
++ run(): bool
+}
+mapreducejob "1" --> mapp
+mapreducejob "1" --> reduc
+@enduml

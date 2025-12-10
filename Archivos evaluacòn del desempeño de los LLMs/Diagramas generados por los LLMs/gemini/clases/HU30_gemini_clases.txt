@@ -1,0 +1,24 @@
+@startuml
+class formcreationsystemus {
+}
+class form {
++ addel(element: formel): void
++ rend(): void
+}
+class formel {
+}
+class textel {
+- text: string
+}
+class inputel {
+- label: string
+}
+class subformel {
+}
+formcreationsystemus --> form
+form "1" *-- "*" formel
+formel <|-- textel
+formel <|-- inputel
+formel <|-- subformel
+subformel "1" *-- "1" form
+@enduml

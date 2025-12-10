@@ -1,0 +1,26 @@
+@startuml
+class book {
+- titl: string
+- author: author
++ publish(): bool
+}
+class author {
+- nam: string
+}
+class publish {
+- nam: string
+}
+class librarysystem {
+- book: book[]
++ registerbook(): void
+}
+class user {
+- usernam: string
+- password: string
++ login(): bool
+}
+user "1" -- "*" librarysystem
+librarysystem o-- author
+author "1" -- "*" publish
+publish o-- book
+@enduml

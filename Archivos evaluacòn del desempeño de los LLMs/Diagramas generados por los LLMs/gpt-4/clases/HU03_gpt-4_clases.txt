@@ -1,0 +1,16 @@
+@startuml
+class systemus {
++ executecommand(): void
++ undocommand(): void
+}
+class command {
+# execut(): void
+# undo(): void
+}
+class receiverobject {
+- stat: string
++ changest(): void
+}
+systemus "1" --> "*" command
+command --> "1" receiverobject
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+start
+:enter flashvar;
+if (verbos ==
+:execut command with detail info%;
+elseif (verbos ==
+:retriev basic inform%;
+endif
+stop
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+start
+:system open fil;
+whil (dat remain in fil?) is (ye)
+:system read dat from fil;
+:system process dat;
+endwhil (no)
+:system clos fil proper;
+:system rel resourc;
+stop
+@enduml

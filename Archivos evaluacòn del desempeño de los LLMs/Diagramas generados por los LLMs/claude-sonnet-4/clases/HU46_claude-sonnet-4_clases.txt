@@ -1,0 +1,62 @@
+@startuml
+class hospitaladministr {
+- administrator: string
+- nam: string
+- email: string
++ registerus(): bool
++ manageus(): bool
++ controlaccess(): bool
+}
+class patient {
+- patient: string
+- nam: string
+- dateofbirth: dat
+- contactinf: string
++ updatepersonalinf(): bool
+}
+class doctor {
+- doctor: string
+- nam: string
+- specialti: string
+- licensenumb: string
++ treatpati(): bool
+}
+class director {
+- director: string
+- nam: string
+- depart: string
+- authoritylevel: string
++ overseeoper(): bool
+}
+class medicalhistori {
+- history: string
+- patient: string
+- diagnos: string
+- treatment: string
+- dat: dat
++ addrecord(): bool
++ updaterecord(): bool
+}
+class allergi {
+- allergy: string
+- allergennam: string
+- sever: string
+- descript: string
+}
+class accessrecord {
+- record: string
+- user: string
+- accesstim: dat
+- accessedresourc: string
+- accesstyp: string
++ logaccess(): bool
+}
+hospitaladministr --> patient
+hospitaladministr --> doctor
+hospitaladministr --> director
+patient "1" --> "*" medicalhistori
+patient "1" --> "*" allergi
+hospitaladministr --> accessrecord
+doctor --> accessrecord
+director --> accessrecord
+@enduml

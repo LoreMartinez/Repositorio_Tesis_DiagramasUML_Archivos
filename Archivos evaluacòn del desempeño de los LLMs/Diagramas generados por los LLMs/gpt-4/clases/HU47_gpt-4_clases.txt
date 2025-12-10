@@ -1,0 +1,9 @@
+@startuml
+class softwaredevelop {
+}
+class executionstrategi {
+- behavior: string
++ changebehavior(): void
+}
+softwaredevelop -- executionstrategi
+@enduml

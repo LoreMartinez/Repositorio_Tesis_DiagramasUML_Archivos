@@ -1,0 +1,18 @@
+@startuml
+class user {
+- usernam: string
+- password: string
++ login(): bool
+}
+class eventf {
+- event: list<event>
++ addev(event): void
+}
+class event {
+- id: integ
+- descript: string
++ markasr(): void
+}
+user "1" -- "*" eventf
+eventf *-- "*" event
+@enduml

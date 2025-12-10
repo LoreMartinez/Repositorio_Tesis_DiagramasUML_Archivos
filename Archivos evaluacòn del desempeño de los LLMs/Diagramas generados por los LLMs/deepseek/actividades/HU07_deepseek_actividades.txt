@@ -1,0 +1,10 @@
+@startuml
+start
+:enter xml configur fil;
+:pars xml dat into key-valu pair;
+:extract key-valu pair;
+generat Class definit from key-valu pair;
+generat Interface definit from key-valu pair;
+compil boilerpl sourc cod;
+stop
+@enduml

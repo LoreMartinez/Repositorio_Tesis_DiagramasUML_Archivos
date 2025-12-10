@@ -1,0 +1,13 @@
+@startuml
+start
+:student start quiz;
+:student submit answer;
+:result are shown immedi;
+if (retak quiz?) then (ye)
+:student retak quiz;
+els (no)
+stop
+endif
+:result are shown immedi;
+stop
+@enduml

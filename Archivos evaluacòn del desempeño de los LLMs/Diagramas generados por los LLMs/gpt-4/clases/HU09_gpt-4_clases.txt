@@ -1,0 +1,21 @@
+@startuml
+class systemus {
+- perm: list<entitypermiss>
++ accessent(): list<entiti>
+}
+class entitypermiss {
+- entiti: entiti
+- vieweventf: bool
+}
+class entiti {
+- eventf: list<event>
++ vieweventf(): list<event>
+}
+class event {
+- timestamp: dat
+- inform: string
+}
+systemus "1" -- "*" entitypermiss
+entitypermiss --> entiti
+entiti "1" -- "*" event
+@enduml

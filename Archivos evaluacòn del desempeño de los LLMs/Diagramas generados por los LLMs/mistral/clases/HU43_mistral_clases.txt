@@ -1,0 +1,18 @@
+@startuml
+class networkappl {
+- serverurl: string
+- header: map<string, string>
+- status: integ
+- responsedat: string
++ receiverespons(respons: string): void
+}
+class responsechunk {
+- header: map<string, string>
+- status: integ
+- dat: string
++ gethead(): map<string, string>
++ getstatus(): integ
++ getdat(): string
+}
+networkappl --> "*" responsechunk
+@enduml

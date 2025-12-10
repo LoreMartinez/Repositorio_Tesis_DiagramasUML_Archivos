@@ -1,0 +1,20 @@
+@startuml
+start
+:user access kpplay configur;
+:user add flashvar to kpplay;
+if (enabl verbos?) then (ye)
+:user enabl verbos option;
+:system activ detail log;
+els (no)
+:system maintain standard configur;
+endif
+:system sav configur;
+:system execut command with flashvar;
+if (verbos enabl?) then (ye)
+:system display detail execu inform;
+els (no)
+:system display standard output;
+endif
+:user receiv command result;
+stop
+@enduml

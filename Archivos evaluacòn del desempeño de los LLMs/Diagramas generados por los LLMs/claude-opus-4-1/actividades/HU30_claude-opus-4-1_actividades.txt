@@ -1,0 +1,19 @@
+@startuml
+start
+:set analys goal;
+:defin dat requir;
+:collect dat from sourc;
+:process and cle dat;
+:visual dat;
+:analyz pattern and trend;
+:generat hypothes;
+if (hypothes val?) then (ye)
+:docu find;
+els (no)
+:refin analys approach;
+:re-analyz dat;
+:generat new hypothes;
+endif
+:present result to team;
+stop
+@enduml

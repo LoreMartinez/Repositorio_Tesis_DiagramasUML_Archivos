@@ -1,0 +1,9 @@
+@startuml
+start
+:import dat from fil;
+:insert into hashtabl;
+:run verif report;
+:generat search report;
+:generat status report;
+stop
+@enduml

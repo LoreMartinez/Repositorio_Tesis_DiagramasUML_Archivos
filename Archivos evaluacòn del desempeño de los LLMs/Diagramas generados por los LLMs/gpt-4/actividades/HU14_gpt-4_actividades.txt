@@ -1,0 +1,14 @@
+@startuml
+start
+:system administr trigger check;
+:system check api status;
+if (api oper?) then (no)
+:system stop api process;
+endif
+:system check mongodb status;
+if (mongodb oper?) then (no)
+:system stop mongodb process;
+endif
+:system manag servic;
+stop
+@enduml

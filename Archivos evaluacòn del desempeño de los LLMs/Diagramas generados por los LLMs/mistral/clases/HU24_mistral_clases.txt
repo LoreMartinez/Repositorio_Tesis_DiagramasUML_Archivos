@@ -1,0 +1,21 @@
+@startuml
+class liberabrillianceplussystem {
+- connecteddevic: devic
+- attribut: map<string, object>
+- signal: list<signal>
++ connect(devic: devic): void
++ readattribut(): map<string, object>
++ writeattribut(key: string, valu: object): void
++ capturesign(): signal
++ updatesign(signal: signal): void
+}
+class devic {
+- operationstatus: operationstatus
+}
+class operationstatus {
+- status: string
+}
+class signal {
+- dat: list<object>
+}
+@enduml

@@ -1,0 +1,58 @@
+@startuml
+class projectmanag {
+- nam: string
+- email: string
++ createproject(): project
++ assigncompon(): void
++ trackl(): void
++ organizegroup(): void
+}
+class project {
+- project: string
+- nam: string
+- descript: string
++ addmemb(): void
++ removememb(): void
+}
+class compon {
+- component: string
+- nam: string
+- status: string
++ assigntoaccount(): void
+}
+class group {
+- group: string
+- nam: string
+- level: int
++ addsubgroup(): void
++ removesubgroup(): void
+}
+class leas {
+- leas: string
+- startdat: dat
+- enddat: dat
+- status: string
++ extend(): void
++ termin(): void
+}
+class account {
+- account: string
+- nam: string
+- balanc: doubl
++ updatebal(): void
+}
+class projectmembership {
+- joindat: dat
+- rol: string
++ updaterol(): void
+}
+projectmanag "1" --> "*" project
+project "1" --> "*" compon
+project "1" --> "*" group
+project "1" --> "*" account
+project "1" --> "*" projectmembership
+compon "*" --> "1" account
+compon "1" --> "*" leas
+group "1" --> "*" group
+account "1" --> "*" projectmembership
+@enduml

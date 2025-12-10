@@ -1,0 +1,10 @@
+@startuml
+start
+:user enter credenti;
+if (account exist?) then (ye)
+:system send password reset email to user;
+els (no)
+:system send error messag to user;
+endif
+stop
+@enduml

@@ -1,0 +1,74 @@
+@startuml
+class graphicsdevelop {
+- nam: string
++ manageopenglobject(): void
++ renderscen(): void
+}
+class globject {
+- id: int
+- typ: string
++ creat(): void
++ bind(): void
++ destroy(): void
+}
+class glbuff {
+- buffer: int
+- buffertyp: string
+- siz: int
++ uploaddat(): void
++ bindbuff(): void
+}
+class glva {
+- vao: int
++ bindvertexarray(): void
++ enablevertexattribut(): void
+}
+class gltextur {
+- textur: int
+- width: int
+- height: int
+- format: string
++ loadtextur(): void
++ bindtextur(): void
+}
+class glframebuff {
+- framebuffer: int
+- width: int
+- height: int
++ attachtextur(): void
++ bindframebuff(): void
++ outputtotextur(): void
++ outputtobuff(): void
+}
+class glshad {
+- shader: int
+- shadertyp: string
+- sourc: string
++ compil(): bool
++ getcompilestatus(): bool
+}
+class glshaderprogram {
+- program: int
++ attachshad(): void
++ linkprogram(): bool
++ useprogram(): void
++ setuniform(): void
+}
+class scen {
+- depthdat: float[]
+- colordat: float[]
++ rendercomplet(): void
+}
+graphicsdevelop --> globject
+globject <|-- glbuff
+globject <|-- glva
+globject <|-- gltextur
+globject <|-- glframebuff
+glbuff --> glva
+gltextur --> glframebuff
+glframebuff --> scen
+glshad --> glshaderprogram
+glshaderprogram --> scen
+graphicsdevelop --> glshad
+graphicsdevelop --> glshaderprogram
+@enduml

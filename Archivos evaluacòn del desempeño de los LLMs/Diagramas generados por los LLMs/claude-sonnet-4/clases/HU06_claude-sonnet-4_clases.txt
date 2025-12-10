@@ -1,0 +1,35 @@
+@startuml
+class clientappl {
+- application: string
++ connecttoserv(): bool
++ manageuserrecord(): void
+}
+class websocketserv {
+- serveraddress: string
+- isconnect: bool
++ handleconnect(): void
++ processrequest(): void
++ sendrespons(): void
+}
+class btsus {
+- user: string
+- usernam: string
+- email: string
+- createdd: dat
+- lastmodifi: dat
++ creat(): bool
++ read(): btsus
++ updat(): bool
++ delet(): bool
+}
+class userrecord {
+- record: string
+- dat: string
+- timestamp: dat
++ sav(): void
++ load(): void
+}
+clientappl --> websocketserv
+websocketserv --> btsus
+btsus --> userrecord
+@enduml

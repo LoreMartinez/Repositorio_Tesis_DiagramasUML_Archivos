@@ -1,0 +1,41 @@
+@startuml
+class user {
+- user: string
+- nam: string
++ executeoper(): bool
+}
+class dataset {
+- dat: string
+- nam: string
+- siz: long
++ getdat(): object
+}
+class oper {
+- operator: string
+- nam: string
++ execut(): object
+}
+class customscript {
+- script: string
+- scriptcont: string
+- languag: string
++ run(): object
+}
+class keybasedaggreg {
+- aggregationkey: string
+- aggregationtyp: string
++ aggreg(): object
+}
+class oper {
+- operation: string
+- timestamp: dat
+- status: string
++ process(): object
++ getresult(): object
+}
+user "1" --> "*" oper
+oper "1" --> "1" dataset
+oper "1" --> "1" oper
+oper <|-- customscript
+oper <|-- keybasedaggreg
+@enduml

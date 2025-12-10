@@ -1,0 +1,21 @@
+@startuml
+start
+:student submit quiz answer;
+if (result avail?) then (ye)
+:system display quiz result;
+:decis: do you want to retak?
+if (ye) then (ye)
+fork
+:system process quiz;
+:check for result;
+->:system process quiz;
+:check for result;
+end fork
+els (no)
+:stop;
+endif
+els (no)
+:system display error messag;
+endif
+stop
+@enduml

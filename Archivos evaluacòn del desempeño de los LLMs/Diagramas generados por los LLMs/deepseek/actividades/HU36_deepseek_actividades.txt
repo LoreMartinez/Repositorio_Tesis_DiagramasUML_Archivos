@@ -1,0 +1,13 @@
+@startuml
+start
+:read configur fil at path
+:system initi intern variabl;
+if (has search bar) then (ye)
+:user enter queri into search bar;
+els (no)
+:system display error messag;
+endif
+:system process the enter queri;
+:return result vi result pag;
+stop
+@enduml

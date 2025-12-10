@@ -1,0 +1,23 @@
+@startuml
+class teach {
++ generateexam(): exam
+}
+class exam {
+- numberofquest: int
+}
+class question {
+}
+class vari {
+}
+class topic {
+}
+class student {
+}
+teach "1" -- "*" exam
+teach "1" -- "*" student
+exam "1" *-- "*" question
+question "1" *-- "*" vari
+exam "*" -- "*" topic
+question "*" -- "1" topic
+student "*" -- "*" exam
+@enduml

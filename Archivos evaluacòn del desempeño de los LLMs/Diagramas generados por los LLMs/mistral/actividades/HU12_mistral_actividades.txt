@@ -1,0 +1,17 @@
+@startuml
+skinparam packagestyl rectangl
+skinparam arrowcolor #0099CC
+start
+user_request -> system_check : request receiv
+if (secur check pass?) then (ye)
+system_initi
+system_rend
+if (request typ is get or post?) then (ye)
+system_redirectforward
+endif
+els (no)
+system_denyaccess
+endif
+system_pagedestruct
+stop
+@enduml

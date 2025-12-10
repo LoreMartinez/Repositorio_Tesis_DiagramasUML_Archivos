@@ -1,0 +1,70 @@
+@startuml
+class sensormonitoringus {
+- user: string
+- nam: string
++ capturedat(): void
++ visualizedat(): void
++ sendcommand(): void
+}
+class kinectsensor {
+- sensor: string
+- status: string
++ capture3ddat(): data3d
++ getstatus(): string
+}
+class flightsensor {
+- sensor: string
+- altitud: doubl
+- spe: doubl
+- orient: string
++ captureflightdat(): flightdat
++ getstatus(): string
+}
+class data3d {
+- timestamp: datetim
+- depthmap: array
+- colormap: array
++ process(): processeddat
+}
+class flightdat {
+- timestamp: datetim
+- altitud: doubl
+- spe: doubl
+- head: doubl
++ process(): processeddat
+}
+class processeddat {
+- timestamp: datetim
+- datapoint: array
++ visual(): visual
+}
+class visual {
+- viewtyp: string
+- renderset: string
++ display(): void
++ updat(): void
+}
+class devic {
+- devic: string
+- status: string
++ executecommand(command: command): void
++ getstatus(): string
+}
+class command {
+- commandtyp: string
+- paramet: string
++ valid(): bool
++ execut(): void
+}
+sensormonitoringus --> kinectsensor
+sensormonitoringus --> flightsensor
+sensormonitoringus --> devic
+sensormonitoringus --> visual
+kinectsensor --> data3d
+flightsensor --> flightdat
+data3d --> processeddat
+flightdat --> processeddat
+processeddat --> visual
+devic --> command
+sensormonitoringus --> command
+@enduml

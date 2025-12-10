@@ -1,0 +1,15 @@
+@startuml
+class bankingsystemadministr {
++ registerbank(bank: bank): void
+}
+class bank {
+- nam: string
+- locat: string
+- responsiblemanag: manag
+}
+class manag {
+- nam: string
+}
+bankingsystemadministr --> bank
+bank --> manag
+@enduml

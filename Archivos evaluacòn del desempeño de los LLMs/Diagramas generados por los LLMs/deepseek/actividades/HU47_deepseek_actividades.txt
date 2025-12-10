@@ -1,0 +1,13 @@
+@startuml
+start
+:user enter person dat;
+:system valid enter address;
+if (val?) then (ye)
+:system valid cred card detail;
+:user receiv confirm email;
+:user receiv welcom packag;
+els (no)
+:display error messag;
+endif
+stop
+@enduml

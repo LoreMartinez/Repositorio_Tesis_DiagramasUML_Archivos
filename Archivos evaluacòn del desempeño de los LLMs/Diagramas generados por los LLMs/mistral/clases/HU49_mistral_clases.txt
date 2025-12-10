@@ -1,0 +1,25 @@
+@startuml
+class workgroup {
+- member: list<memb>
+- project: list<project>
+- solut: list<solut>
+- fix: list<fix>
+- deadlin: list<deadlin>
+}
+class memb {
+- nam: string
+}
+class project {
+- titl: string
+}
+class solut {
+- descript: string
+}
+class fix {
+- detail: string
+}
+class deadlin {
+- dat: datetim
+}
+workgroup "1" -- "*" memb
+@enduml

@@ -1,0 +1,23 @@
+@startuml
+class h5cudssystemus {
+}
+class h5cudscontain {
++createparticl()
++createmesh()
++createlattic()
++organizestructur()
++accessgroup()
+}
+class particl {
+}
+class mesh {
+}
+class lattic {
+}
+h5cudssystemus --> h5cudscontain
+h5cudscontain "1" *-- "*" particl
+h5cudscontain "1" *-- "*" mesh
+h5cudscontain "1" *-- "*" lattic
+mesh "1" *-- "*" particl
+lattic "1" *-- "*" particl
+@enduml

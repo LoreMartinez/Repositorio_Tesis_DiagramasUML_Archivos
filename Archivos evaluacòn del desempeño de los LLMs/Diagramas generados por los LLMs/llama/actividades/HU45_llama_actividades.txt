@@ -1,0 +1,10 @@
+@startuml
+start
+:app user enter credenti;
+if (val?) then (ye)
+:show dashboard;
+els (no)
+:show error;
+endif
+stop
+@enduml

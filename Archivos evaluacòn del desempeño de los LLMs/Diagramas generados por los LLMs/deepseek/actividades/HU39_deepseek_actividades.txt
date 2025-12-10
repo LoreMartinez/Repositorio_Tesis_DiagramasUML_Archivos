@@ -1,0 +1,16 @@
+@startuml
+start
+:user select resel;
+.system valid resel;
+.if (resel is activ)
+.system check csv fil for error;
+.if (no error in csv)
+:bas on kyc typ, updat applic detail;
+.end if;
+.els
+:display error messag;
+.end els;
+endif
+(system approv the applic or send it back with feedback)
+stop
+@enduml

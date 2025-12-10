@@ -1,0 +1,16 @@
+@startuml
+start
+:system receiv user request;
+:user enter flashvar;
+if (flashvar are val) then (ye)
+:kpplay load flashvar;
+if (verbos is enabl) then (ye)
+:system execut command with detail inform;
+els (no)
+:system execut command without verbos;
+endif
+els (no)
+:system return error;
+endif
+stop
+@enduml

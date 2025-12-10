@@ -1,0 +1,11 @@
+@startuml
+class student {
++ interactwithflashcard(): void
+}
+class flashcard {
+- question: string
+- rightansw: string
+- wrongansw: string[]
+}
+student "1" -- "*" flashcard
+@enduml

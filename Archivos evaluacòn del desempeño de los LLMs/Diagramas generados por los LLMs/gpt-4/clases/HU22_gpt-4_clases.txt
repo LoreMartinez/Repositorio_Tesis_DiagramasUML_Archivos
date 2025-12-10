@@ -1,0 +1,17 @@
+@startuml
+class documentmanagementsystemus {
++ createdocu(): docu
++ createdocumentcollect(): documentcollect
++ organizedocu(): void
++ searchdocu(): docu[]
+}
+class docu {
+- metadat: map<string, string>
+}
+class documentcollect {
+- docu: docu[]
+}
+documentmanagementsystemus "1" --> "*" docu
+documentmanagementsystemus "1" --> "*" documentcollect
+documentcollect "1" --> "*" docu
+@enduml

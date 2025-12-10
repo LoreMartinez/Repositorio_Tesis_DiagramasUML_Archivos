@@ -1,0 +1,37 @@
+@startuml
+start
+:check apache2 status;
+if (inval) then (ye)
+:show error messag;
+endif
+els
+:proc to check celeryd;
+endif
+:check celeryd status;
+if (inval) then (ye)
+:show error messag;
+endif
+els
+:proc to mount storag;
+endif
+:mount storag (if info exist);
+if (no info) then (ye)
+:show no info messag;
+endif
+els
+:proc to stop apache2 and celeryd process;
+endif
+:stop apache2, celeryd, and background process;
+:start essenti servic if run;
+wait for 5 second;
+:check if ani error occur dure servic start;
+if (error) then (ye)
+:show error messag;
+endif
+els
+:proc to start system;
+endif
+:start the system and ensur oper complet success;
+checkallservic();
+stop
+@enduml

@@ -1,0 +1,43 @@
+@startuml
+class modelingsystemus {
+- usernam: string
+- user: string
+}
+class project {
+- nam: string
+- descript: string
+- creationd: dat
++ createpackag(): packag
++ querypropert(): string
+}
+class packag {
+- nam: string
+- namespac: string
++ createmodel(): model
++ organizeel(): void
+}
+class model {
+- nam: string
+- typ: string
++ addattribut(): attribut
++ addmethod(): method
++ definerelationship(): void
+}
+class attribut {
+- nam: string
+- datatyp: string
+- visibl: string
++ getpropert(): string
+}
+class method {
+- nam: string
+- returntyp: string
+- visibl: string
++ getsignatur(): string
+}
+modelingsystemus "1" --> "*" project
+project "1" *-- "*" packag
+packag "1" *-- "*" model
+model "1" *-- "*" attribut
+model "1" *-- "*" method
+@enduml

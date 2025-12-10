@@ -1,0 +1,28 @@
+@startuml
+class hospitaladministr {
+- administrator: string
+- password: string
+- user: set<patient|doctor|director>
+}
+abstract class user {
+- user: string
+- medicalhistori: medicalhistori
+- allerg: allerg
+- accessrecord: accessrecord
+}
+class patient extend user {}
+class doctor extend user {}
+class director extend user {}
+class medicalhistori {
+- patient: user
+- entri: list<entri>
+}
+class allerg {
+- patient: user
+- allerg: list<allergi>
+}
+class accessrecord {
+- patient: user
+- record: list<record>
+}
+@enduml

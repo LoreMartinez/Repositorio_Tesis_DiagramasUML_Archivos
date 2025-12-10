@@ -1,0 +1,23 @@
+@startuml
+class play {
++ viewcharactersummari()
+}
+class charact {
+}
+class statist {
+}
+class possess {
+}
+class ship {
+}
+class companion {
+}
+class combatcap {
+}
+play "1" -- "1" charact
+charact "1" *-- "1" statist
+charact "1" *-- "1" combatcap
+charact "1" o-- "*" possess
+possess <|-- ship
+possess <|-- companion
+@enduml

@@ -1,0 +1,36 @@
+@startuml
+class develop {
+- nam: string
+- employe: string
+}
+class entiti {
+- id: string
+- createdd: dat
+- modifiedd: dat
+}
+class dao {
++ sav(entiti: entiti): void
++ updat(entiti: entiti): void
++ findby(id: string): entiti
++ delet(entiti: entiti): void
+}
+class jpada {
+- entitymanag: object
++ sav(entiti: entiti): void
++ updat(entiti: entiti): void
++ findby(id: string): entiti
++ delet(entiti: entiti): void
+}
+class xmlda {
+- xmlfilepath: string
++ sav(entiti: entiti): void
++ updat(entiti: entiti): void
++ findby(id: string): entiti
++ delet(entiti: entiti): void
+}
+develop --> entiti
+develop --> dao
+jpada --|> dao
+xmlda --|> dao
+dao --> entiti
+@enduml

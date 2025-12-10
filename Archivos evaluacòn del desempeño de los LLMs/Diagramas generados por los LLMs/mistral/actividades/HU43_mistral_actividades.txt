@@ -1,0 +1,14 @@
+@startuml
+start
+:student open quiz;
+:student answer question;
+:system sav answer;
+if (submiss is val?) then (ye)
+:system calcul scor;
+:system display result;
+els (no)
+:system indic inval submiss;
+endif
+:student has option to retak quiz;
+stop
+@enduml

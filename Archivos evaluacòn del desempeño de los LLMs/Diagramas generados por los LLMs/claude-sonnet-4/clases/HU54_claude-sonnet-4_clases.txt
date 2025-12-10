@@ -1,0 +1,15 @@
+@startuml
+class person {
+- nam: string
+}
+class student {
+}
+class professor {
+}
+class schooladministr {
++ registerperson(): person
+}
+student --|> person
+professor --|> person
+schooladministr --> person
+@enduml

@@ -1,0 +1,18 @@
+@startuml
+start
+:system user want to delet review;
+:system locat review;
+if (review found?) then (ye)
+:display delet option;
+:system user confirm delet;
+if (confirm?) then (ye)
+:delet review;
+els (no)
+:cancel delet oper;
+endif
+els (no)
+:inform system user review not found;
+endif
+:system user manag content;
+stop
+@enduml

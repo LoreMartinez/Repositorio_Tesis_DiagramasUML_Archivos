@@ -1,0 +1,23 @@
+@startuml
+class student {
+- id: int
+- enrol: list[enrol]
++ enrol(cours: cours): void
++ dropenrol(enrol: enrol): void
++ viewenrol(): void
+}
+class enrol {
+- student: student
+- cours: cours
+- status: enum[enrol, drop]
++ isenrol(): bool
++ isdrop(): bool
+}
+class cours {
+- id: int
+- student: list[student]
++ enrol(student: student): void
++ dropenrol(student: student): void
++ viewstud(): void
+}
+@enduml

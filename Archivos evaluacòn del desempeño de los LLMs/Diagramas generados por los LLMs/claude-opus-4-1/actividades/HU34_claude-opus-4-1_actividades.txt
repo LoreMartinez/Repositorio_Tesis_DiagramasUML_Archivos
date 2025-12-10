@@ -1,0 +1,26 @@
+@startuml
+start
+:receiv request;
+:check secur;
+if (secur val?) then (ye)
+:process control;
+if (request typ?) then (post)
+:handl post request;
+els (get)
+:handl get request;
+endif
+if (respons typ need?) then (rend)
+:rend pag;
+els (forward)
+if (forward need?) then (ye)
+:forward request;
+els (no)
+:redirect request;
+endif
+endif
+:display pag correct;
+els (no)
+:deni access;
+endif
+stop
+@enduml

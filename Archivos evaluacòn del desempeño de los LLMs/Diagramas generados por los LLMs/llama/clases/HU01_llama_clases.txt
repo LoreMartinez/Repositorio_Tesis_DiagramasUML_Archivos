@@ -1,0 +1,25 @@
+@startuml
+class event {
+- nam: string
+}
+class plan {
+- event: event
+- schedul: schedul
+- materi: materi
++ createpl()
+}
+class task {
+- descript: string
+- duedat: dat
++ assigntask(event)
+}
+class eventorgan {
+- usernam: string
+- plan: plan
++ manageev(event)
+}
+class rol {
+- nam: string
+}
+event "1" -- "*" eventorgan
+@enduml

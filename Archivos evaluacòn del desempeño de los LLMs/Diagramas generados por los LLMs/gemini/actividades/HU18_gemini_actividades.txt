@@ -1,0 +1,14 @@
+@startuml
+start
+:system receiv input;
+:system detect if input requir verbos;
+if (verbos is requir?) then (ye)
+:system enabl verbos mod;
+:system execut command;
+:system provid detail inform;
+els (no)
+:system execut command;
+:system provid standard inform;
+endif
+stop
+@enduml

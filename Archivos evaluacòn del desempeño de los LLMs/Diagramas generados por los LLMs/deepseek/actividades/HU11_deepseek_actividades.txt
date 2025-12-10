@@ -1,0 +1,15 @@
+@startuml
+start
+:user enter credenti;
+if (val?) then (ye)
+:system present list of review to delet;
+fork
+:select all desir review;
+:confirm delet;
+end fork
+stop
+els (no)
+:display error messag;
+endif
+stop
+@enduml

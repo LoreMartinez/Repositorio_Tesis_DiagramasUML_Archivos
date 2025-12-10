@@ -1,0 +1,30 @@
+@startuml
+start
+:administr select csv fil uplo option;
+:administr select specif resel;
+:system valid resel is activ;
+if (resel activ?) then (ye)
+:administr upload csv fil;
+:system read csv fil;
+:system valid csv content format;
+if (csv format val?) then (ye)
+:system extract card applic;
+:system check kyc typ for each applic;
+if (kyc typ requir special handl?) then (ye)
+:system appli kyc-specif rul;
+:system process applic with kyc requir;
+els (no)
+:system process standard applic;
+endif
+:system sav process applic;
+:administr receiv success confirm;
+els (no)
+:system show csv format error;
+:administr receiv error detail;
+endif
+els (no)
+:system show inact resel error;
+:administr receiv resel status notif;
+endif
+stop
+@enduml

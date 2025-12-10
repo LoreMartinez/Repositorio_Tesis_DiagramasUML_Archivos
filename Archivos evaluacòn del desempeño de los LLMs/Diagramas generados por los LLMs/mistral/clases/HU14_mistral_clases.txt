@@ -1,0 +1,11 @@
+@startuml
+class textcont {
+- borderstyl: borderstyl
+- content: string
++ displaycont(): void
+}
+enum borderstyl {
+sid,
+full
+}
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+start
+:app user submit a comment on a post;
+if (comment post success?) then (ye)
+:system display the post comment;
+els (no)
+:system provid error feedback;
+endif
+stop
+@enduml

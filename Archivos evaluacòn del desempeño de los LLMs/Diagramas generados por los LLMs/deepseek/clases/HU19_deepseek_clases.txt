@@ -1,0 +1,17 @@
+@startuml
+class order {
+- product: string
+- customernam: string
+- produc: string
+- creationd: string
+- sourc: string
++ createord(): void
++ calculatediscount(siz: integ): doubl
++ applytax(siz: integ, taxrat: doubl): doubl
++ finaliseord(): void
+}
+order "1" -- "*" productpart
+order "1" -- "*" materi
+order "1" -- "*" mesh
+order "1" -- "*" lattic
+@enduml

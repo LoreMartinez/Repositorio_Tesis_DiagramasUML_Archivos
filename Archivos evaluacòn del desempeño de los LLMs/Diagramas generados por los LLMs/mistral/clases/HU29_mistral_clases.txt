@@ -1,0 +1,15 @@
+@startuml
+class book {
+# titl: string
+# author: author
+# publish: publish
+}
+class author {
+- nam: string
+}
+class publish {
+- nam: string
+}
+book "1" --> "*" author
+book "1" --> "*" publish
+@enduml

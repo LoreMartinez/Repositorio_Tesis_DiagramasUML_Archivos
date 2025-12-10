@@ -1,0 +1,28 @@
+@startuml
+class applicationus {
+- user: string
+- nam: string
++ viewactivityschedul(): activityschedul
+}
+class activityschedul {
+- schedul: string
+- titl: string
++ getscheduledsess(): list<session>
+}
+class session {
+- session: string
+- nam: string
+- starttim: datetim
+- endtim: datetim
++ getvenu(): venu
+}
+class venu {
+- venu: string
+- nam: string
+- locat: string
+- capac: int
+}
+applicationus --> activityschedul
+activityschedul "1" --> "*" session
+session "*" --> "1" venu
+@enduml

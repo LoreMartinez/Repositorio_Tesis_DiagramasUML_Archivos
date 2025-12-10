@@ -1,0 +1,40 @@
+@startuml
+class system {
+- manageus: bool
+- trackmedicalhistori: bool
+}
+class user {
++ usernam: string
++ password: string
+- email: string
+# medicalhistori: [string]
+# allerg: set<string>
+- accessrecord: accessrequest
+method login(): bool
+}
+class rol {
++ nam: string
+}
+class patient extend user {
+# patient: string
+}
+class doctor extend user {
+# specialti: string
+}
+class director extend user {
+# depart: string
+}
+class accessrequest {
+- typ: string
+- sensit: level
+}
+class hospitaladmin {
++ manageus(): void
+method createus(): void
+method registerpati(): void
+method assignaccessrecord(user user, accessrequest request): void
+hospitaladmin "+ manag" "user"
+user "- hasaccesst" accessrequest
+}
+user "1" "-->" accessrequest "1"
+@enduml

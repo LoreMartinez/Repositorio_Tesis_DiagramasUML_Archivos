@@ -1,0 +1,31 @@
+@startuml
+class project {
+- id: int
+- creator: actor
+- compon: compon[]
+- account: account[]
+- leasedcompon: compon[]
+- group: group[]
+- membership: membership[]
+}
+class compon {
+- id: int
+- account: account
+}
+class account {
+- id: int
+- project: project
+}
+class group {
+- id: int
+- parentgroup: group
+}
+class membership {
+- id: int
+- project: project
+- user: actor
+}
+class actor {
+- id: int
+}
+@enduml

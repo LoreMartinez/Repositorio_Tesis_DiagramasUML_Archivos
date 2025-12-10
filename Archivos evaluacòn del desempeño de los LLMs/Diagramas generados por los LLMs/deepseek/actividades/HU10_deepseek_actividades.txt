@@ -1,0 +1,14 @@
+@startuml
+start
+:enter credenti;
+if (val?) then
+:read fil;
+whil (mor dat?)
+:read som dat;
+if (no mor dat?) then
+:clos resourc;
+endif
+endwhil
+endif
+stop
+@enduml

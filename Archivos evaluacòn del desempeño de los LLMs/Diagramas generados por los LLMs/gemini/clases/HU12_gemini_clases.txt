@@ -1,0 +1,14 @@
+@startuml
+class hierarchicalstructur {
+- nam: string
++ analyz(): void
+}
+class compon {
+- propert: string
++ addcompon(compon: compon): void
++ removecompon(compon: compon): void
++ modifi(): void
+}
+hierarchicalstructur "1" *-- "1..*" compon
+compon "1" *-- "0..*" compon
+@enduml

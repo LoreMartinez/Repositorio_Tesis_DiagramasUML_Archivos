@@ -1,0 +1,41 @@
+@startuml
+class h5cudssystemus {
+- user: string
+- usernam: string
++ createcontain(): h5cudscontain
++ organizestructur(): bool
++ managesimulationdat(): bool
++ accessgroup(): bool
+}
+class h5cudscontain {
+- container: string
+- nam: string
+- creationd: dat
++ addparticl(): bool
++ addmesh(): bool
++ addlattic(): bool
++ gethierarchicalstructur(): string
+}
+class particl {
+- particl: string
+- posit: string
+- propert: string
++ initi(): bool
+}
+class mesh {
+- mesh: string
+- connect: string
+- nod: string
++ generatestructur(): bool
+}
+class lattic {
+- lattic: string
+- structur: string
+- paramet: string
++ arrangeel(): bool
+}
+h5cudssystemus "1" --> "*" h5cudscontain
+h5cudscontain "1" *-- "*" particl
+h5cudscontain "1" *-- "*" mesh
+h5cudscontain "1" *-- "*" lattic
+@enduml

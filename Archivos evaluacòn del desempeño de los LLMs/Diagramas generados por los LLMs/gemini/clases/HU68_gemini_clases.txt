@@ -1,0 +1,14 @@
+@startuml
+class dataaccessimplement {
++ stor()
++ updat()
++ queri()
++ delet()
+}
+class jpada {
+}
+class xmlda {
+}
+jpada --|> dataaccessimplement
+xmlda --|> dataaccessimplement
+@enduml

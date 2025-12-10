@@ -1,0 +1,31 @@
+@startuml
+class manag {
+- produc: string
+- creator: string
+- creationd: string
+- sourc: string
+- filepath: string
+- totalpag: integ
+- format: string
+#moddat
++ registerloc(chargingst c, string connectornam)
+}
+class chargingst {
+- nam: string
+- typ: string  # "dc" or "ac"
+- portcount: integ
+- coordin: string
+#moddat
++ addport()
+}
+class connector {
+- nam: string
+- typ: string  # e.g., "usb", "qc"
+- maxvoltag: integ
+- amper: integ
+- #moddat
++ addport(chargingst station)
+}
+manag "-->| chargingst
+chargingst "-->| connector
+@enduml

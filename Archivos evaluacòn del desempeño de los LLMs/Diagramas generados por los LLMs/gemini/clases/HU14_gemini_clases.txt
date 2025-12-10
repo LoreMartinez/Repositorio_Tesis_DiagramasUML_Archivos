@@ -1,0 +1,10 @@
+@startuml
+class textcont {
+- content: string
++ display(): void
+}
+class borderstyl {
+- typ: string
+}
+textcont "1" -- "1" borderstyl
+@enduml

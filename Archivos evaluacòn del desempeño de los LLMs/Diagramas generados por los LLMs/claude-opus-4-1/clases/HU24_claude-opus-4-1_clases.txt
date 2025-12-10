@@ -1,0 +1,47 @@
+@startuml
+class user {
+- user: string
+- usernam: string
++ connecttodevic(): bool
++ readattribut(attributenam: string): string
++ writeattribut(attributenam: string, valu: string): void
++ capturesign(signal: string): signal
++ updatesign(signal: signal): void
+}
+class devic {
+- devic: string
+- devicenam: string
+- status: string
++ connect(): bool
++ disconnect(): void
++ getstatus(): string
+}
+class attribut {
+- attribut: string
+- nam: string
+- valu: string
+- timestamp: dat
++ getvalu(): string
++ setvalu(valu: string): void
+}
+class signal {
+- signal: string
+- signaltyp: string
+- valu: string
+- capturetim: dat
++ captur(): void
++ process(): void
+}
+class historicaldat {
+- record: string
+- timestamp: dat
+- dat: string
++ record(dat: string): void
++ retriev(startdat: dat, enddat: dat): string
+}
+user "1" --> "1" devic
+devic "1" --> "*" attribut
+devic "1" --> "*" signal
+user "1" --> "*" historicaldat
+signal "*" --> "1" historicaldat
+@enduml

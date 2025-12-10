@@ -1,0 +1,10 @@
+@startuml
+start
+:user interact with system to process request;
+if (http method is get?) then (ye)
+:rend current view;
+els (no)
+:redirect to anoth pag;
+endif
+stop
+@enduml

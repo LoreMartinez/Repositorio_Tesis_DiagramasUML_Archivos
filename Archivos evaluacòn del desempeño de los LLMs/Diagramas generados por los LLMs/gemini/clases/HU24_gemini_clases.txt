@@ -1,0 +1,23 @@
+@startuml
+class systemus {
+}
+class devic {
++ connect()
++ control()
++ readattribut(nam: string): attribut
++ writeattribut(attribut: attribut)
++ capturesign(nam: string): signal
++ updatesign(signal: signal)
+}
+class attribut {
+- nam: string
+- valu: string
+}
+class signal {
+- nam: string
+- valu: string
+}
+systemus --> devic
+devic "1" *-- "*" attribut
+devic "1" *-- "*" signal
+@enduml

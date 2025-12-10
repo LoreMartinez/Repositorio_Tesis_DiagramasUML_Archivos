@@ -1,0 +1,13 @@
+@startuml
+particip user
+particip system
+start
+:user run unit test;
+:system calcul cod coverag;
+if (coverag meet threshold?) then (ye)
+:system generat report;
+els (no)
+:system identif are for mor test;
+endif
+stop
+@enduml

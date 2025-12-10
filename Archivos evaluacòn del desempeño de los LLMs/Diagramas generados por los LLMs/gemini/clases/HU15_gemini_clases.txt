@@ -1,0 +1,23 @@
+@startuml
+class datasystemadministr {
+}
+class configurablecli {
+- client: string
++ authent()
++ manag()
+}
+class zonet {
+- dat: string
++ access()
++ updat()
+}
+class datastorag {
+- dat: string
+- iscach: bool
++ load()
++ maintain()
+}
+datasystemadministr "1" -- "*" configurablecli
+datasystemadministr "1" -- "*" zonet
+datasystemadministr "1" -- "*" datastorag
+@enduml

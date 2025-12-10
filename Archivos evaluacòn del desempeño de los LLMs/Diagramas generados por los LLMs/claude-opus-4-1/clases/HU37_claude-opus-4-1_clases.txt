@@ -1,0 +1,24 @@
+@startuml
+class chessplay {
+- nam: string
++ movepiec(piec: piec, targetsquar: squar): void
++ executestrategi(): void
+}
+class piec {
+- typ: string
+- color: string
++ mov(targetsquar: squar): bool
+}
+class squar {
+- row: int
+- column: int
++ isoccupi(): bool
+}
+class board {
++ getsquar(row: int, column: int): squar
+}
+chessplay --> piec
+piec --> squar
+board *-- squar
+chessplay --> board
+@enduml

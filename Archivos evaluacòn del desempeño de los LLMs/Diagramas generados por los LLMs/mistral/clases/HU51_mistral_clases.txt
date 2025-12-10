@@ -1,0 +1,36 @@
+@startuml
+class logg {
+- outputtarget: list<outputtarget>
+- format: format
+- severitylevel: list<severitylevel>
+- configur()
+- capturemessag(messag: messag, level: severitylevel)
+}
+interface outputtarget {
+- output(): void
+}
+class fileoutputtarget implement outputtarget {
+- fil: fil
+- open()
+- clos()
+- writ(messag: string)
+}
+class consoleoutputtarget implement outputtarget {
+- print(messag: string)
+}
+class androidoutputtarget implement outputtarget {
+}
+enum format {
+text,
+json,
+xml
+}
+enum severitylevel {
+info,
+warn,
+error,
+critic
+}
+logg "1" --> "*" fileoutputtarget
+logg "1" --> "*" consoleoutputtarget
+@enduml

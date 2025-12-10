@@ -1,0 +1,16 @@
+@startuml
+class model {
+- metadat: map[string, string]
+- page_cont: string
+}
+class project {
+- nam: string
+- model: set[model]
+}
+class packag {
+- nam: string
+- project: set[project]
+}
+model "1" -- "*" project
+project "1" -- "*" packag
+@enduml

@@ -1,0 +1,19 @@
+@startuml
+class design {
+}
+class vehicl {
+- direct: string
++ controlmov(): void
+}
+class propulsionsystem {
+- typ: string
++ implementmodul(): void
+}
+class thrust {
+- thrustertyp: string
++ setthrustertyp(): void
+}
+design -- vehicl
+vehicl *-- propulsionsystem
+propulsionsystem *-- thrust
+@enduml

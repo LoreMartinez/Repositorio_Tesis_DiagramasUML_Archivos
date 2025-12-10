@@ -1,0 +1,11 @@
+@startuml
+class person {
+- nam: string
+}
+class student {
+}
+class professor {
+}
+student --|> person
+professor --|> person
+@enduml

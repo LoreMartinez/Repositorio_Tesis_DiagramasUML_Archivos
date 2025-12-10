@@ -1,0 +1,19 @@
+@startuml
+class develop {
+- nam: string
+}
+class protocolautomationsystem {
+- script: list<string>
++ manageprotocol(): void
++ handlecontextsandcommun(): void
+}
+class control {
+- protocolcontext: string
++ managescriptandprotocolexecu(): void
++ processquer(): void
++ performactionsbasedonscript(): void
++ keepcontextualinform(): void
+}
+develop "1" --> "1" protocolautomationsystem
+protocolautomationsystem "1" --> "1" control
+@enduml

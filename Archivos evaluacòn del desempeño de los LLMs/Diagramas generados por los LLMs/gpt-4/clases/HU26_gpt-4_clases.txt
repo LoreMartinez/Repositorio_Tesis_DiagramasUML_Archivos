@@ -1,0 +1,37 @@
+@startuml
+class modelingsystemus {
++ createproject(): void
++ createpackag(): void
++ createmodel(): void
++ createattribut(): void
++ createmethod(): void
++ structureelementshierarch(): void
++ definerelationship(): void
++ querypropert(): void
++ querydepend(): void
+}
+class project {
+- projectnam: string
+}
+class packag {
+- packagenam: string
+}
+class model {
+- modelnam: string
+}
+class attribut {
+- attributenam: string
+}
+class method {
+- methodnam: string
+}
+modelingsystemus "1" --> "*" project
+modelingsystemus "1" --> "*" packag
+modelingsystemus "1" --> "*" model
+modelingsystemus "1" --> "*" attribut
+modelingsystemus "1" --> "*" method
+project o-- "*" packag
+packag o-- "*" model
+model o-- "*" attribut
+model o-- "*" method
+@enduml

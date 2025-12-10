@@ -1,0 +1,60 @@
+@startuml
+class networkengin {
+- nam: string
+- experiencelevel: string
++ definenetwork(): void
++ runanalys(): void
++ reviewmetr(): void
+}
+class network {
+- nam: string
+- descript: string
++ addnod(nod: nod): void
++ addflow(flow: flow): void
++ getnod(): list
++ getflow(): list
+}
+class nod {
+- nod: string
+- nodenam: string
+- processingcapac: doubl
+- locat: string
+}
+class flow {
+- flow: string
+- flownam: string
+- datar: doubl
+- prioriti: int
+- sourcenod: nod
+- destinationnod: nod
+}
+class performanceanalys {
+- analysis: string
+- timestamp: dat
++ calculateendtoendrespons(): doubl
++ calculateminimumtim(): doubl
++ calculatemaximumtim(): doubl
++ generateflowmetr(): flowmetr
+}
+class flowmetr {
+- throughput: doubl
+- latenc: doubl
+- packetloss: doubl
+- util: doubl
+}
+class trafficscenari {
+- scenari: string
+- scenarionam: string
+- trafficl: doubl
+- durat: int
+}
+networkengin "1" --> "*" network
+network "1" *-- "*" nod
+network "1" *-- "*" flow
+flow "*" --> "1" nod : sourc
+flow "*" --> "1" nod : destin
+networkengin "1" --> "*" performanceanalys
+performanceanalys "1" --> "1" network
+performanceanalys "1" --> "*" flowmetr
+performanceanalys "*" --> "1" trafficscenari
+@enduml

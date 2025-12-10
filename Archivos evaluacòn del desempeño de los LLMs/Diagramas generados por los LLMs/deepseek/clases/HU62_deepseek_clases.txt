@@ -1,0 +1,11 @@
+@startuml
+class contain {
++ nam: string
+formul "1" --* contain
+formul "2" --* contain
+formul "3" --* contain
+axiom "1" --* contain
+axiom "2" --* contain
+axiom "3" --* contain
+}
+@enduml

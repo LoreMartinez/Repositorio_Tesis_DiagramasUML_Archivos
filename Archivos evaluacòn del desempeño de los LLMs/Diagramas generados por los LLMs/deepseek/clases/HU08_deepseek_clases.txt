@@ -1,0 +1,19 @@
+@startuml
+class synchronizationsystem {
++ sharedobject: object
+}
+class accessnod {
+- connect: synchronizationsystem
+}
+class messag {
+generic typ: string
+}
+class updatemessag extend messag {
++ sourcetyp: string
+}
+accessnod "1" -- "*" synchronizationsystem
+updatemessag "networksourc" typ=networksourc
+updatemessag "filesourc" typ=filesourc
+synchronizationsystem has method syncsharedobject
+updatemessag "..." -> synchronizationsystem.syncsharedobject
+@enduml

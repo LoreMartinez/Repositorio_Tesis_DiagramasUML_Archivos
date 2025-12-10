@@ -1,0 +1,19 @@
+@startuml
+class diagram {
++ generatediagram()
+}
+class diagramel {
+}
+class clust {
+}
+class block {
+}
+class path {
+}
+diagram *-- "*" diagramel
+diagram *-- "*" path
+clust --|> diagramel
+block --|> diagramel
+clust o-- "*" diagramel
+path -- "2" diagramel
+@enduml

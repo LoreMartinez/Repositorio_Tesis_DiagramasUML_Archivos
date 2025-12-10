@@ -1,0 +1,20 @@
+@startuml
+class assessmentsystemus {
++ interactwithquest(): void
++ answerquest(): void
++ receiveresult(): void
+}
+class question {
++ ask(): void
+}
+class answer {
++ validateansw(): bool
+}
+class result {
++ getfeedback(): string
+}
+assessmentsystemus "1" --> "*" question
+assessmentsystemus "1" --> "*" answer
+assessmentsystemus "1" --> "1" result
+question "1" --> "1" answer
+@enduml

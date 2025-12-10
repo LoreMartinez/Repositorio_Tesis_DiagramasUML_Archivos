@@ -1,0 +1,14 @@
+@startuml
+class student {
++ enrollincours(cours: cours): enrol
++ cancelenrol(enrol: enrol): void
++ dropenrol(enrol: enrol): void
+}
+class enrol {
+- status: string
+}
+class cours {
+}
+student "1" -- "*" enrol
+cours "1" -- "*" enrol
+@enduml

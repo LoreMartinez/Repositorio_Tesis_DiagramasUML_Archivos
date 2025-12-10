@@ -1,0 +1,17 @@
+@startuml
+start
+:event occur in system;
+:system captur event;
+:appli macr to event;
+:logg process event;
+:append rout event to destin;
+:formatt structur event dat;
+:convert transform event format;
+:stor process log entri;
+if (event requir alert?) then (ye)
+:send notif to administr;
+els (no)
+endif
+:log avail for monitor;
+stop
+@enduml

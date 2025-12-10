@@ -1,0 +1,32 @@
+@startuml
+class chargingstationmanag {
+- manager: string
+- nam: string
++ registerloc(locat: locat): void
++ viewavailableconnector(station: string): list
+}
+class locat {
+- location: string
+- address: string
+- coordin: string
+- nam: string
++ addchargingst(station: chargingst): void
+}
+class chargingst {
+- station: string
+- model: string
+- status: string
++ addconnector(connector: connector): void
++ getavailableconnector(): list
+}
+class connector {
+- connector: string
+- connectortyp: string
+- poweroutput: doubl
+- avail: bool
++ setavail(status: bool): void
+}
+chargingstationmanag "1" --> "*" locat
+locat "1" *-- "*" chargingst
+chargingst "1" *-- "*" connector
+@enduml

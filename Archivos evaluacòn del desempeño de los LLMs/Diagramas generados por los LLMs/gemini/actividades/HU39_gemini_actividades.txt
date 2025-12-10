@@ -1,0 +1,15 @@
+@startuml
+start
+:administr upload card applic from csv fil;
+if (is resel activ?) then (ye)
+:check csv content;
+if (is csv content val?) then (ye)
+:handl cas accord to kyc typ;
+els (no)
+:show content error;
+endif
+els (no)
+:show resel inact error;
+endif
+stop
+@enduml

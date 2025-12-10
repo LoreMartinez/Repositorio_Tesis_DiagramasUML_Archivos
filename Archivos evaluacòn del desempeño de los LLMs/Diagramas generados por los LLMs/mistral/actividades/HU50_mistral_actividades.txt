@@ -1,0 +1,7 @@
+@startuml
+start
+:develop team memb design user Interface;
+:develop team memb generat develop plan;
+:develop team memb generat test plan;
+stop
+@enduml

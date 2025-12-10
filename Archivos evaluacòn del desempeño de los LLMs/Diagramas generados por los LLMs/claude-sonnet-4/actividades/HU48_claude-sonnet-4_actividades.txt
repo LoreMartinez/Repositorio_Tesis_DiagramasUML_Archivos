@@ -1,0 +1,21 @@
+@startuml
+start
+:user send request;
+if (request typ?) then (get)
+:system process get request;
+:system render view;
+els (post)
+:system process post request;
+if (redirect requir?) then (ye)
+:system redirect to appropri pag;
+els (no)
+if (forward requir?) then (ye)
+:system forward to target pag;
+els (no)
+:system render view;
+endif
+endif
+endif
+:user receiv correct view;
+stop
+@enduml

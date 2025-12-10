@@ -1,0 +1,44 @@
+@startuml
+class visualizationtoolus {
+- user: string
+- nam: string
++ organizeel(): void
++ generatediagram(): void
+}
+class clust {
+- cluster: string
+- nam: string
+- level: int
++ addel(): void
++ removeel(): void
+}
+class block {
+- block: string
+- nam: string
+- level: int
++ setposit(): void
+}
+class path {
+- path: string
+- startpoint: string
+- endpoint: string
++ connect(): void
+}
+class diagram {
+- diagram: string
+- titl: string
++ rend(): void
++ distribut(): void
+}
+visualizationtoolus "1" --> "*" clust
+visualizationtoolus "1" --> "*" block
+visualizationtoolus "1" --> "*" path
+visualizationtoolus "1" --> "1" diagram
+clust "1" *-- "*" block
+clust "1" *-- "*" clust
+path "*" --> "1" clust
+path "*" --> "1" block
+diagram "1" *-- "*" clust
+diagram "1" *-- "*" block
+diagram "1" *-- "*" path
+@enduml

@@ -1,0 +1,12 @@
+@startuml
+start
+:system administr upload csv fil;
+:system check if resel is activ;
+if (resel activ?) then (ye)
+:system check csv content;
+:system handl cas bas on kyc typ;
+els (no)
+:system administr is inform that resel is not activ;
+endif
+stop
+@enduml

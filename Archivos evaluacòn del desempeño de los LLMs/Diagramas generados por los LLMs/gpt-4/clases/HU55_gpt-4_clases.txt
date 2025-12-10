@@ -1,0 +1,20 @@
+@startuml
+class develop {
+}
+class client {
++ interactwithadapte(): void
+}
+class adapt {
++ adapt(): void
+}
+class adapte {
++ existingcompon(): void
+}
+class target {
++ targetinterfac(): void
+}
+develop -- client
+client --> adapt
+adapt --> target
+adapt ..> adapte
+@enduml

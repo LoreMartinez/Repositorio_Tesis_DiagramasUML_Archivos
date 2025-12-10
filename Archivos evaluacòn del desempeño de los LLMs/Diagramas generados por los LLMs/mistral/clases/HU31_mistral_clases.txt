@@ -1,0 +1,32 @@
+@startuml
+class sensormonitoringcontrolsystem {
+- kinectsensor: kinectsensor
+- flightsensor: flightsensor
+- dataprocessor: dataprocessor
+- visual: visual
+- commandsend: commandsend
+}
+class kinectsensor {
+- #dat: 3DData
+}
+class flightsensor {
+- #dat: 3DData
+}
+class dataprocessor {
+- #processeddat: processeddat
+}
+class visual {
+- #visual: visual
+}
+class commandsend {
+- #command: command
+}
+class processeddat {
+}
+class visual {
+}
+class command {
+}
+class threeddat {
+}
+@enduml

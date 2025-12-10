@@ -1,0 +1,28 @@
+@startuml
+class systemus {
++ sendcommand()
++ receivetelemetrydat()
++ receivegpssign()
+}
+class vehicl {
++ processultrasonicdat()
+}
+class telemetrydat {
+- payl: string
+}
+class command {
+- instruct: string
+}
+class gpssignal {
+- latitud: float
+- longitud: float
+}
+class ultrasonicdat {
+- distanc: float
+}
+systemus "1" -- "1..*" vehicl
+vehicl "1" -- "0..*" telemetrydat
+vehicl "1" -- "0..*" command
+vehicl "1" -- "0..*" gpssignal
+vehicl "1" -- "0..*" ultrasonicdat
+@enduml

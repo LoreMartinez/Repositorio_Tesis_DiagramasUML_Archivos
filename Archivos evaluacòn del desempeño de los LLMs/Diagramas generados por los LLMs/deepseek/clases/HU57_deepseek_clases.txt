@@ -1,0 +1,30 @@
+@startuml
+class compon {
+- id: numb
+- nam: string
+- accounthold: string
+# leasehold?: string
++ createcompon(): void
+}
+class account {
+- id: numb
+- nam: string
+- project: string
++ createaccount(): void
+}
+class group {
+- nam: string
+*-- compon: compon[]
+# member?: compon[]
++ creategroup(): void
+}
+class leas {
+- id: numb
+- component: numb
+- duedat: dat
++ createl(): void
+}
+compon --|> account
+compon --> leas
+group *-- compon
+@enduml

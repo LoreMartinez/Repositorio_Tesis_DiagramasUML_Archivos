@@ -1,0 +1,18 @@
+@startuml
+class assessmentsystem {
+- usernam: string
+- password: string
+}
+class question {
+- questiontext: string
+}
+class answer {
+- answertext: string
+}
+class result {
+- resultvalu: integ
+}
+assessmentsystem "1" -- "*" question
+question "1" --> "* questionansw"
+answer "1" --> "* result"
+@enduml

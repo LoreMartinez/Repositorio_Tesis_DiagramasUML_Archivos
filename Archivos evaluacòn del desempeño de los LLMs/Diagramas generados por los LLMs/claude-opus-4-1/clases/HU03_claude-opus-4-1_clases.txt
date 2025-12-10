@@ -1,0 +1,30 @@
+@startuml
+class user {
+- user: string
+- nam: string
++ executecommand(command: command): void
++ undolastcommand(): void
+}
+class command {
+- descript: string
+- timestamp: datetim
++ execut(): void
++ undo(): void
+}
+class receiverobject {
+- object: string
+- stat: string
++ performoper(): void
++ restorest(): void
+}
+class commandhistori {
+- executedcommand: list
++ addcommand(command: command): void
++ getlastcommand(): command
++ removelastcommand(): void
+}
+user --> command
+command --> receiverobject
+user --> commandhistori
+commandhistori *-- command
+@enduml

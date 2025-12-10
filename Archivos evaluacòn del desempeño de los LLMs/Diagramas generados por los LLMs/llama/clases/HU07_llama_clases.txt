@@ -1,0 +1,56 @@
+@startuml
+class katchplay {
+- id: integ
+- usernam: string
+- gamedat: gamedat
+}
+class updat {
+- updatefrequ: float
+- notificationmethod: notificationmethod
+}
+class inputbox {
+- inputtext: string
+- confirminput: bool
+}
+class gamedat {
+- characterdat: characterdat
+- gamest: gamest
+}
+class characterdat {
+- playerstat: playerstat
+- equip: equip
+}
+class playerstat {
+- healthpoint: integ
+- damagepoint: integ
+}
+class equip {
+- weapontyp: weapontyp
+- armormateri: armormateri
+}
+class weapontyp {
+- damageamount: integ
+}
+class armormateri {
+- defenser: integ
+}
+katchplay "1" --> inputbox
+katchplay "1" --|> updat
+updat ..> notificationmethod
+class notificationmethod {
+- notificationtyp: notificationtyp
+- notificationfrequ: float
+}
+class gamest {
+- gamestatus: gamestatus
+- gamemod: gamemod
+}
+class playerstat {
+- playerhealthpoint: integ
+- playerdamagepoint: integ
+}
+characterdat "1" --> playerstat
+updat "10" ..> notificationmethod
+gamedat "1" --> gamest
+katchplay + --> gamedat
+@enduml

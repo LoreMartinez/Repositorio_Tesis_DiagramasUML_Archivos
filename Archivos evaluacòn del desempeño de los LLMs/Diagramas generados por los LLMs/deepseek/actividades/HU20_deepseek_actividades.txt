@@ -1,0 +1,27 @@
+@startuml
+start
+:user log in;
+check storag status:
+if not oper;
+:display warn about storag;
+start storag servic;
+els:
+check orchestr linkag status:
+if not oper;
+:display warn about orchestr linkag;
+start orchestr linkag servic;
+els:
+check mysql status:
+if not oper;
+:display warn about mysql;
+start mysql servic;
+els:
+check apach 2 status:
+if not oper;
+:display warn about apach 2;
+start apach 2 servic;
+endif
+if all compon are oper:
+:system confirm oper;
+endif
+@enduml

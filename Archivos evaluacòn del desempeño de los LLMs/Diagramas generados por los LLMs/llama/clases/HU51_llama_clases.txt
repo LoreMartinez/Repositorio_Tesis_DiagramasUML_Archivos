@@ -1,0 +1,24 @@
+@startuml
+class logg {
+- loglevel: string
+- target: fil, consol, andro
++ log(messag: string): void
+}
+class messag {
+- text: string
+- sever: string (enum: low, medium, high)
+}
+class filetarget {
+- filenam: string
+}
+class consoletarget {
+- consoleoutput: string
+}
+class androidtarget {
+- androidlog: string
+}
+logg "1" -- "*" messag
+logg ".loglevel" -> "filetarget" : loggertarget
+logg ".loglevel" --> "consoletarget" : consoletarget
+logg ".loglevel" --> "androidtarget" : androidtarget
+@enduml

@@ -1,0 +1,52 @@
+@startuml
+class dataprocessingus {
+- user: string
+- nam: string
++ definejob(): mapreducejob
++ runjob(job: mapreducejob): void
+}
+class mapreducejob {
+- job: string
+- jobnam: string
+- status: string
++ configur(): void
++ execut(): void
+}
+class mapp {
+- mapper: string
+- inputformat: string
++ map(input: datachunk): intermediatedat
+}
+class reduc {
+- reducer: string
+- outputformat: string
++ reduc(dat: intermediatedat): processeddat
+}
+class combin {
+- combiner: string
++ combin(dat: intermediatedat): intermediatedat
+}
+class datachunk {
+- chunk: string
+- siz: long
+- locat: string
+}
+class intermediatedat {
+- key: string
+- valu: list
+}
+class processeddat {
+- result: string
+- aggregatedvalu: object
+- timestamp: dat
+}
+dataprocessingus "1" --> "*" mapreducejob
+mapreducejob "1" --> "1..*" mapp
+mapreducejob "1" --> "1..*" reduc
+mapreducejob "1" --> "0..*" combin
+mapp ..> datachunk
+mapp ..> intermediatedat
+reduc ..> intermediatedat
+reduc ..> processeddat
+combin ..> intermediatedat
+@enduml

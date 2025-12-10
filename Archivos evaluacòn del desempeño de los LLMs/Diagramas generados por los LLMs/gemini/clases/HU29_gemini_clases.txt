@@ -1,0 +1,15 @@
+@startuml
+class librarysystemus {
+}
+class book {
+}
+class author {
+}
+class publish {
+}
+librarysystemus ..> book
+librarysystemus ..> author
+librarysystemus ..> publish
+book "*" -- "*" author
+book "*" -- "1" publish
+@enduml

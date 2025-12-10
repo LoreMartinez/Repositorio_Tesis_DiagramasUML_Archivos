@@ -1,0 +1,35 @@
+@startuml
+class systemus {
+- usernam: string
++ buildproduct(): product
+}
+class productbuild {
+- currentproduct: product
++ addpart(part: productpart): void
++ executestep(method: buildmethod): void
++ getproduct(): product
++ validatecomplet(): bool
+}
+class product {
+- nam: string
+- iscomplet: bool
++ addpart(part: productpart): void
++ isreadi(): bool
+}
+class productpart {
+- nam: string
+- isrequir: bool
++ instal(): void
+}
+class buildmethod {
+- nam: string
+- stepord: int
++ execut(): void
++ valid(): bool
+}
+systemus --> productbuild
+productbuild --> product
+productbuild --> buildmethod
+product *-- productpart
+productbuild ..> buildmethod
+@enduml

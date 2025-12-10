@@ -1,0 +1,19 @@
+@startuml
+class compon {
++ oper(): void
+}
+class concretecompon {
++ oper(): void
+}
+class decor {
+# compon: compon
++ oper(): void
+}
+class concretedecor {
++ oper(): void
+}
+compon <|-- concretecompon
+compon <|-- decor
+decor o-- "1" compon
+decor <|-- concretedecor
+@enduml

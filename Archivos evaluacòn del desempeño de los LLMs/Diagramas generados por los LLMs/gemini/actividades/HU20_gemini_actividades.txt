@@ -1,0 +1,25 @@
+@startuml
+start
+fork
+:system check storag status;
+if (is storag status ok?) then (no)
+:system display storag warn;
+endif
+fork again
+:system check orchestr linkag status;
+if (is orchestr linkag ok?) then (no)
+:system display orchestr linkag warn;
+endif
+fork again
+:system check mysql status;
+if (is mysql run?) then (no)
+:system start mysql servic;
+endif
+fork again
+:system check apach 2 status;
+if (is apach 2 run?) then (no)
+:system start apach 2 servic;
+endif
+end fork
+stop
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+class collabor {
+- relatedresourc: list<relatedresourc>
+}
+class relatedresourc {
+- resourcetyp: resourcetyp
+}
+class someth {
+# element: set<element>
+}
+class element {
+- dat: dat
+}
+class otherth {
+# relatedel: set<element>
+}
+@enduml

@@ -1,0 +1,16 @@
+@startuml
+start
+:administr initi system startup;
+:system configur celeryd automat;
+:system perform storag mount;
+:system perform servic registr;
+if (configur success?) then (ye)
+:system start servic;
+:platform becom avail;
+stop
+els (no)
+:system handl error;
+:system exit in control mann;
+stop
+endif
+@enduml

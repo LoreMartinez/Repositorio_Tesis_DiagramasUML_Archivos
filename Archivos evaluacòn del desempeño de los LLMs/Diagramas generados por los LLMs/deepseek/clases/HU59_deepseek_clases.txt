@@ -1,0 +1,33 @@
+@startuml
+class testimplementationcontain {
++ implement: list(testimplement)
++ id: string!
+- createdat: dat
+# sourcefil: string
+@ multipl("implement") : "1"
+contain "testimplement" -> list<testimplement>
+}
+class chapt {
++ chapter: string!
+- createdat: dat
+# chapternam: string
+# sourcefil: string
+class testc extend testc {
++ id: string!
+* chapt: chapt
+- testmethod: string
+- testcod: string
+- frompag: pag
+- topag: pag
+* testc "1" -> testc within sam chapt
+@ multipl("testc") : "*", "testcasesinchapt" : 1
+}
+}
+class testexecutor {
++ chapt: chapt
++ selectedtestc: list(testc)
+- executortyp: string
+# paramet: string
+* testexecutor -> chapt --|> list(testc)
+}
+@enduml

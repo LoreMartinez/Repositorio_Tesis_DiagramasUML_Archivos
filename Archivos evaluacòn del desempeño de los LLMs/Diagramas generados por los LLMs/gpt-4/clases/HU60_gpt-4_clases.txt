@@ -1,0 +1,19 @@
+@startuml
+class networkengin {
++ definenetwork(): void
++ runalgorithm(): void
+}
+class network {
+- nod: string
+- flow: string
++ calculateworstcaseendtim(): float
++ calculateminmaxtim(): float[]
++ calculateflowmetr(): float[]
+}
+class trafficscenari {
+- scenariotyp: string
+- scenariodat: string
+}
+networkengin -- network
+network -- trafficscenari
+@enduml

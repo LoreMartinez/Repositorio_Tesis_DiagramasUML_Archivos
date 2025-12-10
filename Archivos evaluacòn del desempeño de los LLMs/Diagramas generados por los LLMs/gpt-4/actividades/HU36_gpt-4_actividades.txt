@@ -1,0 +1,8 @@
+@startuml
+start
+:system read configur;
+:system initi intern variabl;
+:system wait for user interact;
+:system provid relev inform;
+stop
+@enduml

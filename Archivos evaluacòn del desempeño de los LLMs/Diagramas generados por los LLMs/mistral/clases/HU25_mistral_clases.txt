@@ -1,0 +1,29 @@
+@startuml
+class dataprocessingsystemus {
+- datatoprocess: list[dataitem]
+- mapper: list[mapp]
+- reduc: list[reduc]
+- combin: list[combin]
++ configuremapp()
++ configurereduc()
++ configurecombin()
+}
+class mapp {
+- inputdat: dataitem
+- outputdat: dataitem
++ map(dat: dataitem): dataitem
+}
+class reduc {
+- inputdat: list[dataitem]
+- outputdat: dataitem
++ reduc(dat: list[dataitem]): dataitem
+}
+class combin {
+- inputdat: list[dataitem]
+- outputdat: dataitem
++ combin(dat: list[dataitem]): dataitem
+}
+dataprocessingsystemus "1" -- "*" mapp
+dataprocessingsystemus "1" -- "*" reduc
+dataprocessingsystemus *-- combin
+@enduml

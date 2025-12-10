@@ -1,0 +1,22 @@
+@startuml
+start
+:cloud administr access openstack manag interface;
+:administr review infrastructur requir;
+:administr configur comput nod;
+:administr configur storag nod;
+:administr configur network compon;
+:administr deploy openstack servic;
+if (deploy success?) then (ye)
+:administr verif servic status;
+:administr configur resourc quot;
+:administr set up monitor;
+:administr creat mainten schedul;
+:administr docu configur;
+els (no)
+:administr review error log;
+:administr correct configur issu;
+:administr retr deploy;
+endif
+:cloud platform readi for organiz use;
+stop
+@enduml

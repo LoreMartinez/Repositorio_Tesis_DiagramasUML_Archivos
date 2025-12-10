@@ -1,0 +1,16 @@
+@startuml
+class respons {
+- status: string
++ process()
++ interpretdat()
+}
+class head {
+- nam: string
+- valu: string
+}
+class chunk {
+- dat: string
+}
+respons "1" *-- "*" head
+respons "1" *-- "1..*" chunk
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+class logg(
++ channel: string,
++ format: string
+) {
+}
+class filelogg extend logg {
+- fil: string
+}
+class consolelogg extend logg {
+}
+class mobilelogg extend logg {
+}
+logg "1" -- "*" filelogg
+logg "1" -- "*" consolelogg
+logg "1" -- "*" mobilelogg
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+start
+:develop team start workflow;
+:defin requir;
+:design system architectur;
+:implement design (develop phas);
+:test implement (test phas);
+:verifi correct of test (verif phas);
+if (accept) then (ye)
+:prepar for product launch (oper phas);
+els (no)
+:iter workflow phas as need;
+endif
+stop
+@enduml

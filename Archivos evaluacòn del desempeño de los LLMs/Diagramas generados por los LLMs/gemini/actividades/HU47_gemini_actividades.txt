@@ -1,0 +1,16 @@
+@startuml
+start
+:user enter dat;
+:system valid address and cred card;
+if (valid is success?) then (ye)
+fork
+:system send confirm email;
+fork again
+:system send welcom packag;
+end fork
+:system provid visual confirm of success;
+els (no)
+:system show valid error;
+endif
+stop
+@enduml

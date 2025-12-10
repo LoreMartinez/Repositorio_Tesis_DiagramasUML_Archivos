@@ -1,0 +1,29 @@
+@startuml
+class play {
++ viewcharactersummari(): summari
+}
+class charact {
+- statist: statist
+- possess: possess
+- combatcap: int
++ getstatist(): statist
++ getpossess(): possess
++ getcombatcap(): int
+}
+class summari {
+- charact: charact
+}
+class statist {
+- health: int
+- strength: int
+- intellig: int
+}
+class possess {
+- ship: list
+- compan: list
+}
+play -- charact
+charact --> statist
+charact --> possess
+charact --> summari
+@enduml

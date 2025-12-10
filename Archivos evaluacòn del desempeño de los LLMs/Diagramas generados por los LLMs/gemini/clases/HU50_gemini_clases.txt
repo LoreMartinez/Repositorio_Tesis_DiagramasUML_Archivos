@@ -1,0 +1,16 @@
+@startuml
+class testengin {
+}
+class test {
+- executionmod: string
++ execut(devic: usbdevic): testresult
+}
+class usbdevic {
++ closecommun()
+}
+class testresult {
+}
+testengin --> test
+test ..> usbdevic
+test ..> testresult
+@enduml

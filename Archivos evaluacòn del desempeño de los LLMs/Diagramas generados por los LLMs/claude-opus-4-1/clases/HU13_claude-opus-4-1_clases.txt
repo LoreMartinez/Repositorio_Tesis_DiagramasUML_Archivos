@@ -1,0 +1,61 @@
+@startuml
+class play {
+- player: string
+- playernam: string
++ viewcharactersummari(): charactersummari
++ selectmiss(mission: string): void
++ upgraderesourc(resourc: string): void
+}
+class charact {
+- character: string
+- characternam: string
+- level: int
++ calculatecombatcap(): int
+}
+class statist {
+- strength: int
+- agil: int
+- intellig: int
+- health: int
+- man: int
+}
+class ship {
+- ship: string
+- shipnam: string
+- spe: int
+- armor: int
+- weaponpow: int
+}
+class companion {
+- companion: string
+- companionnam: string
+- combatbonus: int
+- special: string
+}
+class charactersummari {
+- summaryd: dat
++ displaysummari(): void
+}
+class mission {
+- mission: string
+- missionnam: string
+- difficulti: int
+- reward: string
+}
+class resourc {
+- resourc: string
+- resourcenam: string
+- currentlevel: int
+- upgradecost: int
+}
+play "1" -- "1" charact
+charact "1" -- "1" statist
+charact "1" -- "*" ship
+charact "1" -- "*" companion
+charact "1" -- "1" charactersummari
+charactersummari "1" -- "1" statist
+charactersummari "1" -- "*" ship
+charactersummari "1" -- "*" companion
+play "1" -- "*" mission
+play "1" -- "*" resourc
+@enduml

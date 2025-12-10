@@ -1,0 +1,23 @@
+@startuml
+class collabor {
+- nam: string
++ interactwith(): void
++ manageresourc(): void
++ ensureconsist(): void
+}
+class someth {
+- id: string
+- status: string
++ getstatus(): string
++ updat(): void
+}
+class otherth {
+- id: string
+- status: string
++ getstatus(): string
++ updat(): void
+}
+collabor --> someth
+collabor --> otherth
+someth --> otherth
+@enduml

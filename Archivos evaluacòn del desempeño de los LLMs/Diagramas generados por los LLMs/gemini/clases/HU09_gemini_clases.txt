@@ -1,0 +1,14 @@
+@startuml
+class systemus {
++ vieweventf()
+}
+class monitoredent {
+- relevantinform: string
+}
+class event {
+- timestamp: datetim
+- activitydescript: string
+}
+systemus "*" -- "*" monitoredent
+monitoredent "1" *-- "*" event
+@enduml

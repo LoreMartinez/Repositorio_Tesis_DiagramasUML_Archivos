@@ -1,0 +1,56 @@
+@startuml
+class modelingsystemus {
+- usernam: string
+- email: string
++ createproject(): project
++ queryel(): list
+}
+class project {
+- nam: string
+- descript: string
++ addpackag(): packag
++ getpackag(): list
++ finddepend(): list
+}
+class packag {
+- nam: string
+- version: string
++ addmodel(): model
++ getmodel(): list
++ organizehierarchi(): void
+}
+class model {
+- nam: string
+- typ: string
++ addattribut(): attribut
++ addmethod(): method
++ getattribut(): list
++ getmethod(): list
++ definerelationship(): relationship
+}
+class attribut {
+- nam: string
+- datatyp: string
+- visibl: string
++ getpropert(): map
+}
+class method {
+- nam: string
+- returntyp: string
+- visibl: string
+- paramet: list
++ getsignatur(): string
+}
+class relationship {
+- typ: string
+- sourcemodel: model
+- targetmodel: model
++ getdepend(): list
+}
+modelingsystemus "1" --> "*" project
+project *-- packag
+packag *-- model
+model *-- attribut
+model *-- method
+model "1" --> "*" relationship
+@enduml

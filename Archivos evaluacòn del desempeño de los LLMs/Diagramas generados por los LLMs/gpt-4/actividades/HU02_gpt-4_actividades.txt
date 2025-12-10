@@ -1,0 +1,12 @@
+@startuml
+start
+:licens system administr revok set of entitl;
+:system automat handl relat oper;
+:system remov depend;
+:system updat pool;
+:system regener certif;
+:system verif complianc;
+:system preserv consist inform after revoc;
+:system maintain correct licens stat after revoc;
+stop
+@enduml

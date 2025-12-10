@@ -1,0 +1,9 @@
+@startuml
+class carown {
++ registerc(): void
+}
+class car {
+- numberofwheel: int
+}
+carown "1" -- "*" car
+@enduml

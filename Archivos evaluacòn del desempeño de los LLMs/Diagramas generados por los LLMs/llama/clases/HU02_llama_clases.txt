@@ -1,0 +1,12 @@
+@startuml
+class flashcard {
+- question: string
+- answer: string
++ displayquest(): void
+}
+class student {
+- nam: string
++ studyflashcard(flashcard): void
+}
+student "1" -- "*" flashcard
+@enduml

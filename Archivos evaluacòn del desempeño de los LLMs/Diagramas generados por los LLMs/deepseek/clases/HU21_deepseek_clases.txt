@@ -1,0 +1,14 @@
+@startuml
+class carown {
+- usernam: string
+}
+class car {
+- mak: string
+- model: string
+}
+class registrationservic {
++ registerc(): bool
+}
+carown "1" -- "*" car
+car "--*" registrationservic
+@enduml

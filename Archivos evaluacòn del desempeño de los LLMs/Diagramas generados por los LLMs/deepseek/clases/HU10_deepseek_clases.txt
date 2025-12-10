@@ -1,0 +1,13 @@
+@startuml
+class applicationus {
+- usernam: string
+- password: string
+}
+class applic {
++ id: string
+}
+class activityscheduleservic {
+- schedulenam: string
+}
+applicationus -->> applic -->* activityscheduleservic
+@enduml

@@ -1,0 +1,25 @@
+@startuml
+class student {
+- nam: string
+- student: string
++ practic(): void
++ strengthenknowledg(): void
+}
+class flashcard {
+- content: string
++ display(): void
+}
+class question {
+- questiontext: string
++ ask(): string
+}
+class answer {
+- answertext: string
+- iscorrect: bool
++ valid(): bool
+}
+student --> flashcard
+flashcard *-- question
+flashcard *-- answer
+question "1" --> "*" answer
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+start
+:system user attempt to log out;
+if (is user log in?) then (ye)
+:system log out user;
+:redirect to login pag;
+els (no)
+:system show error messag;
+endif
+stop
+@enduml

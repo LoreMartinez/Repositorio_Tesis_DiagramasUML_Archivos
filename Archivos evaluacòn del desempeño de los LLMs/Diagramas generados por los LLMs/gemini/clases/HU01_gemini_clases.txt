@@ -1,0 +1,23 @@
+@startuml
+class eventorgan {
++ createpl(): plan
+}
+class event {
+}
+class plan {
++ definetask()
++ createschedul()
++ allocatemateri()
+}
+class task {
+}
+class schedul {
+}
+class materi {
+}
+eventorgan "1" -- "*" plan
+event "1" *-- "1" plan
+plan "1" *-- "*" task
+plan "1" *-- "1" schedul
+plan "1" *-- "*" materi
+@enduml

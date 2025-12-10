@@ -1,0 +1,16 @@
+@startuml
+class user {
+- id: string (public)
+- usernam: string (public)
+- password: string (public)
++ login(): bool
+}
+class command {
+- action: action
++ execut(): void
++ undo(): void
+}
+class action {
+- creat(): void
+}
+@enduml

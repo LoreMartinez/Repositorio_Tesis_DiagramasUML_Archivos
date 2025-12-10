@@ -1,0 +1,18 @@
+@startuml
+start
+:system event occur;
+:logg captur event;
+:macr process event dat;
+:append determin output destin;
+:formatt structur event inform;
+:convert transform dat format;
+:system record structur log entri;
+:administr monitor system log;
+if (debug requir?) then (ye)
+:administr analyz log dat;
+:administr identif system issu;
+els (no)
+:system continu normal oper;
+endif
+stop
+@enduml

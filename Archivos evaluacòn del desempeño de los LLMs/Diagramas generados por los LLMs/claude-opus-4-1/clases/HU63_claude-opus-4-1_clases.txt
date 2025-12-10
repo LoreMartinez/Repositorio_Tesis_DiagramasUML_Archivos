@@ -1,0 +1,48 @@
+@startuml
+class gamecommunicationadministr {
+- administrator: string
+- servernam: string
++ processmessag(messag: messag): void
++ maintaingameflow(): void
+}
+class messag {
+- messag: string
+- timestamp: datetim
+- player: string
++ interpret(): void
+}
+class hellomessag {
+- playernam: string
++ establishconnect(): void
+}
+class inputmessag {
+- inputdat: string
+- actiontyp: string
++ executeact(): void
+}
+class timermessag {
+- durat: int
+- eventtyp: string
++ triggerev(): void
+}
+class serv {
+- server: string
+- status: string
++ interpretinteract(messag: messag): void
++ updategamest(): void
+}
+class play {
+- player: string
+- usernam: string
+- connectionstatus: string
++ sendmessag(messag: messag): void
+}
+hellomessag --|> messag
+inputmessag --|> messag
+timermessag --|> messag
+gamecommunicationadministr "1" --> "*" messag
+serv "1" --> "*" messag
+play "1" --> "*" messag
+gamecommunicationadministr "1" --> "1" serv
+serv "1" --> "*" play
+@enduml

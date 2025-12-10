@@ -1,0 +1,52 @@
+@startuml
+class applicationus {
+- user: string
++ requestlabeldraw(): void
+}
+class labelviewhelp {
+- currentcanv: canv
++ drawoncanv(canv: canv, path: path): void
++ applystyl(styl: styl): void
+}
+class canv {
+- width: int
+- height: int
++ cle(): void
++ rend(): void
+}
+class path {
+- point: list
+- strokewidth: float
++ addpoint(x: float, y: float): void
++ closepath(): void
+}
+class label {
+- text: string
+- posit: posit
++ settext(text: string): void
++ setposit(x: float, y: float): void
+}
+class graphicalel {
+- element: string
+- visibl: bool
++ show(): void
++ hid(): void
+}
+class styl {
+- color: string
+- fontsiz: int
+- fontfamili: string
++ applytoel(element: graphicalel): void
+}
+class posit {
+- x: float
+- y: float
+}
+applicationus --> labelviewhelp
+labelviewhelp --> canv
+labelviewhelp --> path
+labelviewhelp --> styl
+label --|> graphicalel
+graphicalel --> posit
+styl --> graphicalel
+@enduml

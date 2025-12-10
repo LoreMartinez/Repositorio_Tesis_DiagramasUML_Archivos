@@ -1,0 +1,20 @@
+@startuml
+class protocolautomationsystem {
++ executeprotocol(protocol: protocol)
++ executescript(script: script)
++ processqueri()
++ handlecommun()
+}
+class protocol {
+}
+class script {
++ performact()
+}
+class context {
+- contextualinform: string
+}
+protocolautomationsystem --> protocol
+protocolautomationsystem --> script
+protocolautomationsystem "1" *-- "1" context
+protocol "1" o-- "*" script
+@enduml

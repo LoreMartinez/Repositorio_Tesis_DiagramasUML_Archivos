@@ -1,0 +1,14 @@
+@startuml
+class iotdevicedevelop {
++ senddat(): bool
++ receivedat(): bool
+}
+class meshnetworkinterfac {
+- supportedprotocol: string
+- physicallay: string
+}
+class meshnetworknod {
+}
+iotdevicedevelop -- meshnetworkinterfac
+meshnetworkinterfac "1" -- "*" meshnetworknod
+@enduml

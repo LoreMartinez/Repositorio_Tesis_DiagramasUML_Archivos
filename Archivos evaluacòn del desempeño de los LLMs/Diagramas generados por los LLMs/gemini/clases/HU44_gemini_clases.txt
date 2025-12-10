@@ -1,0 +1,19 @@
+@startuml
+class neuralnetwork {
+- stat: statedat
++ train(): void
++ savest(): void
++ restorest(): void
+}
+class lay {
+- typ: string
+- stat: statedat
++ savest(): void
++ restorest(): void
+}
+class activationfunct {
+- nam: string
+}
+neuralnetwork "1" *-- "1..*" lay
+lay "1" -- "1" activationfunct
+@enduml

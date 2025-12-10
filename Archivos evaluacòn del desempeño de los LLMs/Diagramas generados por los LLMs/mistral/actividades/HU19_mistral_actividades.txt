@@ -1,0 +1,14 @@
+@startuml
+start
+:system prepar serv;
+:system instal glusterf;
+:system configur volum;
+:system expos servic;
+if (instal error) then (ye)
+:log error detail;
+:send error notif;
+els (no)
+:verifi instal;
+endif
+stop
+@enduml

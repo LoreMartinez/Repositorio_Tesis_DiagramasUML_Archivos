@@ -1,0 +1,14 @@
+@startuml
+class user {
+- nam: string
+}
+class exam extend model {
++ questioncount: int!
+- topic: collect[topic]
+}
+class topic {
++ subject: string
+}
+user <-> exam
+exam *-- topic
+@enduml

@@ -1,0 +1,44 @@
+@startuml
+class networkapplicationdevelop {
+- applicationnam: string
++ createcli(): client
++ createserv(): serv
+}
+class basenetworkcompon {
+# port: int
+# address: string
+# isconnect: bool
++ connect(): bool
++ disconnect(): void
+}
+class client {
+- serveraddress: string
+- serverport: int
++ senddat(dat: string): void
++ receivedat(): string
+}
+class serv {
+- listeningport: int
+- maxconnect: int
++ startlisten(): void
++ stoplisten(): void
++ acceptconnect(): client
++ broadcastdat(dat: string): void
+}
+class datatransmitt {
+# transmissionr: int
++ transmitdat(dat: string): bool
+}
+class datareceiv {
+# buffers: int
++ receivedat(): string
+}
+client --|> basenetworkcompon
+serv --|> basenetworkcompon
+client --|> datatransmitt
+client --|> datareceiv
+serv --|> datatransmitt
+serv --|> datareceiv
+networkapplicationdevelop ..> client
+networkapplicationdevelop ..> serv
+@enduml

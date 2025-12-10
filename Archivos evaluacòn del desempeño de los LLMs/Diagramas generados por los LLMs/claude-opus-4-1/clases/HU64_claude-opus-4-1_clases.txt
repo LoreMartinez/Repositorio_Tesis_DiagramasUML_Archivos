@@ -1,0 +1,50 @@
+@startuml
+class h5cudsus {
+- user: string
+- usernam: string
++ createcontain(): h5cudscontain
++ organizestructur(): void
+}
+class h5cudscontain {
+- container: string
+- nam: string
++ addparticl(particl: particl): void
++ addmesh(mesh: mesh): void
++ addlattic(lattic: lattic): void
++ getgroup(group: string): group
+}
+class particl {
+- particl: string
+- posit: string
+- propert: string
+}
+class mesh {
+- mesh: string
+- topolog: string
++ connectparticl(): void
+}
+class lattic {
+- lattic: string
+- structur: string
++ arrangeparticl(): void
+}
+class group {
+- group: string
+- nam: string
+- hierarchylevel: integ
++ addel(element: element): void
++ removeel(element: string): void
+}
+class element {
+- element: string
+- typ: string
+}
+particl --|> element
+mesh --|> element
+lattic --|> element
+h5cudsus "1" --> "*" h5cudscontain
+h5cudscontain "1" *-- "*" group
+group "1" o-- "*" element
+mesh "1" --> "*" particl
+lattic "1" --> "*" particl
+@enduml

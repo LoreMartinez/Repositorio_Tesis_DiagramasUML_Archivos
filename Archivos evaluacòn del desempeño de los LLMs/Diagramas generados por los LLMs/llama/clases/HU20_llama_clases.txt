@@ -1,0 +1,35 @@
+@startuml
+class applicationus {
+- usernam: string
+- password: string
+}
+class messag {
+- content: string
+}
+class profil {
+- user: applicationus
+- messag: set<messag>
+}
+class user {
+- usernam: string
+- profil: profil
++ follow(user): void
++ post(twit): void
+}
+class twit {
+- text: string
+}
+class followe {
+- follow: user
+- user: user
+}
+applicationus "1" -- "*" profil
+profil "1" ->> applicationus
+messag "1" -- "*" profil
+profil o-- messag
+user "1" --> profil
+profil *--> user
+user "1" ..> followe
+followe "1" --* user
+user "1" + follow(followe): void
+@enduml

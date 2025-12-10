@@ -1,0 +1,14 @@
+@startuml
+start
+:enter docu metadat;
+if (val?) then (ye)
+:valid docu;
+endif
+:transf docu;
+:log success messag;
+if (transf fail?) then (ye)
+:display error messag;
+endif
+:system log user out;
+stop
+@enduml

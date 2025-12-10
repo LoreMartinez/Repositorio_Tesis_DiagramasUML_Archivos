@@ -1,0 +1,47 @@
+@startuml
+class assessmentsystemus {
+- usernam: string
+- password: string
+- session: string
+- currentquest: question
+- scor: integ
+- finalresult: result
++ login(usernam: string, password: string): bool
++ getnextquest(): question
++ submitansw(answer: answer): void
+}
+class formallogicsystemus {
+- usernam: string
+- password: string
+- currentformul: atomicformul | temporaryformul | implicationformul
++ login(usernam: string, password: string): bool
++ createatomicformul(): void
++ createtemporaryformul(): void
++ createimplicationformul(): void
+}
+class gamecommunicationsystemadmin {
+- usernam: string
+- password: string
+- currentgamesess: gamesess
++ login(usernam: string, password: string): bool
++ sendhellomessag(): void
++ inputuserinput(): string
+}
+class h5cudssystemus {
+- usernam: string
+- password: string
+- currenth5cudscontain: h5cudsccontain
++ login(usernam: string, password: string): bool
++ createparticl(): particl
++ connectparticl(): void
++ createmesh(): mesh
+}
+class eventorgan {
+- usernam: string
+- password: string
+- currentev: event
++ login(usernam: string, password: string): bool
++ createpl(): plan
++ executetask(task: task): void
+}
+@enduml

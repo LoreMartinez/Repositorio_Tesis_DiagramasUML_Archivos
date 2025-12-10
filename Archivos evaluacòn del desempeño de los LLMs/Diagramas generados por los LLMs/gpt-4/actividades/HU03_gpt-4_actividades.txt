@@ -1,0 +1,6 @@
+@startuml
+start
+:cloud administr deploy openstack environ;
+:cloud administr maintain openstack environ;
+stop
+@enduml

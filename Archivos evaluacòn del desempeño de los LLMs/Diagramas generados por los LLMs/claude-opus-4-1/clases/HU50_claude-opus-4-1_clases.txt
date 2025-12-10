@@ -1,0 +1,45 @@
+@startuml
+class testengin {
+- nam: string
+- employe: string
++ executetest(): void
++ selecttestmod(): void
+}
+class usbdevic {
+- devic: string
+- devicenam: string
+- status: string
++ connect(): bool
++ disconnect(): void
++ isconnect(): bool
+}
+class test {
+- test: string
+- testnam: string
+- mod: string
+- status: string
++ run(): void
++ simulatedat(): void
++ executeprocedur(): void
+}
+class testresult {
+- result: string
+- timestamp: string
+- dat: string
+- status: string
++ obtainresult(): string
+}
+class devicecommun {
+- connectionstatus: bool
+- protocol: string
++ opencommun(): bool
++ closecommun(): void
++ senddat(): void
++ receivedat(): string
+}
+testengin "1" --> "*" test
+test "*" --> "1" usbdevic
+test "1" --> "*" testresult
+usbdevic "1" --> "1" devicecommun
+testengin "1" --> "*" devicecommun
+@enduml

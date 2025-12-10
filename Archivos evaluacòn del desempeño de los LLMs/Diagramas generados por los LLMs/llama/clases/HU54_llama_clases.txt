@@ -1,0 +1,25 @@
+@startuml
+class administr {
+- id: integ
+- nam: string
+- email: string
+}
+class person {
+- id: integ
+- nam: string
+- age: integ
+}
+class rol {
+- nam: string
+}
+class student : person {
+- rol: rol
+}
+class professor : person {
+- rol: rol
+}
+student "1" -- "*" rol
+professor "1" -- "*" rol
+administr "1" -- student
+administr "1" -- professor
+@enduml

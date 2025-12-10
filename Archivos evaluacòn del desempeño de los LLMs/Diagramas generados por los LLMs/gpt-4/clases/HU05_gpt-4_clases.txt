@@ -1,0 +1,17 @@
+@startuml
+class networkapplicationdevelop {
+}
+class basecl {
++ createcli(): client
++ createserv(): serv
+}
+class client {
++ senddat(): void
+}
+class serv {
++ receivedat(): void
+}
+networkapplicationdevelop ..> basecl
+basecl --> client
+basecl --> serv
+@enduml

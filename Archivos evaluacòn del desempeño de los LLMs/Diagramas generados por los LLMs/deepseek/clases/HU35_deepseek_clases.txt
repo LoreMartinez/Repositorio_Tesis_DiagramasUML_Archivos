@@ -1,0 +1,36 @@
+@startuml
+class messag {
+- text: string
++ senderref: refer<send>
++ receiverref: refer<receiv>
++ sendmessag(): void
++ receiv(): void
+}
+class send : object {
+# repres a compon that can send messag.
++ nam: string
+}
+class receiv : object {
+# repres a compon that can receiv messag.
+- nam: string
+}
+class systemcompon : object {
+# a bas class for system compon that can interact vi channel.
+# has ident.
++ id: string
+# has output connect.
+- output: outputinterfac
+# has input connect.
+- input: inputinterfac
+# has collect of channel.
+- channel: channelinterfac()
+}
+class channel : object {
+# repres a commun pathway betw compon.
++ nam: string
++ typ: string  # e.g.,
++ connectedcompon: collect<connectedcomponentinterfac>()
+}
+connectedcompon(o) << channel
+systemcompon "1" *-- channel
+@enduml

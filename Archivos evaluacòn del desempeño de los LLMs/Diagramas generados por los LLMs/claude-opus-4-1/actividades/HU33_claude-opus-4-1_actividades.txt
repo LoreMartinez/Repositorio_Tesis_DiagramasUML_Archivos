@@ -1,0 +1,17 @@
+@startuml
+start
+:dat analyst upload or open dataset;
+if (dataset load success?) then (ye)
+:execut dat clean;
+:perform dat model;
+:appli segment;
+:conduct exploratori dat analys (eda);
+:generat insight;
+:creat complet report;
+:export report for furth use;
+els (no)
+:show error messag;
+stop
+endif
+stop
+@enduml

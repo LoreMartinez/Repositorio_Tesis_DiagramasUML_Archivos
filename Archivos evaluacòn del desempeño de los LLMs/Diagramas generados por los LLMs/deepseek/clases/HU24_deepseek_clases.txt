@@ -1,0 +1,37 @@
+@startuml
+class devic {
+- product: string
+- serialnumb: string
+- currentsignalvalu: float
+- lastupdatedtim: datetim?
+- status: attribut
++ start(): void
++ stop(): void
++ read(): void
++ writ(string valu): void
++ captur(): void
++ updat(string messag): void
+}
+interface datael {
+datatyp: string
+datavalu: ani
+datanam: string
+}
+class attribut implement datael {
+- datatyp: string
+- valu: ani
+- nam: string
++ getvalu(): string
++ setvalu(string newvalu)
+}
+class handl {
+- attribut: list<attribut>
+# datael
++ receiv datael dat
+* handl
+- messag: messag
+# attribut
++ command: command
+- command: command sent to devic
+}
+@enduml

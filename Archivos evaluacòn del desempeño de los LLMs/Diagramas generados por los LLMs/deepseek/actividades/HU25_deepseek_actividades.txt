@@ -1,0 +1,11 @@
+@startuml
+start
+:dat arriv;
+check_data_avail(dat):
+:process into diagram;
+generatediagramasimagefil();
+no_remaining_dat = tru;
+whil (data_avail)
+endwhil
+stop
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+start
+:develop team set requir;
+:design the system;
+:develop the system;
+:test of the system;
+:verifi the system;
+:operation the system;
+stop
+@enduml

@@ -1,0 +1,28 @@
+@startuml
+class h5cudssystemus {
++ createhierarchi(): void
++ organizehierarchi(): void
+}
+class h5cudscontain {
+- particlegroup: particl[]
+- meshgroup: mesh[]
+- latticegroup: lattic[]
++ addparticl(particl: particl): void
++ addmesh(mesh: mesh): void
++ addlattic(lattic: lattic): void
++ accessgroup(group: string): object[]
+}
+class particl {
++ createparticl(): particl
+}
+class mesh {
++ createmesh(): mesh
+}
+class lattic {
++ createlattic(): lattic
+}
+h5cudssystemus --> h5cudscontain
+h5cudscontain *-- particl
+h5cudscontain *-- mesh
+h5cudscontain *-- lattic
+@enduml

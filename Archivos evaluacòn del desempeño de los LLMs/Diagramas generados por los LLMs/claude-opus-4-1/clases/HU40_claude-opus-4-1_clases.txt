@@ -1,0 +1,67 @@
+@startuml
+class develop {
+- nam: string
+- experiencelevel: string
++ createappl(): applic
++ manageplatform(): void
++ configuredevic(): void
+}
+class applic {
+- nam: string
+- version: string
++ execut(): void
+}
+class platform {
+- nam: string
+- vendor: string
+- version: string
++ initi(): void
++ getdevic(): devic[]
+}
+class devic {
+- nam: string
+- typ: string
+- memorys: long
++ allocatememori(siz: long): memori
++ executekernel(kernel: kernel): void
+}
+class context {
+- propert: string
++ createprogram(sourc: string): program
++ createcommandqueu(): commandqueu
+}
+class program {
+- sourcecod: string
+- buildstatus: string
++ build(): bool
++ createkernel(nam: string): kernel
+}
+class kernel {
+- nam: string
+- workgroups: int
++ setargu(index: int, valu: object): void
++ execut(): void
+}
+class memori {
+- siz: long
+- typ: string
++ read(): object
++ writ(dat: object): void
+}
+class commandqueu {
+- inord: bool
++ enqueuekernel(kernel: kernel): void
++ enqueuereadbuff(memori: memori): object
++ enqueuewritebuff(memori: memori, dat: object): void
+}
+develop "1" --> "*" applic
+develop "1" --> "*" platform
+platform "1" --> "*" devic
+develop "1" --> "*" context
+context "1" --> "*" program
+context "1" --> "1" commandqueu
+program "1" --> "*" kernel
+devic "1" --> "*" memori
+commandqueu "1" ..> "*" kernel
+commandqueu "1" ..> "*" memori
+@enduml

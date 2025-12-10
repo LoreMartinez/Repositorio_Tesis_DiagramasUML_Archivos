@@ -1,0 +1,20 @@
+@startuml
+class vehiclemonitoringsystem {
++ user: string
+- sendtelemetri(string telemetrydat): bool
+- receivetelemetri(): [string]
+- processcommand(string command): void
+- updateposit(): positiondat
+# commun port for dat exchang
+vehicleport: string "send"
+incomingport: string "receiv"
+@ multipl
+user "1" -- "*" vehiclemonitoringsystem
+}
+class user {
++ user: string
+- loginus(): bool
+@ multipl
+vehiclemonitoringsystem "--|> user
+}
+@enduml

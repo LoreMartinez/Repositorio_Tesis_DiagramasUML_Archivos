@@ -1,0 +1,20 @@
+@startuml
+start
+:design user interface;
+:design system architectur;
+fork
+:generat develop plan;
+fork again
+:generat test plan;
+end fork
+:review and valid plan;
+if (plan approv?) then (ye)
+:final project document;
+:project readi for implement;
+els (no)
+:revis plan bas on feedback;
+:updat document;
+:project readi for implement;
+endif
+stop
+@enduml

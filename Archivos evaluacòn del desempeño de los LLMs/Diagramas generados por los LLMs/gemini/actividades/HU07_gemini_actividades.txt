@@ -1,0 +1,11 @@
+@startuml
+start
+:develop provid xml configur fil;
+:system process the xml configur fil;
+if (is the fil val?) then (ye)
+:system automat generat boilerpl sourc cod;
+els (no)
+:system report an error;
+endif
+stop
+@enduml

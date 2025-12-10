@@ -1,0 +1,52 @@
+@startuml
+class strategygameplay {
+- player: string
+- playernam: string
++ planstrategi(): void
++ evaluateoutcom(): void
+}
+class card {
+- card: string
+- cardnam: string
+- cardtyp: string
++ playcard(): void
+}
+class charact {
+- character: string
+- characternam: string
+- level: int
++ performact(): void
+}
+class resourc {
+- resourc: string
+- resourcetyp: string
+- quantiti: int
++ consum(): void
++ replenish(): void
+}
+class mission {
+- mission: string
+- missionnam: string
+- object: string
+- status: string
++ assignmiss(): void
++ completemiss(): void
+}
+class environ {
+- environment: string
+- environmentnam: string
+- environmenttyp: string
+}
+class planet {
+- planet: string
+- planetnam: string
+- planettyp: string
+}
+strategygameplay "1" --> "*" card
+strategygameplay "1" --> "*" charact
+strategygameplay "1" --> "*" resourc
+strategygameplay "1" --> "*" mission
+mission "1" --> "1" environ
+mission "1" --> "1" planet
+charact "1" --> "*" mission
+@enduml

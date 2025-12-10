@@ -1,0 +1,12 @@
+@startuml
+start
+:user request a pag;
+:system receiv the request;
+if (request typ is post?) then (ye)
+:system process post request secur;
+els (no)
+:system process get request;
+endif
+:system provid the correct view;
+stop
+@enduml

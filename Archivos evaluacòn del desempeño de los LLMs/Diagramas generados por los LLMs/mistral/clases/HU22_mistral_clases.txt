@@ -1,0 +1,8 @@
+@startuml
+class docu {
+- metadat: map[string, string]
+- page_cont: string
+- createdocu(metadat: map[string, string], content: string) : void
+- search() : list[docu]
+}
+@enduml

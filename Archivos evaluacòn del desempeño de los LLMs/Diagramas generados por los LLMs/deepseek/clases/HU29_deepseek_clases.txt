@@ -1,0 +1,29 @@
+@startuml
+class user {
+- usernam: string
+- password: string
+}
+class book {
++ titl: string
+- author: author
+- publish: publish
+- pag: integ
+- year public: integ
+method createbook() : void
+}
+class author {
++ nam: string
+- book: collect of book
+method createbook() : void
+}
+class publish {
++ nam: string
+- book: collect of book
+method publishbook() : void
+}
+book --|> author
+publish *-- book
+user ..> book
+user ..> author
+user ..> publish
+@enduml

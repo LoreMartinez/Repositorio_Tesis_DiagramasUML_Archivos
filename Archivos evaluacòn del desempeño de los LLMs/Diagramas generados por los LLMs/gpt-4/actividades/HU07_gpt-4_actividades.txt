@@ -1,0 +1,7 @@
+@startuml
+start
+:softwar develop input xml configur fil;
+:system generat boilerpl sourc cod;
+:system ensur consist with architectur design;
+stop
+@enduml

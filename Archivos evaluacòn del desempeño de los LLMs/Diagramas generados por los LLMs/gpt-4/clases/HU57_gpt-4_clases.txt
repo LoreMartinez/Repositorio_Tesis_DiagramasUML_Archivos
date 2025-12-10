@@ -1,0 +1,31 @@
+@startuml
+class projectmanag {
++ managecompon()
++ manageaccount()
++ managel()
++ managegroup()
+}
+class project {
++ assigncomponenttoaccount()
++ trackleasedcompon()
++ manageprojectmembership()
+}
+class compon {
+- componentnam: string
+}
+class account {
+- accountnam: string
+}
+class leas {
+- leasenam: string
+}
+class group {
+- groupnam: string
++ organizehierarch()
+}
+projectmanag "1" -- "*" project
+project "1" -- "*" compon
+project "1" -- "*" account
+project "1" -- "*" leas
+project "1" -- "*" group
+@enduml

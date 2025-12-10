@@ -1,0 +1,14 @@
+@startuml
+start
+:design user interface;
+:design system architectur;
+:generat develop plan;
+:generat test plan;
+if (plan complet?) then (ye)
+:project readi for implement;
+:project readi for test;
+els (no)
+:review and refin plan;
+endif
+stop
+@enduml

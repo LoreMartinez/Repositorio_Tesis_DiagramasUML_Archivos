@@ -1,0 +1,48 @@
+@startuml
+class play {
+- nam: string
+- scor: int
++ planstrategi(): void
++ endturn(): void
+}
+class charact {
+- nam: string
+- level: int
+- experi: int
++ levelup(): void
+}
+class unit {
+- typ: string
+- strength: int
+- health: int
++ mov(): void
++ attack(): void
+}
+class mission {
+- nam: string
+- descript: string
+- status: string
+- reward: int
++ assign(): void
++ complet(): void
+}
+class planet {
+- nam: string
+- resourc: int
+- popul: int
++ develop(): void
++ extractresourc(): int
+}
+class environ {
+- terrain: string
+- climat: string
++ affectun(): void
+}
+play "1" --> "*" charact
+play "1" --> "*" unit
+play "1" --> "*" mission
+play "1" --> "*" planet
+planet "1" --> "1" environ
+mission "*" --> "*" unit
+mission "*" --> "*" planet
+@enduml

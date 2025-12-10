@@ -1,0 +1,19 @@
+@startuml
+activ adminstopsservic {
+start
+:admin select "stop servic";
+:apache2 servic start to stop;
+:mysql servic start to stop;
+if (apache2 stop) then (ye)
+:apache2 confirm messag display;
+els (no)
+:handl apache2 error;
+endif
+if (mysql stop) then (ye)
+:mysql confirm messag display;
+els (no)
+:handl mysql error;
+endif
+stop
+}
+@enduml

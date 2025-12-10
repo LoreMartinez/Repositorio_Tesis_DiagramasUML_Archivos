@@ -1,0 +1,29 @@
+@startuml
+class robotoper {
++ controlcompon: public
+- usernam: string
+- password: string
++ monitorcompon: public
+- arduinotyp: string
+method startmonitor(): bool
+method stopmonitor(): void
+}
+class arduin {
++ typ: string "-
+}
+class manipul {
++ length: integ "- length of manipul in mm"
++ powerconsumpt: integ "- pow consumpt in ma"
+}
+class motor {
++ rpm: integ "- rpm of motor"
++ voltagedrop: integ "- voltag drop in volt"
+}
+class powersuppli {
++ voltag: integ "- output voltag in volt"
+}
+robotoper "1" -- "*" arduin
+robotoper "1" -- "*" manipul
+robotoper "1" -- "*" motor
+robotoper "1" -- "*" powersuppli
+@enduml

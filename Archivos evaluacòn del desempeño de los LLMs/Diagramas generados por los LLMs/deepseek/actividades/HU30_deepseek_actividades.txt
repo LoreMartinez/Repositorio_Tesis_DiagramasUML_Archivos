@@ -1,0 +1,18 @@
+@startuml
+start
+:set goal;
+:creat account (new user pag);
+:system log in;
+:access modif pag;
+:splash scre and login pag;
+:visual dat use analys tool;
+:analyz dat result;
+:generat hypothes bas on analys;
+:review hypothes outcom;
+if (posit outcom) then
+:proc with test hypothes
+els
+:revis dat collect or goal set
+endif
+(stop);
+@enduml

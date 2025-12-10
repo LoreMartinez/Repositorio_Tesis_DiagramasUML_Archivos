@@ -1,0 +1,23 @@
+@startuml
+class liberabrillianceplussystemus {
++ connecttodevic(): void
++ controldevic(): void
++ readattribut(): attribut[]
++ writeattribut(attribut: attribut[]): void
++ captureandupatesign(): signal[]
++ monitordeviceoper(): void
++ recordhistoricaldat(): void
++ processinform(): void
+}
+class devic {
+}
+class attribut {
+- attributevalu: string
+}
+class signal {
+- signalvalu: string
+}
+liberabrillianceplussystemus --> devic
+liberabrillianceplussystemus --> attribut
+liberabrillianceplussystemus --> signal
+@enduml

@@ -1,0 +1,20 @@
+@startuml
+class websocketserv {
+- connectionmanag: connectionmanag
+}
+class btsus {
+- id: integ
+- usernam: string
+- password: string
+- nam: string
+- email: string
+- createdat: datetim
++ creat()
++ read(id: integ)
++ updat(id: integ, user: btsus)
++ delet(id: integ)
+}
+class connectionmanag {
+- user: set[btsus]
+}
+@enduml

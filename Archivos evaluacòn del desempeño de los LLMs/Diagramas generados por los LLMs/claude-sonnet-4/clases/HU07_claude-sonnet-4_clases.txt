@@ -1,0 +1,40 @@
+@startuml
+class play {
+- player: string
+- nam: string
++ interactwithotherplay(): void
++ viewgraphicalinterfac(): void
++ experiencegameplay(): void
+}
+class charact {
+- character: string
+- nam: string
+- level: int
++ performact(): void
++ updatestatus(): void
+}
+class inputbox {
+- input: string
+- content: string
++ receiveinput(): void
++ processinput(): void
+}
+class gamest {
+- stat: string
+- currentlevel: string
+- gametim: long
++ getcurrentst(): gamest
++ updatest(): void
+}
+class updat {
+- lastupdatetim: long
++ updat(): void
++ isupdaterequir(): bool
+}
+play "1" --> "*" charact
+play "1" --> "*" inputbox
+play "1" --> "1" gamest
+charact --|> updat
+inputbox --|> updat
+gamest --|> updat
+@enduml

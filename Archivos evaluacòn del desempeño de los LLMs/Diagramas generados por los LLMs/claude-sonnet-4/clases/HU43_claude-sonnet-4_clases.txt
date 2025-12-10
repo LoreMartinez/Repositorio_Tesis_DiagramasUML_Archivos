@@ -1,0 +1,29 @@
+@startuml
+class networkapplicationdevelop {
+- nam: string
++ receiverespons(): respons
++ processrespons(respons: respons): void
++ interpretdat(dat: string): void
++ handlepartialrespons(respons: respons): void
+}
+class respons {
+- header: map
+- status: string
+- dat: string
+- iscomplet: bool
+- ischunk: bool
++ gethead(): map
++ getstatus(): string
++ getdat(): string
++ iscomplet(): bool
++ ischunk(): bool
+}
+class serv {
+- address: string
+- port: int
++ sendrespons(): respons
++ sendchunkedrespons(): respons
+}
+networkapplicationdevelop --> respons
+serv --> respons
+@enduml

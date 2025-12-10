@@ -1,0 +1,26 @@
+@startuml
+class project {
+- compon: compon[]
+- group: group[]
+- leas: leas[]
+- account: account[]
+}
+class compon {
+- nam: string
+- typ: string
+}
+class group {
+- nam: string
+}
+class leas {
+- compon: compon
+- account: account
+}
+class account {
+- nam: string
+}
+project "1" -- "*" compon
+project "1" -- "*" group
+project "1" -- "*" leas
+project "1" -- "*" account
+@enduml

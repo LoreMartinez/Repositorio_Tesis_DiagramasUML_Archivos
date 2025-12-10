@@ -1,0 +1,16 @@
+@startuml
+class testdevelop {
+}
+class testimplement {
++ load()
+}
+class testc {
++ run()
+}
+class chapt {
+}
+testdevelop ..> testimplement
+testdevelop ..> testc
+chapt "1" *-- "*" testc
+testc "1" -- "1" testimplement
+@enduml

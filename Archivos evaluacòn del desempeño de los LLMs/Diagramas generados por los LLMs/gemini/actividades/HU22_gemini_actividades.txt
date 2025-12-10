@@ -1,0 +1,40 @@
+@startuml
+start
+:system perform system updat;
+if (updat success?) then (ye)
+:system instal and configur mysql;
+if (mysql instal success?) then (ye)
+:system instal and configur glusterf;
+if (glusterf instal success?) then (ye)
+:system instal and configur apache2;
+if (apache2 instal success?) then (ye)
+:system instal and configur php;
+if (php instal success?) then (ye)
+:system instal and configur web ui cod;
+if (web ui instal success?) then (ye)
+stop
+els (no)
+:system handl error;
+stop
+endif
+els (no)
+:system handl error;
+stop
+endif
+els (no)
+:system handl error;
+stop
+endif
+els (no)
+:system handl error;
+stop
+endif
+els (no)
+:system handl error;
+stop
+endif
+els (no)
+:system handl error;
+stop
+endif
+@enduml

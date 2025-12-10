@@ -1,0 +1,12 @@
+@startuml
+start
+:enter credenti;
+-> login pag
+if (system authent success)
+:updat print status;
+-> dashboard to display printer' status
+els
+:display error messag;
+endif
+stop
+@enduml

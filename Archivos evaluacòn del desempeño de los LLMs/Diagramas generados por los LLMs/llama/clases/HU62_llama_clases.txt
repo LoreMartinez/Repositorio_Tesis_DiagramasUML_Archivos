@@ -1,0 +1,36 @@
+@startuml
+class formallogicsystem {
+- systemnam: string
+}
+class atomicformul {
+- formul: string
+}
+class temporaryformul {
+- formul: string
+}
+class implicationformul {
+- formul: string
+}
+class axiom {
+- axiomvalu: string
+}
+class formulacontain {
++ addaxiom(axiom)
++ removeaxiom(axiom)
+}
+class logicalreasoningengin {
++ createformul(atomicformul)
++ manipulateformul(temporaryformul)
++ queryimpl(implicationformul)
+- evaluatereason(formulacontain)
+}
+class user {
+- usernam: string
+- password: string
++ login(): bool
+}
+formallogicsystem "1" -- "*" logicalreasoningengin
+atomicformul "" -- "*" implicationformul
+logicalreasoningengin ..> formallogicsystem
+user "1" -- "*" formulacontain
+@enduml

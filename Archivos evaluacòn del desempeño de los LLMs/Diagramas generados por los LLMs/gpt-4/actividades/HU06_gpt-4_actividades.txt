@@ -1,0 +1,12 @@
+@startuml
+start
+:system check for avail dat;
+if (dat avail?) then (ye)
+:system read dat;
+:system generat diagram;
+:user visual the inform;
+els (no)
+:End process;
+endif
+stop
+@enduml

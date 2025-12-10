@@ -1,0 +1,28 @@
+@startuml
+class strategygameplay {
++ handleturn(): void
++ planstrategi(): void
++ assignm(): void
++ controlgamedevelop(): void
+}
+class charact {
++ managecharact(): void
+}
+class unit {
++ manageun(): void
+}
+class mission {
++ managemiss(): void
+}
+class planet {
++ manageplanet(): void
+}
+class environ {
++ manageenviron(): void
+}
+strategygameplay --> charact
+strategygameplay --> unit
+strategygameplay --> mission
+strategygameplay --> planet
+strategygameplay --> environ
+@enduml

@@ -1,0 +1,18 @@
+@startuml
+class product {
+- id: integ
++ creat(): void
+}
+class part {
+- nam: string
+- materi: string
++ getcost(): float
+}
+class assembl {
+- part: set<part>
+- quantiti: integ
++ assembl(): void
+}
+product *--|> assembl
+assembl o--* part
+@enduml

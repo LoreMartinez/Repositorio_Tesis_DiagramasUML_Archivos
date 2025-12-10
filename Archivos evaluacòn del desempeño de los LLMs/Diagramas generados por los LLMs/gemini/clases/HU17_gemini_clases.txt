@@ -1,0 +1,31 @@
+@startuml
+class robotoper {
++ controlrobot(): void
++ monitorrobot(): void
+}
+class robot {
++ coordinatemov(): void
++ ensurecorrectoper(): void
+}
+class robotcompon {
+# status: string
++ getstatus(): string
+}
+class arduin {
++ maintaincommun(): void
+}
+class manipul {
+}
+class motor {
+}
+class powersuppli {
+# energylevel: string
++ maintainenergi(): void
+}
+robotoper --> robot
+robot "1" *-- "1..*" robotcompon
+robotcompon <|-- arduin
+robotcompon <|-- manipul
+robotcompon <|-- motor
+robotcompon <|-- powersuppli
+@enduml

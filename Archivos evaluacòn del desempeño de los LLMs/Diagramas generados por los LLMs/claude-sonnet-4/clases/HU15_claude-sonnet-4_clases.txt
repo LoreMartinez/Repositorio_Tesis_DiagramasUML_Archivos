@@ -1,0 +1,48 @@
+@startuml
+class datasystemadministr {
+- usernam: string
+- password: string
++ authent(): bool
++ managecli(): void
++ accesszonet(): void
++ updatezonet(): void
++ loaddat(): void
++ maintaindat(): void
+}
+class configurablecli {
+- client: string
+- configur: string
+- status: string
++ configur(): void
++ getstatus(): string
+}
+class zonet {
+- zon: string
+- dat: string
+- lastupd: dat
++ updat(): void
++ getzonedat(): string
+}
+class datastorag {
+- storagetyp: string
+- capac: long
++ loaddat(): void
++ savedat(): void
++ maintaindat(): void
+}
+class memorystorag {
+- caches: int
++ cach(): void
++ optimizeaccess(): void
+}
+class persistentstorag {
+- locat: string
++ persist(): void
++ backup(): void
+}
+datasystemadministr --> "*" configurablecli
+datasystemadministr --> "*" zonet
+datasystemadministr --> datastorag
+datastorag <|-- memorystorag
+datastorag <|-- persistentstorag
+@enduml

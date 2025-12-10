@@ -1,0 +1,41 @@
+@startuml
+class entitysystem {
+# contain relat entit
+- collect: entityplay "play 1"
++ accesseventf(): void
+}
+class play {
+# play attribut
+- nam: string
+- age: integ
+- gend: string
+- posit: point
+# play method
+method movetoposit(
+point newposit
+): void
+method fight(
+object oppon
+): void
+}
+class charact {
+# charact attribut simil to play
+- nam: string
+- age: integ
+- gend: string
+- posit: point
+# addit method specif to charact
++ attack(): void
+- takedamag(numer damag): void
+}
+class enemi {
+# enemi attribut with gam-specif stat
+- nam: string
+- strength: float
+- spe: float
+# enemi method
+method fle(
+point direct
+): void
+}
+@enduml

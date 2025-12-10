@@ -1,0 +1,19 @@
+@startuml
+class context {
+- strategi: executionstrategi
++ executebehavior(): void
++ setstrategi(strategi: executionstrategi): void
+}
+class executionstrategi {
++ execut(): void
+}
+class concretestrategy {
++ execut(): void
+}
+class concretestrategyb {
++ execut(): void
+}
+context o-- "1" executionstrategi
+concretestrategy --|> executionstrategi
+concretestrategyb --|> executionstrategi
+@enduml

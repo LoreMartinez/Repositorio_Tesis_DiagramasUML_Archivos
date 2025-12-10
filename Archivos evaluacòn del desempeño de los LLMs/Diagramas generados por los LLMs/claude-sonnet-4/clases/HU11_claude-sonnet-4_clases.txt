@@ -1,0 +1,51 @@
+@startuml
+class develop {
+- nam: string
+- id: string
+}
+class control {
+- controller: string
+- status: string
++ manageexecu(): bool
++ handlecommun(): bool
++ processqueri(): string
++ performact(): bool
+}
+class script {
+- script: string
+- content: string
+- status: string
++ execut(): bool
+}
+class protocol {
+- protocol: string
+- nam: string
+- status: string
++ execut(): bool
+}
+class context {
+- context: string
+- inform: string
+- timestamp: dat
++ organiz(): bool
++ makeaccess(): bool
+}
+class queri {
+- query: string
+- content: string
+- timestamp: dat
+}
+class protocolworkflow {
+- workflow: string
+- nam: string
+- status: string
+}
+develop --> control
+control --> script
+control --> protocol
+control --> context
+control --> queri
+context --> protocolworkflow
+script --> protocolworkflow
+protocol --> protocolworkflow
+@enduml

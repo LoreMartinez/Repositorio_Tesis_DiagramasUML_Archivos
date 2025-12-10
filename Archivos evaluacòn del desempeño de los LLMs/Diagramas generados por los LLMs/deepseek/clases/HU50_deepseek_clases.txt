@@ -1,0 +1,16 @@
+@startuml
+class testengineerus {
++ createtest(): void
+- synchronouscommun(): void
+- asynchronouscommun(): void
+}
+class communicationhandl {
+handlesynchronoustransf: (string) void
+handleasynchronoustransf: (string, void) void
+}
+testengineerus *-- communicationhandl
+class devic {
+executecommand(command: string)
+}
+devic *-- communicationhandl
+@enduml

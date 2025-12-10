@@ -1,0 +1,16 @@
+@startuml
+start
+:As a cloud administr, i want to deploy and
+maintain a complet openstack environ
+to provid a robust and scalabl privat cloud platform for the organiz.
+:deploy environ;
+:configur servic;
+:valid secur set;
+if (secur check pass) then (ye)
+:show dashboard;
+els (no)
+:show error;
+endif
+:stop deploy process;
+stop
+@enduml

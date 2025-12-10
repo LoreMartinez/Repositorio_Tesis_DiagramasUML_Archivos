@@ -1,0 +1,16 @@
+@startuml
+class systemus {
+- permissionset: set[string]
+- eventf: list[event]
++ accessent(): list[entiti]
++ viewchronologicaleventf(): list[event]
+}
+abstract class entiti {
+- id: string
++ get(): string
+}
+class docu extend entiti {
+- metadat: map[string, string]
++ getmetadat(): map[string, string]
+}
+@enduml

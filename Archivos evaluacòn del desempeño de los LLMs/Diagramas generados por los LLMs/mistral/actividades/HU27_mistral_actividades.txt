@@ -1,0 +1,9 @@
+@startuml
+user -> "system" : log in
+if ("isloggedin?") then (ye)
+"system" --> "user" : redirect to hom pag
+els (no)
+"system" --> "user" : display error messag
+endif
+"user" --> "system" : log out
+@enduml

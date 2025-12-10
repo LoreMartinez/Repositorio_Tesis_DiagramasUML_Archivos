@@ -1,0 +1,47 @@
+@startuml
+class play {
+- player: string
+- usernam: string
++ updateposit(): void
++ sendinput(): void
+}
+class charact {
+- character: string
+- nam: string
+- posit: posit
+- health: int
++ mov(): void
++ interact(): void
+}
+class posit {
+- x: float
+- y: float
+- z: float
+}
+class inputbox {
+- input: string
+- valu: string
+- timestamp: long
++ captur(): void
++ process(): void
+}
+class gamest {
+- stat: string
+- currenttim: long
+- activecharact: int
++ synchron(): void
++ broadcast(): void
+}
+class updat {
+- updater: int
+- lastupd: long
++ updat(): void
+}
+play "1" --> "1..*" charact
+play "1" --> "*" inputbox
+charact "*" --> "1" posit
+gamest "1" --> "*" charact
+updat <|-- charact
+updat <|-- gamest
+updat <|-- inputbox
+@enduml

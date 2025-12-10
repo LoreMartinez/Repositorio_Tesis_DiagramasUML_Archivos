@@ -1,0 +1,42 @@
+@startuml
+class applicationus {
+- usernam: string
+- email: string
+- profilepictur: string
+- bio: string
++ updateprofil(): bool
++ followus(): bool
++ unfollowus(): bool
+}
+class messag {
+- content: string
+- timestamp: datetim
+- isre: bool
++ send(): bool
++ markasr(): bool
+}
+class twit {
+- content: string
+- timestamp: datetim
+- lik: int
+- retweet: int
++ post(): bool
++ lik(): bool
++ retweet(): bool
+}
+class profil {
+- displaynam: string
+- bio: string
+- joindat: datetim
+- followerscount: int
+- followingcount: int
++ updat(): bool
++ getfollow(): list
++ getfollow(): list
+}
+applicationus "1" -- "1" profil
+applicationus "1" -- "*" messag : send
+applicationus "1" -- "*" messag : receiv
+applicationus "1" -- "*" twit : post
+applicationus "*" -- "*" applicationus : follow
+@enduml

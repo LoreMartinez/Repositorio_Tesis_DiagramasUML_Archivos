@@ -1,0 +1,12 @@
+@startuml
+class protocolautomationsystem {
+- scriptrepositori: repositori
+- protocolrepositori: repositori
+- contextstor: contextstor
+- communicationmanag: communicationmanag
+}
+class control {
+- pas: protocolautomationsystem
+}
+protocolautomationsystem "1" --> control
+@enduml

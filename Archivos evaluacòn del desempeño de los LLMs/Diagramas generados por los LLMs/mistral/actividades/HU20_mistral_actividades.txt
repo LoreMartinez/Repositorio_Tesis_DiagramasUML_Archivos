@@ -1,0 +1,36 @@
+@startuml
+start
+:system check storag status;
+if (storag is ok?) then (ye)
+go to storage_ok;
+els (no)
+:display warn for storag issu;
+:attempt recoveri or shutdown;
+endif
+storage_ok:
+:system check orchestr linkag;
+if (orchestr linkag is ok?) then (ye)
+go to orchestra_ok;
+els (no)
+:display warn for orchestr linkag issu;
+:attempt recoveri or shutdown;
+endif
+orchestra_ok:
+:system check mysql;
+if (mysql is ok?) then (ye)
+go to mysql_ok;
+els (no)
+:display warn for mysql issu;
+:attempt recoveri or shutdown;
+endif
+mysql_ok:
+:system check apach 2;
+if (apach 2 is ok?) then (ye)
+go to apache2_ok;
+els (no)
+:display warn for apach 2 issu;
+:attempt recoveri or shutdown;
+endif
+apache2_ok:
+stop
+@enduml

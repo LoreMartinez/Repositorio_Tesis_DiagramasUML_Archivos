@@ -1,0 +1,35 @@
+@startuml
+class eventorgan {
+}
+class event {
++dat: string
+-produc: string
+-creator: string
+}
+class plan {
+-detail: string
+-task: task []
+-schedul: schedul []
+}
+class task {
++nam: string
++descript: string
+-belongst: plan
+}
+class schedul {
+-task: task []
++starttim: string
++endtim: string
++durat: string
+-respons: string
+}
+class materi {
++id: string
++typ: string
++quantiti: integ
++owner: string
+}
+event "1" -- "*" plan
+plan "--" task
+task "1" *-- materi
+@enduml

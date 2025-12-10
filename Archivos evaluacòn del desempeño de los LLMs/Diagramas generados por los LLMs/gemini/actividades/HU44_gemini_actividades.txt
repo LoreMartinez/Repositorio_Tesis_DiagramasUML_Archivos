@@ -1,0 +1,12 @@
+@startuml
+start
+:user request to access profil;
+:system display profil with user dat and edit option;
+if (user decid to modifi inform?) then (ye)
+:user modif inform;
+:user submit the modif;
+:system sav the updat inform;
+els (no)
+endif
+stop
+@enduml

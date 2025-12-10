@@ -1,0 +1,45 @@
+@startuml
+class strategygameplay {
+- card: set[card]
+- charact: set[charact]
+- resourc: resourc
+- mission: mission*
+- environ: environ
+- planet: planet
+- action: action*
+}
+class card {
+- nam: string
+- descript: string
+- action: action*
+}
+class charact {
+- nam: string
+- typ: string
+- resourc: resourc
+}
+class resourc {
+- amount: int
+}
+class mission {
+- object: string
+- outcom: result
+}
+class environ {
+- terrain: string
+- planet: planet*
+}
+class planet {
+- nam: string
+}
+class action {
+- descript: string
+- result: result
+}
+strategygameplay "1" -- "*" environ
+strategygameplay "1" -- "*" planet
+strategygameplay "1"..> mission
+strategygameplay "1" -- "*" card
+strategygameplay "1" -- "*" charact
+strategygameplay "1" -- "*" resourc
+@enduml

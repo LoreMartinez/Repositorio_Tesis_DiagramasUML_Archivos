@@ -1,0 +1,8 @@
+@startuml
+start
+:enter requir into system;
+:system process requir;
+:system generat develop plan;
+:system generat test plan;
+stop
+@enduml

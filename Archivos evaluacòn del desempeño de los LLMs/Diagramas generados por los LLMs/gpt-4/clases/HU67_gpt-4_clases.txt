@@ -1,0 +1,18 @@
+@startuml
+class visualizationtoolus {
+}
+class element {
++ organiz(): void
++ connect(): void
+}
+class clust {
+}
+class block {
+}
+class path {
+}
+visualizationtoolus "1" -- "*" element
+element  "*" -- "1..*" clust
+element  "*" -- "1..*" block
+element  "*" -- "1..*" path
+@enduml

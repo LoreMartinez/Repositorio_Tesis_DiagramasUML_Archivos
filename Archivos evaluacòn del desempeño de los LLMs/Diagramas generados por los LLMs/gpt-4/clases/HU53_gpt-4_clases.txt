@@ -1,0 +1,36 @@
+@startuml
+class graphicsdevelop {
+}
+class globject {
+- glbuff: string
+- glva: string
++ managebuff(): void
+}
+class gltextur {
++ managetextur(): void
+}
+class glframebuff {
++ manageframebuff(): void
+}
+class glshad {
++ manageshad(): void
+}
+class glshaderprogram {
++ manageshaderprogram(): void
+}
+class scen {
++ renderscen(): void
++ outputresult(): void
+}
+graphicsdevelop --> globject
+graphicsdevelop --> gltextur
+graphicsdevelop --> glframebuff
+graphicsdevelop --> glshad
+graphicsdevelop --> glshaderprogram
+graphicsdevelop --> scen
+globject --|> scen
+gltextur --|> scen
+glframebuff --|> scen
+glshad --|> scen
+glshaderprogram --|> scen
+@enduml

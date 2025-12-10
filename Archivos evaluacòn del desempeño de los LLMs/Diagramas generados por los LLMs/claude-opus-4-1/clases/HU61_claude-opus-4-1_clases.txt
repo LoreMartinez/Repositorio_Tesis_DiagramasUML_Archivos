@@ -1,0 +1,34 @@
+@startuml
+class user {
+- nam: string
+- email: string
++ takeassess(): void
++ submitansw(answer: string): void
+}
+class assess {
+- titl: string
+- descript: string
++ start(): void
++ calculateresult(): result
+}
+class question {
+- text: string
+- point: int
++ display(): void
+}
+class answer {
+- content: string
+- iscorrect: bool
++ evalu(): bool
+}
+class result {
+- scor: int
+- feedback: string
++ display(): void
+}
+user "1" --> "*" assess
+assess "1" *-- "*" question
+question "1" --> "*" answer
+user "1" --> "*" answer
+assess "1" --> "1" result
+@enduml

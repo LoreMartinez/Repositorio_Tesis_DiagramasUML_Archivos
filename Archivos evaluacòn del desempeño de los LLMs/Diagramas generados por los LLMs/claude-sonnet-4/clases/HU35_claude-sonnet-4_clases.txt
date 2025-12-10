@@ -1,0 +1,34 @@
+@startuml
+class messagingserveradministr {
+- admin: string
+- nam: string
++ sendmessag(): bool
++ receivemessag(): bool
++ managecompon(): void
+}
+class structuredmessag {
+- messag: string
+- content: string
+- timestamp: dat
+- messagetyp: string
++ formatmessag(): string
++ validatestructur(): bool
+}
+class systemcompon {
+- component: string
+- componentnam: string
+- status: string
++ processmessag(): bool
++ maintainconnect(): bool
+}
+class communicationservic {
+- servic: string
+- connectionstatus: string
++ establishconnect(): bool
++ maintainrealtimeinteract(): bool
+}
+messagingserveradministr "1" --> "*" structuredmessag
+messagingserveradministr "1" --> "*" systemcompon
+structuredmessag "1" --> "*" systemcompon
+systemcompon "1" --> "1" communicationservic
+@enduml

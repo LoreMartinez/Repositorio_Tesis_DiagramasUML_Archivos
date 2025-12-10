@@ -1,0 +1,14 @@
+@startuml
+start
+:enter command to check ffmpeg avail;
+if (ffmpeg exist) then (ye)
+:instal ffmpeg;
+endif
+:enter command to check celeri avail;
+if (celeri exist) then (ye)
+:set up celeri configur fil;
+endif
+:set environ variabl correct;
+:run test for deploy readi;
+deploy applic
+@enduml

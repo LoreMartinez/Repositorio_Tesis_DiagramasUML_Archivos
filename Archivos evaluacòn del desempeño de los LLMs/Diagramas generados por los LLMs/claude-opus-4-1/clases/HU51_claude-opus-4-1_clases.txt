@@ -1,0 +1,51 @@
+@startuml
+class logg {
+- severitylevel: string
++ logmessag(messag: string, sever: string): void
++ setseveritylevel(level: string): void
++ addoutputtarget(target: outputtarget): void
++ removeoutputtarget(target: outputtarget): void
+}
+class outputtarget {
+- isen: bool
++ writ(messag: string): void
++ enabl(): void
++ disabl(): void
+}
+class filetarget {
+- filepath: string
+- maxfiles: int
++ writ(messag: string): void
++ rotatefil(): void
+}
+class consoletarget {
+- coloren: bool
++ writ(messag: string): void
+}
+class androidtarget {
+- tag: string
++ writ(messag: string): void
+}
+class messageformatt {
+- format: string
++ formatmessag(messag: string, sever: string): string
++ setformat(format: string): void
+}
+class textconvert {
+- encod: string
++ convert(text: string): string
++ setencod(encod: string): void
+}
+class logmessag {
+- content: string
+- sever: string
+- timestamp: dat
+}
+filetarget --|> outputtarget
+consoletarget --|> outputtarget
+androidtarget --|> outputtarget
+logg "1" --> "*" outputtarget
+logg "1" --> "1" messageformatt
+logg "1" --> "1" textconvert
+logg "1" --> "*" logmessag
+@enduml

@@ -1,0 +1,18 @@
+@startuml
+class docu {
+- titl: string
+- creator: string
+- content: string
++ searchindex: string
+- datecr: dat
+- sourc: string
++ addto(collect) : void
+}
+class documentcollect {
++ collect: [docu]
+- totalitem: integ
++ addnew(docu) : void
+}
+docu "1" --|> documentcollect
+documentcollect --|> docu
+@enduml

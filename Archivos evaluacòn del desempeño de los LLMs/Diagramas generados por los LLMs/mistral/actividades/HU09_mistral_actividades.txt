@@ -1,0 +1,19 @@
+@startuml
+start
+:system prepar system;
+:system configur celeryd;
+if (storag mount requir?) then (ye)
+:system perform storag mount;
+els (no)
+skip;
+endif
+:system regist servic;
+:system start the system;
+:system check for error;
+if (error occur?) then (ye)
+:system exit in a control mann;
+els (no)
+:system set platform avail;
+endif
+stop
+@enduml

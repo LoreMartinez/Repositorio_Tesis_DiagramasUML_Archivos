@@ -1,0 +1,14 @@
+@startuml
+class vehicledesign {
+- nam: string
+}
+class propulsionsystem {
+- rearthrust: thrust
+- lateralthrust: thrust
+}
+class thrust {
+- typ: string
+}
+vehicledesign "1" --> propulsionsystem
+propulsionsystem *-- thrust
+@enduml

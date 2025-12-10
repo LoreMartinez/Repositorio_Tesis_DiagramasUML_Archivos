@@ -1,0 +1,17 @@
+@startuml
+class testdevelop {
++ loadtestimplement(): void
++ runtestc(): void
+}
+class testimplement {
+- testnam: string
+- chapt: string
+- cas: string
+}
+class testc {
+- cas: string
+- status: bool
+}
+testdevelop --> testimplement
+testdevelop --> testc
+@enduml

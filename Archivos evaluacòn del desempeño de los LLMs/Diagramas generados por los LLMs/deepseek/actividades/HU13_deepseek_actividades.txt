@@ -1,0 +1,14 @@
+@startuml
+start
+:organiz receiv request;
+:organiz process request;
+:modif pag open;
+:organiz edit dat in modif pag;
+:organiz valid workshop info;
+if (val) then (ye)
+:workshop list updat with val dat;
+els (no)
+:workshop list updat with inval dat;
+endif
+stop
+@enduml

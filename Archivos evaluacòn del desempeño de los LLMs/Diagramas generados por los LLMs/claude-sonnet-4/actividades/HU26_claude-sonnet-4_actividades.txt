@@ -1,0 +1,7 @@
+@startuml
+start
+:user request to access profil;
+:system retriev user dat;
+:system display all user dat clear and complet;
+stop
+@enduml

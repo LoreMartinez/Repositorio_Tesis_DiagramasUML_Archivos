@@ -1,0 +1,21 @@
+@startuml
+start
+:user access profil;
+:system display user dat;
+:system show edit option;
+if (user want to modifi dat?) then (ye)
+:user select edit option;
+:user modif inform;
+:user sav chang;
+:system valid modif;
+if (val dat?) then (ye)
+:system updat profil;
+:system show success messag;
+els (no)
+:system show error messag;
+endif
+els (no)
+:user view inform;
+endif
+stop
+@enduml

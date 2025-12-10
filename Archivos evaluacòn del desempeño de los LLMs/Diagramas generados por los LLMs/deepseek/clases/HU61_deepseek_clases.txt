@@ -1,0 +1,43 @@
+@startuml
+class question {
+- text: string
++ difficulti: integ
+}
+class user {
+- usernam: string
+- password: string
++ takeexam(): result
+}
+class answer {
+- question: integ
+- user: user
+- respons: string
++ checkansw(): bool
+}
+class exam {
+- id: integ
+*-- question
++ result: result
+- nam: string
+- descript: string
+- totalquest: integ
+- difficultylevel: integ
++ takeexam(): result
+}
+class result {
+- user: integ
+- scor: integ
+- questionscount: integ
+- correctansw: integ
+*-- answer
+- statist: arraystatist
++ adduserexam(): void
+}
+# associ betw exam and question:
+question "1" -- "*" exam "#1"
+question "2" -- "*" exam "#1"
+# mani-to-mani associ betw question, answer, and user:
+answer "1" "-->" user "a"
+answer "1" "--->" question "1"
+exam "#1" "mani" -- "*" result
+@enduml

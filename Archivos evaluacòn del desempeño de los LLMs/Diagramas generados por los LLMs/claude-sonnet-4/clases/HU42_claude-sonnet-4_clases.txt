@@ -1,0 +1,42 @@
+@startuml
+class teach {
+- nam: string
+- subject: string
++ generatepdf(): pdf
+}
+class pdf {
+- filenam: string
+- creationd: dat
++ sav(): void
+}
+class question {
+- text: string
+- difficulti: string
++ display(): string
+}
+class vari {
+- content: string
+- iscorrect: bool
+}
+class topic {
+- nam: string
+- descript: string
+}
+class exam {
+- titl: string
+- numberofquest: int
+- creationd: dat
++ organiz(): void
+}
+class student {
+- nam: string
+- student: string
+}
+teach --> pdf
+teach --> exam
+exam "1" --> "*" question
+question "1" --> "*" vari
+question "*" --> "*" topic
+teach --> student
+exam --> student
+@enduml

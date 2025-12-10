@@ -1,0 +1,19 @@
+@startuml
+class play {
++ jointeam()
++ controlrobot()
++ participateinmatch()
+}
+class team {
+}
+class robot {
+}
+class match {
+}
+class gam {
+}
+play "1" -- "1" robot
+team "1" -- "*" play
+match "1" -- "2..*" team
+gam "1" -- "*" match
+@enduml

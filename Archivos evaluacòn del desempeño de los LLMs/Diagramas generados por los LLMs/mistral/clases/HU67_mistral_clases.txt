@@ -1,0 +1,25 @@
+@startuml
+class visualizationtool {
+- element: list<element>
++ organizeel(element: list<element>): void
+}
+abstract class element {
+- nam: string
+}
+class clust extend element {
++ addblock(block: block): void
+}
+class block extend element {
+- compon: list<compon>
+}
+class compon extend element {
+- typ: string
+}
+class path {
+- start: clust
+- end: block
+}
+visualizationtool "1" --|> clust
+clust o-- block
+block *-- compon
+@enduml

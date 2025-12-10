@@ -1,0 +1,24 @@
+@startuml
+start
+:administr initi system startup;
+:system check storag mount status;
+if (storag mount?) then (ye)
+:system start apache2 servic;
+if (apache2 start correct?) then (ye)
+:system start celeryd servic;
+if (celeryd start correct?) then (ye)
+:system confirm all servic run;
+els (no)
+:system report celeryd error;
+:administr receiv error notif;
+endif
+els (no)
+:system report apache2 error;
+:administr receiv error notif;
+endif
+els (no)
+:system report storag mount error;
+:administr receiv error notif;
+endif
+stop
+@enduml

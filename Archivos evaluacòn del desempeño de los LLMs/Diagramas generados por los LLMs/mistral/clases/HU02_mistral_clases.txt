@@ -1,0 +1,9 @@
+@startuml
+class student {
+- flashcard: list<flashcard>
+}
+class flashcard {
+- question: string
+- answer: string
+}
+@enduml

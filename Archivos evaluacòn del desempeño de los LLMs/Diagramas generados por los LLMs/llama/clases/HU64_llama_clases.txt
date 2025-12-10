@@ -1,0 +1,30 @@
+@startuml
+class user {
+- usernam: string
+- password: string
+}
+class particl {
+- id: integ
+- typ: string
+- posit: point
+}
+class mesh {
+- nam: string
+- particl "1" --> "*" particl
+}
+class lattic {
+- nam: string
+- particl "1" --> "*" particl
+}
+class h5cudscontain {
+- nam: string
+- mesh "*" --> "*" mesh
+- lattic "*" --> "*" lattic
+}
+user "1" -- "*" particl
+particl "1" -- "*" mesh
+particl "1" -- "*" lattic
+mesh "1" -- "*" lattic
+mesh *-- h5cudscontain
+lattic *-- h5cudscontain
+@enduml

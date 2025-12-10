@@ -1,0 +1,18 @@
+@startuml
+start
+:user send a request;
+:servlet contain perform secur check;
+if (secur check pass?) then (ye)
+:servlet contain initi the pag;
+if (request typ is get?) then (get)
+:system render the pag;
+els (post)
+:system process the request and redirect or forward;
+endif
+:servlet contain perform pag destruct;
+:system send correct respons to user;
+els (no)
+:system send secur error respons;
+endif
+stop
+@enduml

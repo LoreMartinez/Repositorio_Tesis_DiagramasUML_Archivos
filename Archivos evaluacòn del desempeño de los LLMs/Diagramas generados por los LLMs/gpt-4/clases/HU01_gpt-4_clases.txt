@@ -1,0 +1,22 @@
+@startuml
+class eventorgan {
+}
+class eventpl {
+- task: task[]
+- schedul: schedul
+- materi: materi[]
++ definetask(): void
++ createschedul(): void
++ allocatemateri(): void
+}
+class task {
+}
+class schedul {
+}
+class materi {
+}
+eventorgan --> eventpl
+eventpl *-- task
+eventpl *-- schedul
+eventpl *-- materi
+@enduml

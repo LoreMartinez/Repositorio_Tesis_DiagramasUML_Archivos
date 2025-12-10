@@ -1,0 +1,24 @@
+@startuml
+class play {
++ planstrateg()
++ assignmiss()
++ controlgamedevelop()
+}
+class charact {
+}
+class unit {
+}
+class mission {
+}
+class planet {
+}
+class environ {
+}
+play "1" -- "*" charact
+play "1" -- "*" unit
+play "1" -- "*" mission
+play "1" -- "*" planet
+unit "*" -- "*" mission
+charact "*" -- "*" mission
+planet "1" *-- "1" environ
+@enduml

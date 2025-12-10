@@ -1,0 +1,37 @@
+@startuml
+class systemus {
+- user: string
+- nam: string
++ selectbuild(): void
++ reviewproduct(): product
+}
+class productbuild {
+- builder: string
+- buildernam: string
++ addpart(part: part): void
++ reset(): void
++ getproduct(): product
+}
+class product {
+- product: string
+- productnam: string
+- iscomplet: bool
++ addcompon(part: part): void
++ valid(): bool
+}
+class part {
+- part: string
+- partnam: string
+- isrequir: bool
+}
+class buildmethod {
+- method: string
+- methodnam: string
+- stepord: int
++ execut(build: productbuild): void
+}
+systemus --> productbuild
+productbuild --> product
+product *-- part
+productbuild --> buildmethod
+@enduml

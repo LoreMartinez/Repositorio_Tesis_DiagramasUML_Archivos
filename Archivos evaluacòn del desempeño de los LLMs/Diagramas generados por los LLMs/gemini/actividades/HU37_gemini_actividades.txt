@@ -1,0 +1,22 @@
+@startuml
+start
+:system verif storag is mount;
+if (is storag mount?) then (ye)
+:system start apache2;
+if (did apache2 start correct?) then (ye)
+:system start celeryd;
+if (did celeryd start correct?) then (ye)
+stop
+els (no)
+:system report celeryd failur;
+stop
+endif
+els (no)
+:system report apache2 failur;
+stop
+endif
+els (no)
+:system report storag mount failur;
+stop
+endif
+@enduml

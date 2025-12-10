@@ -1,0 +1,35 @@
+@startuml
+class play {
+- usernam: string
+- email: string
+- level: integ
+- align: string
++ login(): bool
+}
+class charact {
+- hp: integ
+- atk: integ
+- ac: integ
+- sp: integ
+- spr: integ
+-stab: integ
+- currentcompanion: object
+}
+class possess {
++ cost: integ
+- ship: ship
+- companion: companion
+}
+class ship {
+- nam: string
+- cost: integ
+}
+class companion {
+- nam: string
+- gend: string
+}
+play "1" --|> charact
+charact --!* possess
+possess --!* ship
+possess --!* companion
+@enduml

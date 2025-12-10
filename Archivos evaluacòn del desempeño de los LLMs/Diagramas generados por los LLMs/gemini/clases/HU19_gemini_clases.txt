@@ -1,0 +1,15 @@
+@startuml
+class systemus {
+}
+class product {
+}
+class method {
++buildstep(): void
+}
+class part {
+}
+systemus --> product
+systemus --> method
+product "1" *-- "*" part
+method --> part
+@enduml

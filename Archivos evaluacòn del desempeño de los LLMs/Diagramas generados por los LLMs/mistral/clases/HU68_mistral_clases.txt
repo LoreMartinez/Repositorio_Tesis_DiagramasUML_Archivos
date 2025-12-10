@@ -1,0 +1,11 @@
+@startuml
+class dataaccessimplement {
+- connect: connect
+- entiti: entiti
+}
+class entiti {
+- id: integ
+- attribut: map[string, object]
+}
+dataaccessimplement "1" -- "*" entiti
+@enduml

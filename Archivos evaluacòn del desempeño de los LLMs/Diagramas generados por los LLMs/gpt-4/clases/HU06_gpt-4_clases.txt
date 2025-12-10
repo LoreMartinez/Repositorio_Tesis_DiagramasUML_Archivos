@@ -1,0 +1,15 @@
+@startuml
+class clientapplicationdevelop {
+}
+class websocketserv {
++ manageuserrecord(): void
+}
+class btsus {
++ createrecord(): void
++ readrecord(): void
++ updaterecord(): void
++ deleterecord(): void
+}
+clientapplicationdevelop --> websocketserv
+websocketserv --> btsus
+@enduml

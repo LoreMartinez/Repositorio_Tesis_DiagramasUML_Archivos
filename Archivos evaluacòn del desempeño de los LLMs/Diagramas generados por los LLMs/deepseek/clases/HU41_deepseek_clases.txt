@@ -1,0 +1,42 @@
+@startuml
+class testengin {
++ public id: string
+- privat nam: string
++ executeprotocol(querynam: string)
++ scheduletest()
+}
+class scriptmanag {
+- privat loadedscript: dictionari<string, string>
++ loadscript(scriptnam: string, scriptcont: string)
++ saveoutput(outputtext: string)
+}
+class executioncontext {
+- public id: string
+- querynam: string
+- executiond: string
+method getexecutioncontext(): executioncontext {
+return this;
+}
+}
+class testprotocol {
++ public id: string
+- privat version: string
+method {
++ defin(protocol: testprotocol)
+- privat retriev(protocol: testprotocol)
+# protect updat(protocol: testprotocol)
+- delet(protocol: testprotocol)
+@return string from retriev()
+method getresult(): string
+}
+}
+class resulthandl {
+- public result: list<result>
+method {
+void processresult()
+}
+}
+testengin "1" --|> scriptmanag
+testengin "1" "1" -->* testprotocol
+testprotocol "<id>" <-> executioncontext "1"
+@enduml

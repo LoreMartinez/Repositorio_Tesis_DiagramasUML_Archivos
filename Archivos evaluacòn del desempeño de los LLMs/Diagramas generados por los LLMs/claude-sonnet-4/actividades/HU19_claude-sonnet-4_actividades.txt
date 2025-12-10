@@ -1,0 +1,26 @@
+@startuml
+start
+:system administr initi glusterf instal;
+:system automat instal glusterf;
+if (instal success?) then (ye)
+:system configur glusterf serv;
+if (serv configur success?) then (ye)
+:system creat and configur volum;
+if (volum configur success?) then (ye)
+:system expos servic;
+if (servic exposur success?) then (ye)
+:instal process complet success;
+els (no)
+:handl servic exposur error;
+endif
+els (no)
+:handl volum configur error;
+endif
+els (no)
+:handl serv configur error;
+endif
+els (no)
+:handl instal error;
+endif
+stop
+@enduml

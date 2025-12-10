@@ -1,0 +1,18 @@
+@startuml
+class nod {
+- nod: string
+}
+class meshnetworkinterfac {
++ senddat(): void
++ receivedat(): void
+}
+class protocol {
+- nam: string
+}
+class rfphysicallay {
+}
+nod "1" *-- "1" meshnetworkinterfac
+meshnetworkinterfac "1" *-- "1" rfphysicallay
+meshnetworkinterfac --> protocol
+nod "*" -- "*" nod : form mesh
+@enduml

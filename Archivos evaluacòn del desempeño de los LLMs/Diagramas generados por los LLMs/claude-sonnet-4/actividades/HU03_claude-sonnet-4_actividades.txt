@@ -1,0 +1,26 @@
+@startuml
+start
+:cloud administr plan openstack deploy;
+:prepar infrastructur requir;
+:instal openstack compon;
+if (instal success?) then (ye)
+:configur openstack servic;
+:set up network and storag;
+:test platform function;
+if (platform work correct?) then (ye)
+:deploy platform for organiz use;
+:monitor platform perform;
+:perform regul mainten task;
+if (mainten need?) then (ye)
+:appli updat and patch;
+:optim perform;
+els (no)
+endif
+els (no)
+:troubleshoot configur issu;
+endif
+els (no)
+:fix instal problem;
+endif
+stop
+@enduml

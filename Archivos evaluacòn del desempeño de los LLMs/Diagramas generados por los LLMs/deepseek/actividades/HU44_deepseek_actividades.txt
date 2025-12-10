@@ -1,0 +1,10 @@
+@startuml
+start
+:enter credenti;
+if (val?) then (ye)
+:view profil dashboard;
+els (no)
+:show error messag about inval credenti;
+endif
+stop
+@enduml

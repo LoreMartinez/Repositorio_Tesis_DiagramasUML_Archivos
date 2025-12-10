@@ -1,0 +1,27 @@
+@startuml
+class user {
+- usernam: string
+- email: string
++ checkperm(): bool
+}
+class entiti {
+- entity: string
+- nam: string
+- descript: string
++ geteventf(): list<event>
+}
+class event {
+- event: string
+- timestamp: datetim
+- descript: string
+- eventtyp: string
+}
+class permiss {
+- permission: string
+- accesslevel: string
++ validateaccess(): bool
+}
+user "1" -- "*" permiss
+permiss "*" -- "1" entiti
+entiti "1" -- "*" event
+@enduml

@@ -1,0 +1,29 @@
+@startuml
+class formallogicsystemus {
+- user: string
+- createdformul: list<formul>
++ createatomicformul(...): atomicformul
++ createtemporaryformul(...): temporaryformul
++ createimplicationformul(...): implicationformul
++ manageaxiom(): void
+}
+class atomicformul {
+- id: string
+- formul: string
++ manipul(): void
+}
+class temporaryformul {
+- id: string
+- formul: string
++ manipul(): void
+}
+class implicationformul {
+- id: string
+- premis: formul
+- conclus: formul
++ manipul(): void
+}
+formallogicsystemus "1" --> "*" atomicformul
+formallogicsystemus "1" --> "*" temporaryformul
+formallogicsystemus "1" --> "*" implicationformul
+@enduml

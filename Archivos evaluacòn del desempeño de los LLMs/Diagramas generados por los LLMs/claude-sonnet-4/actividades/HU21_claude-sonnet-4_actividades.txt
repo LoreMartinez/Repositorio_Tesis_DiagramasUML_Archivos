@@ -1,0 +1,22 @@
+@startuml
+start
+:system administr initi celeryd launch;
+:system check storag status;
+if (storag ok?) then (ye)
+:system check configur;
+if (configur ok?) then (ye)
+:system check scre status;
+if (scre ok?) then (ye)
+:system launch celeryd;
+:servic start correct;
+els (no)
+:system show scre error;
+endif
+els (no)
+:system show configur error;
+endif
+els (no)
+:system show storag error;
+endif
+stop
+@enduml

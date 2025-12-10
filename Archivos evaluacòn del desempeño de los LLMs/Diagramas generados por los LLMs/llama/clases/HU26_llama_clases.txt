@@ -1,0 +1,34 @@
+@startuml
+class project {
+- nam: string
+- descript: string
+}
+class packag {
+- nam: string
+- content: project[]
+}
+class model {
+- nam: string
+- attribut: attribut[]
+- method: method[]
+}
+class attribut {
+- nam: string
+- typ: typ
+}
+class typ {
+- nam: string
+}
+class method {
+- nam: string
+- returntyp: returntyp
+}
+class orderitem {
+- quantiti: integ
+- pric: float
+}
+orderitem "1" --> "*" product
+product "1" --> orderitem
+product "1" --> "*" custom
+custom "1" --> orderitem
+@enduml

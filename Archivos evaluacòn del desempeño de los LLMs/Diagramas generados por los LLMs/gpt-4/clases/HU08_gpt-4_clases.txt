@@ -1,0 +1,14 @@
+@startuml
+class distributedapplicationdevelop {}
+class synchronizationsystem {
+- specif: string
+- model: string
++ keepobjectsupd(): void
+}
+class sharedobject {
+- objectdat: string
++ updateinrealtim(): void
+}
+distributedapplicationdevelop --> synchronizationsystem : want
+synchronizationsystem "1" *-- "*" sharedobject : maintain consist of
+@enduml

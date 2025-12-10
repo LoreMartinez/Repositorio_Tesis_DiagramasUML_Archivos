@@ -1,0 +1,33 @@
+@startuml
+class play {
+- playernam: string
+- skilllevel: int
++ jointeam(): bool
++ controlrobot(): void
++ participateinmatch(): void
+}
+class team {
+- teamnam: string
+- scor: int
++ addplay(): bool
++ collabor(): void
+}
+class robot {
+- robot: string
+- status: string
++ mov(): void
++ performact(): void
+}
+class match {
+- match: string
+- starttim: string
+- endtim: string
++ startmatch(): void
++ endmatch(): void
++ compet(): void
+}
+play "*" --> "1" team
+play "1" --> "1" robot
+team "*" --> "1" match
+robot "*" --> "1" match
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+start
+:system user log in;
+:system verif user authent;
+:system navig to user profil;
+:system display user dat;
+:system display edit option;
+if (modifi dat?) then (ye)
+:system user cho to modifi dat;
+:system updat user dat;
+els (no)
+:system user view dat;
+endif
+stop
+@enduml

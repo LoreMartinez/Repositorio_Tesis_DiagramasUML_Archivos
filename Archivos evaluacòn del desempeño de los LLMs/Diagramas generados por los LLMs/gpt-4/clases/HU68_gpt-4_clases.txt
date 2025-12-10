@@ -1,0 +1,26 @@
+@startuml
+class systemdevelop {}
+class entiti {
++ stor(): void
++ updat(): void
++ queri(): object
++ delet(): void
+}
+class dao {}
+class jpada {
+- jpastor: string
+- jpaupdat: string
+- jpaqueri: string
+- jpadelet: string
+}
+class xmlda {
+- xmlstor: string
+- xmlupdat: string
+- xmlqueri: string
+- xmldelet: string
+}
+systemdevelop -- entiti
+entiti ..> dao
+jpada --|> dao
+xmlda --|> dao
+@enduml

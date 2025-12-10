@@ -1,0 +1,24 @@
+@startuml
+class student {
+- nam: string
++ practicewithflashcard(): void
++ answerquest(answer: string): bool
+}
+class flashcard {
+- question: string
+- correctansw: string
+- wrongansw: string[]
++ displayquest(): string
++ checkansw(answer: string): bool
+}
+class practicesess {
+- starttim: datetim
+- endtim: datetim
+- scor: int
++ startsess(): void
++ endsess(): void
++ calculatescor(): int
+}
+student "1" --> "*" practicesess
+practicesess "1" --> "*" flashcard
+@enduml

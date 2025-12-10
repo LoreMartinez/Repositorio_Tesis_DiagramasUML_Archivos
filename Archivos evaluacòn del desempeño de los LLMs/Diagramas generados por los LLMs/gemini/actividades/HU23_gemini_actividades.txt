@@ -1,0 +1,13 @@
+@startuml
+start
+:platform user select to edit a comment;
+:platform user modif the comment content;
+:platform user submit the modif;
+if (modif is success?) then (ye)
+:system updat the comment content;
+:system record the modif tim;
+els (no)
+:system handl the error;
+endif
+stop
+@enduml

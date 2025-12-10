@@ -1,0 +1,29 @@
+@startuml
+class student {
+- student: string
+- nam: string
+- email: string
++ enrollincours(cours: cours): bool
++ cancelenrol(enrol: enrol): bool
++ dropenrol(enrol: enrol): bool
++ viewenrol(): list<enrol>
+}
+class cours {
+- cours: string
+- titl: string
+- descript: string
+- capac: int
++ isavail(): bool
+}
+class enrol {
+- enrollment: string
+- enrollmentd: dat
+- status: string
++ cancel(): bool
++ drop(): bool
+}
+student "1" --> "*" enrol
+cours "1" --> "*" enrol
+enrol "*" --> "1" student
+enrol "*" --> "1" cours
+@enduml

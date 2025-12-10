@@ -1,0 +1,13 @@
+@startuml
+start
+:system administr request to launch the servic;
+:system check storag status;
+:system check configur status;
+:system check scre status;
+if (ani issu occur?) then (ye)
+:system show warn or error;
+els (no)
+:system launch celeryd servic;
+endif
+stop
+@enduml

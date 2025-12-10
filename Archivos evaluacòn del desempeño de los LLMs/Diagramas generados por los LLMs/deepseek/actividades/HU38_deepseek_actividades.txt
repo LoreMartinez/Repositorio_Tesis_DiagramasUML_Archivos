@@ -1,0 +1,12 @@
+@startuml
+start
+:delet review;
+if (usernam == "self" || email == "self") then (ye)
+:delet review;
+:wait for confirm;
+:check success (if lasterror != null) then (ye) els (no) endif
+els (no)
+:show error messag;
+endif
+stop
+@enduml

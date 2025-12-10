@@ -1,0 +1,52 @@
+@startuml
+class robotoper {
+- operator: string
+- nam: string
++ controlrobot(): void
++ monitorcompon(): void
+}
+class robot {
+- robot: string
+- status: string
++ oper(): void
++ coordinatemov(): void
+}
+class arduin {
+- board: string
+- firmwarevers: string
+- connectionstatus: string
++ executecommand(): void
++ senddat(): void
+}
+class manipul {
+- manipulator: string
+- posit: string
+- isact: bool
++ mov(): void
++ grip(): void
++ rel(): void
+}
+class motor {
+- motor: string
+- spe: int
+- direct: string
+- isrun: bool
++ start(): void
++ stop(): void
++ changesp(): void
+}
+class powersuppli {
+- voltagelevel: doubl
+- currentlevel: doubl
+- batterylevel: doubl
+- isoptim: bool
++ checkenergystatus(): bool
++ maintainoptimalcondit(): void
+}
+robotoper --> robot
+robot *-- arduin
+robot *-- manipul
+robot *-- motor
+robot *-- powersuppli
+arduin --> motor
+@enduml

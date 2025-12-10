@@ -1,0 +1,26 @@
+@startuml
+class user {
+- usernam: string
++ sendmessag(string messag, string receiv): void
++ sendtweet(string tweet): void
+}
+class docu {
+- produc: string
+- creator: string
+- creationd: string
++ createdocu(): void
+}
+class messag {
+- content: string
+- timestamp: string
+- receiv: user
++ send(): void
+}
+class tweet extend messag {
+- author: user
++ post(): void
+}
+user "1" --|> docu
+messag *-- tweet
+user "1" *-- user "2"
+@enduml

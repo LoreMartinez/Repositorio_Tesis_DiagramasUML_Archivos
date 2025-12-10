@@ -1,0 +1,38 @@
+@startuml
+class student {
+- usernam: string
+}
+class flashcard {
+question: string
+rightansw: string
+wrongansw: [string]
+}
+class question {
+content: string
+}
+class answer {
+content: string
+}
+class rightansw extend answer {
+rightquest: string
+}
+class wrongansw extend answer {
+wrongquest: string
+}
+class creator {
+usernam: string
+}
+class quiz {
+question: [string]
+}
+class session {
+dat: string
+flashcard: [-] flashcard
+}
+class practicesess {
+starttim: string
+endtim: string
+}
+student "1" -- "*" practicesess
+practicesess (practic) -- "-" flashcard
+@enduml

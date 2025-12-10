@@ -1,0 +1,14 @@
+@startuml
+activ workflow {
+particip system
+particip user
+initi(user start process) --> initialization_ph(system initi resourc)
+initialization_ph --> transfer_decis(if initi complet success)
+initialization_ph --> error_handl(if initi fail)
+transfer_decis --> transfer_ph(if ye, system perform oper)
+transfer_ph --> termin(system complet transf oper)
+error_handl --> error_messag(system display error messag to user)
+error_handl --> retri(user retr process initi)
+initialization_ph, transfer_ph, termin, error_messag, retri: rectangl
+}
+@enduml

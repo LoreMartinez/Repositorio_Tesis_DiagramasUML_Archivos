@@ -1,0 +1,28 @@
+@startuml
+class modelingel {
+- nam: string
+}
+class project {
+}
+class packag {
+}
+class model {
+}
+class attribut {
+- typ: string
+}
+class method {
+- returntyp: string
+}
+modelingel <|-- project
+modelingel <|-- packag
+modelingel <|-- model
+modelingel <|-- attribut
+modelingel <|-- method
+project "1" *-- "*" packag
+packag "1" *-- "*" packag
+packag "1" *-- "*" model
+model "1" *-- "*" attribut
+model "1" *-- "*" method
+modelingel ..> modelingel
+@enduml

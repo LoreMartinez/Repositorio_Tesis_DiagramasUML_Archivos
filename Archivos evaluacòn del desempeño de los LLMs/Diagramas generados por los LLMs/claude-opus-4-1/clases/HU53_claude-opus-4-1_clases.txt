@@ -1,0 +1,64 @@
+@startuml
+class graphicsdevelop {
+- nam: string
++ createscen(): void
++ renderscen(): void
+}
+class globject {
+- id: int
+- typ: string
++ bind(): void
++ unbind(): void
+}
+class glbuff {
+- siz: int
+- dat: byt[]
++ loaddat(): void
++ updatedat(): void
+}
+class glva {
+- vertexcount: int
++ bindattribut(): void
++ draw(): void
+}
+class gltextur {
+- width: int
+- height: int
+- format: string
++ loadimag(): void
++ activ(): void
+}
+class glframebuff {
+- width: int
+- height: int
++ attachtextur(): void
++ attachdepthbuff(): void
++ rend(): void
+}
+class glshad {
+- sourcecod: string
+- shadertyp: string
++ compil(): bool
+}
+class glshaderprogram {
+- program: int
++ attachshad(): void
++ link(): bool
++ use(): void
+}
+class scen {
+- nam: string
++ addobject(): void
++ rend(): void
+}
+graphicsdevelop "1" --> "*" globject
+globject <|-- glbuff
+globject <|-- glva
+globject <|-- gltextur
+globject <|-- glframebuff
+glframebuff "1" --> "*" gltextur
+glshaderprogram "1" *-- "2..*" glshad
+scen "1" --> "*" globject
+scen "1" --> "*" glshaderprogram
+graphicsdevelop "1" --> "*" scen
+@enduml

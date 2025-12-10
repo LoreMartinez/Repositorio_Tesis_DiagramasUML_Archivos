@@ -1,0 +1,25 @@
+@startuml
+class usbdevicetestengin {
+- devic: usbdevic
++ executetestsinsynchronousmod(): void
++ executetestsinasynchronousmod(): void
++ simulatedat(): void
++ runprocedur(): void
++ obtainresult(): result
++ safelyclosecommun(): void
+}
+class usbdevic {
+# communicationport: communicationport
+- synchronousmod: bool
+- asynchronousmod: asynchronouscommun
++ simulatedat(): void
++ runprocedur(): procedureresult
+}
+class communicationport {
+- communicationst: communicationst
++ openconnect(): void
++ sendcommand(command: command): void
++ receiverespons(): respons
+}
+communicationport "1" --> usbdevic
+@enduml

@@ -1,0 +1,13 @@
+@startuml
+skinparam fontsiz 12
+start
+:system read csv fil;
+:system valid resel is activ;
+if (resel activ?) then (ye)
+:system check csv content;
+els (no)
+:system send error messag;
+endif
+:system handl kyc typ cas;
+stop
+@enduml

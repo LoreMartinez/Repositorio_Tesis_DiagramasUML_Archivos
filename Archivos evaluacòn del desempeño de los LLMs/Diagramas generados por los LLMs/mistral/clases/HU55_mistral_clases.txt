@@ -1,0 +1,12 @@
+@startuml
+class adapt {
+# client
+- adapte: adapte
+}
+class target {
++ interact()
+}
+class adapte {
+}
+adapt "1" -- "*" target
+@enduml

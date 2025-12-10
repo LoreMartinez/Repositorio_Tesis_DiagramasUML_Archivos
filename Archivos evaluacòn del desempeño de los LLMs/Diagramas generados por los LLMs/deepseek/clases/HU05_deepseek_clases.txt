@@ -1,0 +1,27 @@
+@startuml
+class applic {
++ createnetworkappl(): networkappl
+class networkappl extend applic {
+- handlecli()
+- handleserv()
+method string getlijst van klant() -> array of string
+method string getlijst van server() -> array of string
+}
+interface iapplic {
+method void createappl();
+}
+}
+class client {
++ connecttoserv(string host, string port) throw ioexcept
+}
+class serv {
+- listenport(integ port)
++ acceptcli()
+}
+class networkinterfac {
++ getip() -> string
+}
+@applic "1" --|> @networkappl
+@applic "1" --|> @client
+@applic "1" --|> @serv
+@enduml

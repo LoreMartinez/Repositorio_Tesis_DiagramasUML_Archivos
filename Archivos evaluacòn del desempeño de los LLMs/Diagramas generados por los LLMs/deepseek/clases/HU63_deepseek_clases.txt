@@ -1,0 +1,49 @@
+@startuml
+class messag {
+- id: string
+- typ: string
++ content: string
+}
+class messagebus {
+- messag: collect<messag>
+void send(messag messag)
+: add a messag to messag
+- receiv(sourc: sourc)
+: receiv messag from sourc
+- receiv(sensor: sensor)
+: receiv sensor dat as messag
++ process()
+: process all receiv messag
+}
+class play {
+- usernam: string
+- level: integ
+void send(messag messag)
+: send a messag to the bus
+}
+class sourc {
+- posit: vector2d
++ emit(messag messag)
+: emit a messag bas on current stat
+}
+class sensor {
+- read: float
+void updat()
+: updat sensor dat
+}
+class serv {
+- channel: channel
+void listenon(channel ch, string pattern)
+: listen for messag match the pattern on the channel
++ processmessag(messag messag)
+: process incom gam messag
+}
+play --"send"--> messag
+sourc "--"emit"---> messag
+sensor "--"emit"---> messag
+play "1" --> messagebus
+sourc "1" --> messagebus
+sensor "1" --> messagebus
+serv "!- listen on ch
+messagebus "--"process"---> serv
+@enduml

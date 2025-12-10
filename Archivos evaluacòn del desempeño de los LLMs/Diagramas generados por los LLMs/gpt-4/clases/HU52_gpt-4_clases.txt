@@ -1,0 +1,14 @@
+@startuml
+class collabor {
+}
+class someth {
++ manageresourc()
++ ensureconsist()
+}
+class otherth {
++ manageresourc()
++ ensureconsist()
+}
+collabor --> someth
+collabor --> otherth
+@enduml

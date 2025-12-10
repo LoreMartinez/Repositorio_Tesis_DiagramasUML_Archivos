@@ -1,0 +1,19 @@
+@startuml
+class test {
+- id: string
+- nam: string
+}
+class othertest {
+- id: string
+- nam: string
+}
+class thirdtest {
+- id: string
+- nam: string
+}
+class systemus {
+}
+systemus ..> test : manag
+test --> othertest
+test --> thirdtest
+@enduml

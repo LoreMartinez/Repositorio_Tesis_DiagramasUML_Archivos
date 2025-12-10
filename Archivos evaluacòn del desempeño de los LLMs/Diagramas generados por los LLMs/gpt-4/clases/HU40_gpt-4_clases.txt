@@ -1,0 +1,36 @@
+@startuml
+class parallelcomputingapplicationdevelop {
++ manageplatform(): void
++ managedevic(): void
++ managecontext(): void
++ manageprogram(): void
++ managekernel(): void
++ managememori(): void
++ executeparallelcomput(): void
++ coordinatehardwarememori(): void
+}
+class platform {
+- platform: string
+}
+class devic {
+- devic: string
+}
+class context {
+- context: string
+}
+class program {
+- program: string
+}
+class kernel {
+- kernel: string
+}
+class memori {
+- memory: string
+}
+parallelcomputingapplicationdevelop --> platform
+parallelcomputingapplicationdevelop --> devic
+parallelcomputingapplicationdevelop --> context
+parallelcomputingapplicationdevelop --> program
+parallelcomputingapplicationdevelop --> kernel
+parallelcomputingapplicationdevelop --> memori
+@enduml

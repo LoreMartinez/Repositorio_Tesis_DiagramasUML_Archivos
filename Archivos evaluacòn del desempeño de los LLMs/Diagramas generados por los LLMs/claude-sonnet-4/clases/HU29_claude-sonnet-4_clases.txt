@@ -1,0 +1,33 @@
+@startuml
+class librarysystemus {
+- user: string
+- nam: string
++ registerbook(): bool
++ registerauthor(): bool
++ registerpublish(): bool
++ maintaincatalog(): bool
+}
+class book {
+- isbn: string
+- titl: string
+- publicationy: int
++ getbookdetail(): string
+}
+class author {
+- author: string
+- nam: string
+- biographi: string
++ getauthorinf(): string
+}
+class publish {
+- publisher: string
+- nam: string
+- address: string
++ getpublisherinf(): string
+}
+librarysystemus --> book
+librarysystemus --> author
+librarysystemus --> publish
+author "1..*" -- "*" book
+publish "1" -- "*" book
+@enduml

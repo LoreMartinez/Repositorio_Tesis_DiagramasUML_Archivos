@@ -1,0 +1,8 @@
+@startuml
+start
+:system read xml configur fil;
+:system pars xml dat;
+:system generat boilerpl sourc cod;
+:develop review generat cod;
+stop
+@enduml

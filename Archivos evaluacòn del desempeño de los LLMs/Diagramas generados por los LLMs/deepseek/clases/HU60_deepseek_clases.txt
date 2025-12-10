@@ -1,0 +1,18 @@
+@startuml
+class network {
+- id: string
+- nam: string
+- descript: string
+}
+class nod {
+- id: string
+- typ: string
+- throughput: doubl?
+- latenc: doubl?
+}
+class algorithm {
+- algorithmtyp: string
+}
+network "1" *-- nod
+nod "-"-- algorithm
+@enduml

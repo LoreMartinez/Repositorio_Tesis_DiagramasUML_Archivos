@@ -1,0 +1,22 @@
+@startuml
+start
+:system administr upload csv fil;
+:system identif resel from csv fil;
+if (resel is activ?) then (ye)
+:system valid csv content;
+if (csv content is val?) then (ye)
+:system check kyc typ;
+if (kyc typ requir special handl?) then (ye)
+:system appli kyc-specif process;
+els (no)
+:system appli standard process;
+endif
+:system process card applic;
+els (no)
+:system show csv valid error;
+endif
+els (no)
+:system show resel inact error;
+endif
+stop
+@enduml

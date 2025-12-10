@@ -1,0 +1,25 @@
+@startuml
+class robotoper {
++ controlcompon(): void
++ monitorcompon(): void
+}
+class robot {
+- arduin: arduin
+- manipul: manipul
+- motor: motor
+- powersuppli: powersuppli
+}
+class arduin {
+}
+class manipul {
+}
+class motor {
+}
+class powersuppli {
+}
+robotoper --> robot
+robot *-- arduin
+robot *-- manipul
+robot *-- motor
+robot *-- powersuppli
+@enduml

@@ -1,0 +1,12 @@
+@startuml
+start
+:system administr stop the system;
+:system administr configur the web ui;
+:system administr remount storag;
+if (api configur?) then (ye)
+:system administr regist the api;
+els (no)
+endif
+:system administr start the system;
+stop
+@enduml

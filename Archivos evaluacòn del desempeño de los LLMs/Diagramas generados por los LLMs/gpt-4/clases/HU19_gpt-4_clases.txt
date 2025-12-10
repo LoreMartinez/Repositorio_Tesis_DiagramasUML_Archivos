@@ -1,0 +1,17 @@
+@startuml
+class systemus {
++ buildproduct(): product
+}
+class product {
+- partsinclud: bool
++ addpart(): void
++ iscomplet(): bool
+}
+class method {
+- step: set<string>
++ executestep(): void
++ iscomplet(): bool
+}
+systemus "1" -- "1..*" product
+product "1" -- "1..*" method
+@enduml

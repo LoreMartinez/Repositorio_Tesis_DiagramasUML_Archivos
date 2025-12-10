@@ -1,0 +1,11 @@
+@startuml
+class play {
++ movepiec(piec: piec, to: squar)
+}
+class piec {
+}
+class squar {
+}
+play "1" -- "*" piec
+piec "1" -- "1" squar
+@enduml

@@ -1,0 +1,21 @@
+@startuml
+start
+:analys team memb set goal;
+:analys team memb defin hypothes;
+:analys team memb collect dat;
+fork
+:dat analyst process collect dat;
+:platform user visual process dat;
+end fork
+:dat analyst generat insight;
+:analys team memb review insight;
+if (insight are satisfactori) then (ye)
+stop
+els (no)
+repeat
+:analys team memb refin hypothes;
+go to :collect dat;
+until insight are satisfactori
+end if
+stop
+@enduml

@@ -1,0 +1,20 @@
+@startuml
+class dataprocessingsystem {
+- dataset: list[dataset]
+- oper: map[oper, function]
+- keybasedaggreg: map[string, function]
+}
+class dataset {
+- element: list[element]
+}
+class element {
+- valu: string
+}
+class oper {
+- oper: function
+}
+class keybasedaggreg {
+- key: string
+- aggregationfunct: function
+}
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class bank {
+- nam: string
+- locat: string
+- manag: manag
+}
+class manag {
+- id: integ
+- nam: string
+}
+@enduml

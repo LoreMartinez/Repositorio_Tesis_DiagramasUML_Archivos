@@ -1,0 +1,38 @@
+@startuml
+class airesearch {
+- nam: string
+- researchar: string
++ createneuralnetwork(): neuralnetwork
++ trainneuralnetwork(network: neuralnetwork): void
++ experimentwitharchitectur(): void
+}
+class neuralnetwork {
+- architectur: string
+- stat: string
++ addlay(lay: lay): void
++ train(): void
++ savest(): void
++ restorest(): void
+}
+class lay {
+- layertyp: string
+- paramet: string
++ activ(): void
+}
+class activationfunct {
+- functiontyp: string
+- paramet: string
++ appli(input: doubl): doubl
+}
+class networkst {
+- timestamp: dat
+- configur: string
+- weight: string
++ sav(): void
++ restor(): void
+}
+airesearch "1" --> "*" neuralnetwork
+neuralnetwork "1" *-- "*" lay
+lay "1" --> "1" activationfunct
+neuralnetwork "1" --> "*" networkst
+@enduml

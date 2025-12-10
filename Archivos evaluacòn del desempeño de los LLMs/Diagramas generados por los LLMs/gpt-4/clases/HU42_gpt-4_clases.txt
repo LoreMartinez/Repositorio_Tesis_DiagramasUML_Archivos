@@ -1,0 +1,27 @@
+@startuml
+class teach {
+- numberofquest: int
+- vari: string[]
+- selectedtop: string[]
++ generateexampdf(): pdf
+}
+class exam {
+- question: question[]
+- vari: string[]
+- topic: string[]
++ getpdf(): pdf
+}
+class question {
+- text: string
+- sortnumb: int
++ gettext(): string
++ getsortnumb(): int
+}
+class pdf {
+- content: string
++ getcont(): string
+}
+teach --> exam : generat
+exam --> question : contain
+exam --> pdf : is sav as
+@enduml

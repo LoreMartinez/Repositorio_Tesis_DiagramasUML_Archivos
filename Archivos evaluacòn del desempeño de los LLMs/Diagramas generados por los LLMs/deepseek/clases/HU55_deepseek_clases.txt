@@ -1,0 +1,12 @@
+@startuml
+class adapt {
+- adapte interfac: adapte
+- targetinterfac interfaceb: targetinterfac
++ adapt(): bool
+}
+class adapte {
+- adapt adapt: adapt
++ adapt(): void
+}
+adapt "1" --|> adapte
+@enduml

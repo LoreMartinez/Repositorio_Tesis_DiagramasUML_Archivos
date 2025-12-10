@@ -1,0 +1,25 @@
+@startuml
+class systemus {
++ managetest(): void
+}
+class test {
+- identifi: string
+- nam: string
++ getrelatedtest(): test[]
+}
+class othertest {
+- identifi: string
+- nam: string
++ getrelatedtest(): test[]
+}
+class thirdtest {
+- identifi: string
+- nam: string
++ getrelatedtest(): test[]
+}
+systemus "1" -- "*" test
+systemus "1" -- "*" othertest
+systemus "1" -- "*" thirdtest
+test "1" -- "*" othertest : manag
+test "1" -- "*" thirdtest : manag
+@enduml

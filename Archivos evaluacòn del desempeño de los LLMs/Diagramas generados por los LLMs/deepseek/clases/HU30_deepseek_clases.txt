@@ -1,0 +1,39 @@
+@startuml
+class formcreat {
+- usernam: string
+- password: string
+- savedformslist: [string]
++ currentform: string
++ addel(typ: string, element: ani)
+: void
++ createnestedform(elementtyp: string, parentidform: string)
+: void
++ saveel(element: ani) : void
++ getsavedform() : [string]
+- closeform(currentform: string)
+}
+class textel {
+- text: string
+- label: string
+}
+class inputel {
+- valu: string
+- typ: string
+- nam: string
+}
+class form {
+- element: [(string, ani)]
++ addel(elementtyp: string, element: ani)
+: void
+}
+class nestedform extend form {
+- parentform: string
++ createchildel(element: ani)
+: void
+}
+class savedform {
+- form: [form]
++ saveform(form: form)
++ getsavedformby(id: string) : form?
+}
+@enduml

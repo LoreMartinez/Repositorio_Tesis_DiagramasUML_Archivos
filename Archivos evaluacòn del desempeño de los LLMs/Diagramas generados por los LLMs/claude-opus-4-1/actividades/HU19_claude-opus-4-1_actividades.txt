@@ -1,0 +1,27 @@
+@startuml
+start
+:administr initi glusterf instal;
+:system download glusterf packag;
+if (downl success?) then (ye)
+:system instal glusterf;
+if (instal success?) then (ye)
+:system configur serv;
+:system creat volum;
+:system configur servic exposur;
+if (configur success?) then (ye)
+:system start glusterf servic;
+:administr receiv success confirm;
+els (no)
+:system log configur error;
+:administr receiv error notif;
+endif
+els (no)
+:system log instal error;
+:administr receiv error notif;
+endif
+els (no)
+:system log downl error;
+:administr receiv error notif;
+endif
+stop
+@enduml

@@ -1,0 +1,13 @@
+@startuml
+start
+:run unit test;
+:system automat analyz cod coverag;
+:system valid qualiti threshold;
+:system generat a detail report;
+if (qualiti threshold are met?) then (ye)
+stop
+els (no)
+:develop identif are of the cod that need mor test;
+stop
+endif
+@enduml

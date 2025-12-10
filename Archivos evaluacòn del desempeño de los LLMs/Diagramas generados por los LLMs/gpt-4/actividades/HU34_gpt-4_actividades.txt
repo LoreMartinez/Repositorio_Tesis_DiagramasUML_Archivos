@@ -1,0 +1,13 @@
+@startuml
+start
+:web develop initi request;
+:system check secur;
+:system process control;
+if (is it post/get request?) then (ye)
+:handl post/get request;
+els (no)
+:perform rend, forward, or redirect as need;
+endif
+:system process and display the pag correct;
+stop
+@enduml

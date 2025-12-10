@@ -1,0 +1,17 @@
+@startuml
+start
+:receiv requir docu;
+:system valid requir;
+if (val?) then (ye)
+:creat system design docu;
+:generat wirefram from design docu;
+:develop softwar cod;
+:perform unit test;
+:perform integr test;
+:perform perform test;
+if (all test pass) then (ye)
+:deploy to product;
+endif
+endif
+stop
+@enduml

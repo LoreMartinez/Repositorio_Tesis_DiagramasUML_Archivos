@@ -1,0 +1,45 @@
+@startuml
+class formallogicus {
+- usernam: string
++ createformul(): formul
++ manipulateformul(): bool
++ queryformul(): formul
++ manageaxiom(): bool
+}
+class atomicformul {
+- express: string
+- isval: bool
++ evalu(): bool
+}
+class temporaryformul {
+- express: string
+- timelim: int
+- isval: bool
++ evalu(): bool
++ expir(): void
+}
+class implicationformul {
+- premis: string
+- conclus: string
+- isval: bool
++ evalu(): bool
++ checkimpl(): bool
+}
+class axiom {
+- stat: string
+- isaxiomat: bool
++ valid(): bool
+}
+class contain {
+- containernam: string
++ addformul(): bool
++ removeformul(): bool
++ addaxiom(): bool
++ removeaxiom(): bool
+}
+formallogicus --> contain
+contain "1" *-- "*" atomicformul
+contain "1" *-- "*" temporaryformul
+contain "1" *-- "*" implicationformul
+contain "1" *-- "*" axiom
+@enduml

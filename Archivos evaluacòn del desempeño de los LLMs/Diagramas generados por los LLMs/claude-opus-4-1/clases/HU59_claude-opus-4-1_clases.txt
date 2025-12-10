@@ -1,0 +1,33 @@
+@startuml
+class testdevelop {
+- nam: string
++ loadtestimplement(): void
++ runtestc(): void
++ verifyresult(): bool
+}
+class testimplement {
+- nam: string
+- version: string
++ execut(): void
+}
+class testc {
+- cas: string
+- descript: string
+- expectedresult: string
++ run(): testresult
+}
+class chapt {
+- chapternumb: int
+- titl: string
+}
+class testresult {
+- status: string
+- actualresult: string
+- timestamp: dat
++ issuccess(): bool
+}
+testdevelop "1" --> "*" testimplement
+testimplement "1" --> "*" testc
+testc "1" --> "1" testresult
+chapt "1" --> "*" testc
+@enduml

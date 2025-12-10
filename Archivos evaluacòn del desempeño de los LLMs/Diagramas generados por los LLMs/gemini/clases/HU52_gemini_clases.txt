@@ -1,0 +1,15 @@
+@startuml
+class collabor {
++ manageel(): void
+}
+class element {
+}
+class someth {
+}
+class otherth {
+}
+collabor --> "*" element
+someth --|> element
+otherth --|> element
+someth -- otherth
+@enduml

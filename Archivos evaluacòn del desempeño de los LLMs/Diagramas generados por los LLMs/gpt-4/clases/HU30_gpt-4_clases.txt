@@ -1,0 +1,20 @@
+@startuml
+class formcreationsystemus {
+}
+class form {
+- element: element[]
++ addel(element: element)
++ rend(): string
+}
+class element {
+- typ: string
+}
+class text extend element {
+}
+class input extend element {
+}
+class subform extend element {
+}
+formcreationsystemus "1" -- "*" form : creat
+form "1" -- "*" element : contain
+@enduml

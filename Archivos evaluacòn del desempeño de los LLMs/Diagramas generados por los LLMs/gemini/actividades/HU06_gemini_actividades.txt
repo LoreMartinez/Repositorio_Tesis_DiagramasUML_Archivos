@@ -1,0 +1,9 @@
+@startuml
+start
+if (is ther dat to process?) then (ye)
+:system read avail dat;
+:system automat generat diagram;
+:system display diagram for visual;
+endif
+stop
+@enduml

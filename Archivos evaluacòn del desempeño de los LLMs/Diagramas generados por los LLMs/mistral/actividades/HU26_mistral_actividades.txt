@@ -1,0 +1,13 @@
+@startuml
+start
+:user navig to hom pag;
+:user click on login pag link;
+:user enter credenti;
+if (val?) then (ye)
+:system valid input;
+:user navig to modif pag;
+els (no)
+:system display an error messag;
+endif
+stop
+@enduml

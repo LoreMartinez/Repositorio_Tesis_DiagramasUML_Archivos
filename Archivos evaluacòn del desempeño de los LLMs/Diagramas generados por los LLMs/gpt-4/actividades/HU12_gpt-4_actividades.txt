@@ -1,0 +1,20 @@
+@startuml
+start
+:user submit request;
+if (secur check) then (pass)
+:initi;
+if (request typ is post or get) then (get)
+:rend pag;
+:redirect/forward;
+:destroy pag;
+els (post)
+:rend pag;
+:redirect/forward;
+:destroy pag;
+endif
+els (fail)
+:deni request;
+endif
+:user receiv respons;
+stop
+@enduml

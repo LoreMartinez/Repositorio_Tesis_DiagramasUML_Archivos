@@ -1,0 +1,18 @@
+@startuml
+class networkapplicationdevelop {
+- currentproject: string
+}
+class client {
+- connect: socketconnect
+# senddat(dat: dataobject)
+}
+class serv {
+- connect: socketconnect
+# receivedat(): dataobject
+}
+class socketconnect {
+# socket: socket
+}
+dataobject "1" --> client
+dataobject "1" --> serv
+@enduml

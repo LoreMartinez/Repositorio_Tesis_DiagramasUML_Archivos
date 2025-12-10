@@ -1,0 +1,61 @@
+@startuml
+class usbdevicetestengin {
+- nam: string
+- id: string
++ executetest(): void
++ simulatedat(): void
++ runprocedur(): void
++ obtainresult(): testresult
++ closecommun(): void
+}
+class testexecu {
+- mod: string
+- status: string
+- starttim: datetim
+- endtim: datetim
++ executesynchron(): void
++ executeasynchron(): void
++ getstatus(): string
+}
+class datasimul {
+- simulateddat: string
+- paramet: map
++ generatedat(): string
++ configureparamet(): void
+}
+class testprocedur {
+- nam: string
+- step: list
+- durat: integ
++ execut(): void
++ getstep(): list
+}
+class testresult {
+- resultdat: string
+- timestamp: datetim
+- success: bool
++ getresultdat(): string
++ issuccess(): bool
+}
+class usbdevic {
+- devic: string
+- status: string
+- communicationop: bool
++ opencommun(): void
++ closecommun(): void
++ getstatus(): string
+}
+class devicecommun {
+- connectionstatus: string
+- protocol: string
++ establish(): void
++ clos(): void
++ isact(): bool
+}
+usbdevicetestengin "1" --> "*" testexecu
+testexecu "1" --> "1" datasimul
+testexecu "1" --> "*" testprocedur
+testexecu "1" --> "*" testresult
+usbdevicetestengin "1" --> "1" usbdevic
+usbdevic "1" --> "1" devicecommun
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+start
+:deploy openstack server;
+:set up storag infrastructur;
+:configur network for openstack;
+:test server for stabil;
+:test storag function;
+:test network setup;
+:set up monitor system;
+:implement alert threshold;
+:maintain system post-deploy;
+endif
+stop
+@enduml

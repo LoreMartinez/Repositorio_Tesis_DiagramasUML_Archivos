@@ -1,0 +1,43 @@
+@startuml
+class applicationus {
+- usernam: string
+- user: string
++ createstructur(): hierarchicalstructur
++ modifystructur(): bool
++ viewstructur(): hierarchicalstructur
+}
+class hierarchicalstructur {
+- structur: string
+- nam: string
+- creationd: dat
++ addcompon(): bool
++ removecompon(): bool
++ getcompon(): compon[]
+}
+class compon {
+- component: string
+- nam: string
+- level: int
++ addchild(): bool
++ removechild(): bool
++ getpar(): compon
++ getchildr(): compon[]
+}
+class scene3d {
+- scen: string
+- dimens: string
++ rend(): bool
++ addobject(): bool
+}
+class organizationalchart {
+- chart: string
+- organizationnam: string
++ addposit(): bool
++ updatehierarchi(): bool
+}
+applicationus "1" --> "*" hierarchicalstructur
+hierarchicalstructur "1" *-- "*" compon
+compon "1" --> "*" compon
+hierarchicalstructur <|-- scene3d
+hierarchicalstructur <|-- organizationalchart
+@enduml

@@ -1,0 +1,26 @@
+@startuml
+start
+:administr identif requir depend;
+:administr access serv;
+:administr check current environ;
+if (ffmpeg instal?) then (ye)
+:verifi ffmpeg version;
+els (no)
+:instal ffmpeg;
+endif
+if (celeri instal?) then (ye)
+:verifi celeri version;
+els (no)
+:instal celeri;
+endif
+:administr configur environ variabl;
+:administr test depend;
+if (all depend work?) then (ye)
+:mark environ as readi;
+:docu configur;
+els (no)
+:troubleshoot issu;
+:reconfigur depend;
+endif
+stop
+@enduml

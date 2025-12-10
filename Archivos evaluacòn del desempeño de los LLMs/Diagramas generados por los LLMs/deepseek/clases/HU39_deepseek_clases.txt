@@ -1,0 +1,18 @@
+@startuml
+class play {
+- player: string
+- usernam: string
+}
+class team {
++ player: [play]
+}
+class match {
+- particip: [team]
+- dat: string
+}
+play "1" -- "*" team
+play "1" ..> match
+team "a" "-->" play "1"
+team "a" "..> match
+match "+2" "--*" team "b"
+@enduml

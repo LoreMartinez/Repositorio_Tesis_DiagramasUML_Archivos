@@ -1,0 +1,21 @@
+@startuml
+start
+partit "dat acquisit" {
+if (uplo new dataset?) then (ye)
+:dat analyst upload dataset;
+els (no)
+:dat analyst open dataset;
+endif
+}
+partit "dat process and analys" {
+:execut dat clean process;
+:execut model process;
+:execut segment process;
+:execut eda process;
+}
+partit "report" {
+:generat report;
+:export report for furth use;
+}
+stop
+@enduml

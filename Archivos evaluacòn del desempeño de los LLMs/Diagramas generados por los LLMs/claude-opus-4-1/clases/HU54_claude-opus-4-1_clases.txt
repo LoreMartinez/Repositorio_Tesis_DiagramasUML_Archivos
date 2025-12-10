@@ -1,0 +1,29 @@
+@startuml
+class schooladministr {
+- administrator: string
+- depart: string
++ registerperson(): void
+}
+class person {
+- person: string
+- nam: string
+- email: string
+- phonenumb: string
+- dateofbirth: dat
+- address: string
+}
+class student {
+- studentnumb: string
+- enrollmentd: dat
+- gradelevel: string
+}
+class professor {
+- employeenumb: string
+- hired: dat
+- depart: string
+- special: string
+}
+student --|> person
+professor --|> person
+schooladministr --> person
+@enduml

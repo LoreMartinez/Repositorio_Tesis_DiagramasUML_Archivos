@@ -1,0 +1,31 @@
+@startuml
+class clientappl {
+- application: string
+- serverurl: string
++ connecttoserv(): bool
++ disconnectfromserv(): void
+}
+class websocketserv {
+- serveraddress: string
+- port: int
++ acceptconnect(): void
++ processrequest(): void
+}
+class btsus {
+- user: string
+- usernam: string
+- email: string
+- registrationd: dat
+- status: string
+}
+class useroper {
+- operation: string
+- operationtyp: string
+- timestamp: dat
++ executeoper(): bool
+}
+clientappl --> websocketserv
+websocketserv "1" --> "*" btsus
+websocketserv --> useroper
+useroper --> btsus
+@enduml

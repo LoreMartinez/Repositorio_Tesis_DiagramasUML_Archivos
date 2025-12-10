@@ -1,0 +1,24 @@
+@startuml
+class userofthestringingmachin {
++ interactwithsystem(): void
+}
+class systemcontrol {
+- stringcontrol: string
+- racketcontrol: string
+- powersupplycontrol: string
+- stringingmachinecontrol: string
++ controlstr (): void
++ controlracket (): void
++ controlpowersuppli (): void
++ controlstringingmachin (): void
+}
+class racket {
+- isstring: bool
+}
+class stringingmachin {
++ stringracket(): void
+}
+userofthestringingmachin --> systemcontrol
+systemcontrol --> racket
+systemcontrol --> stringingmachin
+@enduml

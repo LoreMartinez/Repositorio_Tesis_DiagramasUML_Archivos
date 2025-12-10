@@ -1,0 +1,15 @@
+@startuml
+class neuralnetwork {
+- activationfunct: string
+- layer: array
+}
+class compon {
+- stat: stat
+}
+class stat {
++ sav(): void
++ restor(): void
+}
+neuralnetwork "1" *-- compon
+compon o-- stat
+@enduml

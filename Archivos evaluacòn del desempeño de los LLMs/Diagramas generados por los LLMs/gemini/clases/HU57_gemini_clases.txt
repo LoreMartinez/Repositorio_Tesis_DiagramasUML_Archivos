@@ -1,0 +1,23 @@
+@startuml
+class projectmanag {
+}
+class project {
++ managemembership()
+}
+class compon {
+}
+class group {
+}
+class leas {
+}
+class account {
+}
+projectmanag -- "*" project
+project "*" *-- "1" compon
+project "*" *-- "1" group
+project "*" *-- "1" leas
+project "*" *-- "1" account
+account "1" -- "*" compon
+leas "1" -- "1" compon
+group o-- "*" group
+@enduml

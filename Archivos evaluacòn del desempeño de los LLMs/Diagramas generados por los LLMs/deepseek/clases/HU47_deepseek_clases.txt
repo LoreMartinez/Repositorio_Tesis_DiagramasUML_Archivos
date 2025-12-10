@@ -1,0 +1,28 @@
+@startuml
+class strategi {
+- nam: string
++ execut(): ani
+- descript: string
+}
+class applic {
+- id: string
+- nam: string
+- strateg: [strategi]
+# repositori provid access to strategi collect and allow add/remov strateg
+*- repositori: strategyrepositorylink
+# use by strateg when execut action
+*- actiondetail: actiondetail
+}
+class strategyrepositorylink {
++ repositori: repositori
+- strategi: strategi
+}
+class repositorystrategylink {
++ repositori: repositori
++ strategi: strategi
+}
+class applicationstrategylink {
++ applic: applic
++ strategi: strategi
+}
+@enduml

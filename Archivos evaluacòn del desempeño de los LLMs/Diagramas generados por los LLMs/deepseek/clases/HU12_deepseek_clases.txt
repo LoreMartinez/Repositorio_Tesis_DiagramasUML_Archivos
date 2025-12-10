@@ -1,0 +1,16 @@
+@startuml
+class applicationus {
++ createhierarchicalstructur(): void
+- viewhierarchicalstructur()
+}
+class hierarchicalstructur {
++ createapplicationuseraccess() : applicationus
+}
+class threedscen extend hierarchicalstructur {
+}
+class organizationalchart extend hierarchicalstructur {
+}
+applicationus "1" -- "*" hierarchicalstructur
+applicationus "2" -- "*" organizationalchart
+applicationus "3" -- "*" threedscen
+@enduml

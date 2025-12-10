@@ -1,0 +1,27 @@
+@startuml
+class collabor {
+- nam: string
+- id: string
++ interactwithel(): void
++ ensureconsist(): bool
+}
+class someth {
+- identifi: string
+- status: string
++ updat(): void
+}
+class otherth {
+- identifi: string
+- status: string
++ updat(): void
+}
+class resourc {
+- resourc: string
+- typ: string
++ synchron(): void
+}
+collabor "1" --> "*" someth
+collabor "1" --> "*" otherth
+someth --|> resourc
+otherth --|> resourc
+@enduml

@@ -1,0 +1,18 @@
+@startuml
+class user {
+- id: string # uniqu identifi for each user
+- nam: string
+- email: string
+- creationd: dat
++ registr(typ: string,入学年级: string, grad: string, instructor: string): void
+}
+class student extend user {
+- grad: integ
+}
+class professor extend user {
+- rank: string
+- depart: string
+}
+user *-- student
+user *-- professor
+@enduml

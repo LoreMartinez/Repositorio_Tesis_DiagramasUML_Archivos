@@ -1,0 +1,20 @@
+@startuml
+class platform {
+}
+class devic {
+}
+class context {
+}
+class program {
+}
+class kernel {
++ executecomput(): void
+}
+class memori {
+}
+platform "1" *-- "1..*" devic
+context "1" o-- "1..*" devic
+context "1" *-- "*" program
+context "1" *-- "*" memori
+program "1" *-- "1..*" kernel
+@enduml

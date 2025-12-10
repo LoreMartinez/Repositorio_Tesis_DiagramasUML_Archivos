@@ -1,0 +1,35 @@
+@startuml
+class cashi {
+- nam: string
+- employe: string
++ recordpurch(): void
++ repeatpurch(): void
+}
+class cashmanag {
+- nam: string
+- manager: string
++ recordpurch(): void
++ repeatpurch(): void
++ managecashflow(): void
+}
+class purch {
+- purchas: string
+- dat: dat
+- totalamount: doubl
+- item: string
++ getpurchasedetail(): string
+}
+class cashregist {
+- register: string
+- currentbal: doubl
+- transactionhistori: string
++ updatebal(): void
++ recordtransact(): void
++ getbal(): doubl
+}
+cashi --> purch
+cashmanag --> purch
+purch --> cashregist
+cashi --> cashregist
+cashmanag --> cashregist
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+class clientappl {
++ createus(): void
++ readus(): void
++ updateus(): void
++ deleteus(): void
+}
+class btsus {
+}
+clientappl ..> btsus
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+start
+|
+:fork
+:stop servic scre;
+|-> if (stop fail?) then (ye) :log error: servic scre shutdown fail; els continu ;endif
+|-> :stop servic apach 2;
+|-> if (stop fail?) then (ye) :log error: servic apach 2 shutdown fail; els continu ;endif
+|
+stop
+@enduml

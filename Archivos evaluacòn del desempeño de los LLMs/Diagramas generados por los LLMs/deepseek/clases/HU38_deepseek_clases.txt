@@ -1,0 +1,50 @@
+@startuml
+class play {
+- usernam: string
+- strategypoint: integ
++ submitgam(): void
++ manageattribut(): void
+}
+class charact {
+- nam: string
+- class: string  # e.g., swordsm, rog
+- level: integ
+- experi: integ
+- balanc: float
++ gainexperi(): void
++ updatebal(): void
+}
+class unit {
+- attackpow: integ
+- health: integ
++ dealdamag(amount: integ): void
++ heal(amount: integ): void
+}
+class mission {
+- mission: string
+- descript: string
+- difficulti: string
+- completionstatus: bool
++ createmiss(): void
++ assigntoplay(user: string): void
+}
+class planet {
+- planet: string
+- locat: string  # e.g., sector a, deep spac cor
+- resourc: record<string, integ> = { food: ..., wat: ... }
++ scanresourc(): void
+* generatecont(): void  # to creat new environ
+}
+class environ {
+- environment: string
+- nam: string
+- typ: string  # e.g., desert, forest
+- featur: list<string>
++ generatecont(): void
+}
+play "1" -->* charact
+play "1" -->* unit
+charact "1" -->* mission
+mission "1" -->* planet
+planet "1" -->* environ
+@enduml

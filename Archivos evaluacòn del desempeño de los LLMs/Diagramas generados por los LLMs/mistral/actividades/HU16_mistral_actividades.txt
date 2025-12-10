@@ -1,0 +1,8 @@
+@startuml
+start
+:system request print status;
+:system retriev dat from datab;
+:system updat print status;
+:system display updat status on scre;
+stop
+@enduml

@@ -1,0 +1,28 @@
+@startuml
+class formallogicsystemus {
+- usernam: string
++ createformul(): formul
++ manipulateformul(): formul
++ queryformul(): formul
++ manageaxiom(): axiom
+}
+class formul {
+- atom: bool
+- temporari: bool
+- implic: bool
+}
+class axiom {
+- principl: string
+}
+class contain {
+- formul: list<formul>
+- axiom: list<axiom>
++ addformul(formul: formul): void
++ addaxiom(axiom: axiom): void
+}
+formallogicsystemus --> formul
+formallogicsystemus --> axiom
+formallogicsystemus --> contain
+contain o-- formul
+contain o-- axiom
+@enduml

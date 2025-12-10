@@ -1,0 +1,39 @@
+@startuml
+class group {
+- member: [person]
++ createproject(): project
+}
+class project {
+- nam: string
+- creator: person
+- solut: [solut]
+- fix: [fix]
+- object: #object
+- dat: string
+method solveproblem(): void
+}
+class solut {
+- nam: string
+- method: string
+- project: project
+}
+class fix {
+- fix: person
+- solut: solut
+- descript: string
+- status: string  # e.g., "ongo", "complet"
+method resolveissu(): void
+}
+class object {
+- nam: string
+- deadlin: dat
+}
+group "1" -- "*" project
+project "-->" solut
+solut "--*" fix
+fix "--> discuss, updat
+group "1" "--" * project "1"
+project "1" "-->" solut "a"
+solut "a" "--* fix "f1"
+fix "f1" "->" resolv vi discuss
+@enduml

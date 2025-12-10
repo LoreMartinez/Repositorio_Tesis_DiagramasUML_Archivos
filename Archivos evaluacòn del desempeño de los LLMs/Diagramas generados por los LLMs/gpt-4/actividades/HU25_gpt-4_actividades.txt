@@ -1,0 +1,19 @@
+@startuml
+start
+:system read avail dat;
+if (ther is remain dat) then (ye)
+:system generat diagram;
+els (no)
+stop
+endif
+:system visual dat graphic;
+repeat
+:system read next batch of dat;
+if (ther is remain dat) then (ye)
+:system generat diagram;
+:system visual dat graphic;
+els (no)
+stop
+endif
+repeat whil (ther is remain dat)
+@enduml

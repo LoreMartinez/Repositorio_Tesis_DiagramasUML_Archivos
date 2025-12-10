@@ -1,0 +1,10 @@
+@startuml
+start
+:enter credenti;
+if (val?) then (ye)
+:display profil dat;
+els (no)
+:show error;
+endif
+stop
+@enduml

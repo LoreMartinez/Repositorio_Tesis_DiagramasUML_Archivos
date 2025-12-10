@@ -1,0 +1,20 @@
+@startuml
+class eachsometh {
+- id: string
+- descript: string
++ view(): void
++ edit(): void
++ sav(): void
+}
+class otherth {
+- id: string
+- typ: string
+- resourcecount: integ
++ addresourc(otherth): void
++ removeresourc(otherth, string): void
++ createassoci(someth, string): void
++ updateassoci(someth, string): void
++ deleteassoci(someth): void
+}
+eachsometh "1" -- "*" otherth
+@enduml

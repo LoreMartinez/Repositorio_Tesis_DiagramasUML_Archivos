@@ -1,0 +1,22 @@
+@startuml
+class clust {
+- nam: string
+}
+class block {
+- nam: string
+}
+class path {
+- fromclust: clust
+- toblock: block
+}
+class diagramgener {
++ generatediagram(): void
+}
+class user {
+- usernam: string
+- password: string
++ login(): bool
+}
+user "1" -- "*" diagramgener
+user "1" -->* path
+@enduml

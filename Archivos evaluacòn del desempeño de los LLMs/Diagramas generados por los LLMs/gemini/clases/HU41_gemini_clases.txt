@@ -1,0 +1,25 @@
+@startuml
+class testengin {
+}
+class testprotocol {
+- nam: string
++ execut(): executioncontext
++ manag(): void
+}
+class script {
+- nam: string
++ execut(): void
+}
+class executioncontext {
+- status: string
++ processqueri(): testresult
+}
+class testresult {
+- detail: string
+}
+testengin --> testprotocol
+testengin --> executioncontext
+testprotocol "1" *-- "*" script
+testprotocol "1" --> "*" executioncontext
+executioncontext "1" --> "*" testresult
+@enduml

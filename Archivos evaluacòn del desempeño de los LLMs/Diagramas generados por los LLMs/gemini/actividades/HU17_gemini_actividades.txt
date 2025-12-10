@@ -1,0 +1,10 @@
+@startuml
+start
+:complet requir phas;
+:complet design phas;
+:complet develop phas;
+:complet test phas;
+:complet verif phas;
+:complet oper phas;
+stop
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+class applicationus {
+- textcont: string
+}
+class borderstyl {
+- styl: string
+}
+class displayset {
++ showbord(): bool
+}
+applicationus "1" -- "*" displayset
+displayset o--> borderstyl
+borderstyl --> applicationus
+applicationus "1" --> "*" displayset
+@enduml

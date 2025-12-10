@@ -1,0 +1,70 @@
+@startuml
+class parallelcomputingapplicationdevelop {
+- nam: string
+- developer: string
++ manageplatform(): void
++ managedevic(): void
++ managecontext(): void
++ manageprogram(): void
++ managekernel(): void
++ managememori(): void
++ executecomput(): void
++ coordinateresourc(): void
+}
+class platform {
+- platform: string
+- nam: string
+- vendor: string
++ initi(): bool
++ getdevic(): devic[]
+}
+class devic {
+- devic: string
+- nam: string
+- typ: string
+- computeunit: int
++ isavail(): bool
++ getmemoryinf(): memori
+}
+class context {
+- context: string
+- propert: string
++ creat(): bool
++ rel(): void
+}
+class program {
+- program: string
+- sourcecod: string
+- buildstatus: string
++ build(): bool
++ createkernel(): kernel[]
+}
+class kernel {
+- kernel: string
+- nam: string
+- argument: string
++ setargu(): void
++ execut(): bool
+}
+class memori {
+- memory: string
+- siz: long
+- typ: string
+- alloc: bool
++ alloc(): bool
++ dealloc(): void
++ read(): byt[]
++ writ(): bool
+}
+parallelcomputingapplicationdevelop --> platform
+parallelcomputingapplicationdevelop --> devic
+parallelcomputingapplicationdevelop --> context
+parallelcomputingapplicationdevelop --> program
+parallelcomputingapplicationdevelop --> kernel
+parallelcomputingapplicationdevelop --> memori
+platform "1" --> "*" devic
+context --> devic
+program "1" --> "*" kernel
+devic --> memori
+kernel --> memori
+@enduml

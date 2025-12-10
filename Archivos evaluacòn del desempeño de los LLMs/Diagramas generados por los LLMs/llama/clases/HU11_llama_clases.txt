@@ -1,0 +1,17 @@
+@startuml
+class protocolautomationsystem {
+- script: list<script>
+}
+class script {
+- protocol: integ
+}
+class context {
+- script: integ
+}
+class control {
++ managescript(): void
++ handlecontext(): void
+}
+control ..> script
+control ..> context
+@enduml

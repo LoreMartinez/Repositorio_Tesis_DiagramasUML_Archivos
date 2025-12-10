@@ -1,0 +1,17 @@
+@startuml
+start
+:receiv request;
+:check secur;
+:process control;
+:handl post/get request;
+if (rend is requir?) then (ye)
+:rend pag;
+els (no)
+if (forward is requir?) then (ye)
+:forward request;
+els (no)
+:redirect request;
+endif
+endif
+stop
+@enduml

@@ -1,0 +1,19 @@
+@startuml
+class play {
++ jointeam(): void
++ controlrobot(): void
++ participateinmatch(): void
+}
+class team {
+# member: play
+}
+class robot {
+- operationalstatus: bool
+}
+class match {
+- particip: play
+}
+play -- team
+play --> robot
+play --> match
+@enduml

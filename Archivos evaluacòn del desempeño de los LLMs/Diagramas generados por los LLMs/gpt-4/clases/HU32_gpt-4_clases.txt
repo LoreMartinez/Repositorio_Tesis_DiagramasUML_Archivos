@@ -1,0 +1,18 @@
+@startuml
+class electricvehiclechargingstationmanag {
++ registerloc(): void
++ associatestationtoloc(): void
+}
+class chargingloc {
+- location: string
+}
+class chargingst {
+- station: string
+}
+class connector {
+- connector: string
+}
+electricvehiclechargingstationmanag --> chargingloc
+chargingloc "1" -- "*" chargingst
+chargingst "1" -- "*" connector
+@enduml

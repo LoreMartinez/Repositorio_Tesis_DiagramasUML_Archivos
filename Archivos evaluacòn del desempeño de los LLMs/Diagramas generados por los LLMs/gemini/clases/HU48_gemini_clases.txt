@@ -1,0 +1,19 @@
+@startuml
+class vehicl {
++ mov(direct: string): void
+}
+class propulsionsystem {
++ controlmov(direct: string): void
+}
+class thrust {
++ activ(): void
+}
+class rearthrust {
+}
+class lateralthrust {
+}
+vehicl "1" *-- "1" propulsionsystem
+propulsionsystem "1" *-- "*" thrust
+rearthrust --|> thrust
+lateralthrust --|> thrust
+@enduml

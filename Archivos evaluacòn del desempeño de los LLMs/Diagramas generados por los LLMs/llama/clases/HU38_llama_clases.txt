@@ -1,0 +1,33 @@
+@startuml
+class charact {
+- id: integ
+- nam: string
+}
+class unit {
+- id: integ
+- typ: string
+}
+class mission {
+- id: integ
+- descript: string
+}
+class planet {
+- id: integ
+- nam: string
+}
+class environ {
+- id: integ
+- descript: string
+}
+class gam {
+- id: integ
+- currentturn: charact
+}
+charact "1" -- "*" unit
+unit "1" -> "*" mission
+mission "1" --> planet
+planet "1" o-- environ
+environ "1" --> gam
+gam <<+>> planet
+planet <-* "1" environ
+@enduml

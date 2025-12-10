@@ -1,0 +1,13 @@
+@startuml
+start
+:system_checks_storag;
+if (storage_mount?) then (ye)
+:apache2_start;
+:celeryd_start;
+:errors_handl;
+:services_run;
+els (no)
+:error_report;
+endif
+stop
+@enduml

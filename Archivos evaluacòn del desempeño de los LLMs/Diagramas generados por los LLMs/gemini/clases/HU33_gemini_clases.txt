@@ -1,0 +1,35 @@
+@startuml
+class strategygameplay {
++ managecard()
++ manageunit()
++ manageresourc()
++ assignmiss()
++ planstrategi()
++ evaluatemissionoutcom()
+}
+class card {
+- typ: string
++ performact()
+}
+class unit {
+- typ: string
++ performact()
+}
+class resourc {
+- typ: string
+- amount: int
+}
+class mission {
+- object: string
+- outcom: string
+}
+class environ {
+- nam: string
+}
+strategygameplay "1" *-- "*" card
+strategygameplay "1" *-- "*" unit
+strategygameplay "1" *-- "*" resourc
+strategygameplay "1" --> "*" mission
+mission "*" -- "1" environ
+unit "*" -- "*" mission
+@enduml

@@ -1,0 +1,9 @@
+@startuml
+start
+:administr select guest;
+:system retriev open reserv for select guest;
+:system calcul total pric per guest;
+:system calcul overal total pric;
+:system display reserv cost summari;
+stop
+@enduml

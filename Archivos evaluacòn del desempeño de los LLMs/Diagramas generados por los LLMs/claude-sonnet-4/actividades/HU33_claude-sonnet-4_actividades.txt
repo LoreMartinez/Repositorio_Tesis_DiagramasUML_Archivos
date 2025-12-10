@@ -1,0 +1,12 @@
+@startuml
+start
+:dat analyst upload or open dataset;
+:execut dat clean process;
+:execut model process;
+:execut segment process;
+:execut eda process;
+:execut report gener process;
+:obtain use insight and complet report;
+:export report for furth use;
+stop
+@enduml

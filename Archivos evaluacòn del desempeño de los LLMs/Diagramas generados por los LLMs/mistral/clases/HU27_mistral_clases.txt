@@ -1,0 +1,13 @@
+@startuml
+class cashregist {
+- cashbal: float
+- transact: list[purch]
++ recordpurch(purch: purch): void
++ updatecashbal(): void
+}
+class cashi {
+- currentpurch: purch
++ selectpreviouspurch(index: integ): void
+}
+cashregist "1" --> "*" cashi
+@enduml

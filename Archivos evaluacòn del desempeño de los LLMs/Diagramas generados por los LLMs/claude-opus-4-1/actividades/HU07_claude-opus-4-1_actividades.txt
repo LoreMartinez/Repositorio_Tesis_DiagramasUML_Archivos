@@ -1,0 +1,19 @@
+@startuml
+start
+:develop prepar xml configur fil;
+:develop initi cod gener process;
+:system read xml configur fil;
+if (xml fil val?) then (ye)
+:system pars xml structur;
+:system identif applic compon;
+:system generat boilerpl sourc cod;
+:system creat applic structur fil;
+:system organiz generat cod in project director;
+:develop receiv generat cod;
+:develop review generat structur;
+els (no)
+:system display xml valid error;
+:develop correct xml configur;
+endif
+stop
+@enduml

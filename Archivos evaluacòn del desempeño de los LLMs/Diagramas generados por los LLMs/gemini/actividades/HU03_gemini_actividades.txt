@@ -1,0 +1,6 @@
+@startuml
+start
+:deploy complet openstack environ;
+:maintain the environ;
+stop
+@enduml

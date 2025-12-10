@@ -1,0 +1,10 @@
+@startuml
+start
+:check if graphviz is instal;
+if (tru?) then
+:process all diagram;
+els
+:process sequenc and activ diagram;
+endif
+stop
+@enduml

@@ -1,0 +1,28 @@
+@startuml
+class configurationfil {
+- produc: string
+- creator: string
+- creationd: datetim
+- sourc: string
+- file_path: string
+- total_pag: int
+- format: string
+- titl: string
+- author: string
+- subject: string
+- keyword: string
+- moddat: datetim
+- trap: bool
+- encrypt: string
+- moddat: datetim
+- creationd: datetim
+- pag: int
++ load(): configurationdat
++ processstat(): configurationdat
++ export(): void
+}
+class configurationdat {
+- configur: map[string, string]
++ getconfigur(): map[string, string]
+}
+@enduml

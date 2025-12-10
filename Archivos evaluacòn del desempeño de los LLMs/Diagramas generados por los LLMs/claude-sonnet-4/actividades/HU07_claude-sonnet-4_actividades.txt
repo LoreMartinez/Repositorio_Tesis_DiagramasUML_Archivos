@@ -1,0 +1,14 @@
+@startuml
+start
+:develop provid xml configur fil;
+:system read xml configur fil;
+if (xml fil val?) then (ye)
+:system pars configur structur;
+:system generat boilerpl sourc cod;
+:system creat applic structur fil;
+:develop receiv generat cod;
+els (no)
+:system show valid error;
+endif
+stop
+@enduml

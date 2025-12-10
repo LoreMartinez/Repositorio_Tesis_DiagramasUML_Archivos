@@ -1,0 +1,15 @@
+@startuml
+start
+:user log in;
+-> user navig to comment edit pag;
+-> user enter edit mod;
+-> user edit comment content;
+-> system record modif tim;
+-> :subm chang%;
+if (submiss fail) then
+:display error messag%;
+els
+:log user out%;
+endif
+stop
+@enduml

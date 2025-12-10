@@ -1,0 +1,56 @@
+@startuml
+class vehiclemonitoringus {
+- user: string
+- nam: string
++ sendtelemetrydat(): void
++ receivetelemetrydat(): void
++ sendcommand(): void
++ receivegpssign(): void
++ processultrasonicdat(): void
+}
+class vehicl {
+- vehicl: string
+- model: string
+- licensepl: string
++ getstatus(): string
++ updateposit(): void
+}
+class telemetrydat {
+- dat: string
+- timestamp: dat
+- spe: doubl
+- enginetemperatur: doubl
+- fuellevel: doubl
++ valid(): bool
+}
+class command {
+- command: string
+- typ: string
+- timestamp: dat
+- paramet: string
++ execut(): void
+}
+class gpssignal {
+- signal: string
+- latitud: doubl
+- longitud: doubl
+- altitud: doubl
+- timestamp: dat
++ getloc(): string
+}
+class ultrasonicdat {
+- dat: string
+- distanc: doubl
+- timestamp: dat
+- sensor: string
++ calculateproxim(): doubl
+}
+vehiclemonitoringus "1" --> "*" telemetrydat
+vehiclemonitoringus "1" --> "*" command
+vehiclemonitoringus "1" --> "*" gpssignal
+vehiclemonitoringus "1" --> "*" ultrasonicdat
+vehicl "1" --> "*" telemetrydat
+vehicl "1" --> "*" gpssignal
+vehicl "1" --> "*" ultrasonicdat
+vehicl "1" --> "*" command
+@enduml

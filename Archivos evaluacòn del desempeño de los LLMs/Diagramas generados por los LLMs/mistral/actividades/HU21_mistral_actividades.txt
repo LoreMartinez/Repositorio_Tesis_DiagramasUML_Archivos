@@ -1,0 +1,12 @@
+@startuml
+start
+:system check storag;
+:system check configur;
+:system check scre status;
+if (all check?) then (ye)
+:launch celeryd;
+els (no)
+:show warn or error;
+endif
+stop
+@enduml

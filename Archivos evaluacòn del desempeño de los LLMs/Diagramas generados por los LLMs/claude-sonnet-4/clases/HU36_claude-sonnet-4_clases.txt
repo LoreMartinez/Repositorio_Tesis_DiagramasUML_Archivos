@@ -1,0 +1,19 @@
+@startuml
+class play {
+- nam: string
++ rolldic(): int
++ participateingam(): void
++ determineresult(): int
+}
+class dic {
+- sid: int
++ roll(): int
+}
+class gam {
+- currentturn: int
++ startturn(): void
++ continueplay(): bool
+}
+play "1" --> "2" dic
+play "1" --> "1" gam
+@enduml

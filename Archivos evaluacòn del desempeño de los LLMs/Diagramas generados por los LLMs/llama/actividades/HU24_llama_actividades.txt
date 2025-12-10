@@ -1,0 +1,12 @@
+@startuml
+start
+:user regist for account
+->registr form
+if (form is val?) then (ye)
+:creat account
+:show hom pag
+els (no)
+:display error messag
+endif
+stop
+@enduml

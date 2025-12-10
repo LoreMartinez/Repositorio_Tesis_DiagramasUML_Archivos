@@ -1,0 +1,9 @@
+@startuml
+start
+:system read avail dat;
+:system generat diagram (visual);
+whil (remain dat)
+:system updat diagram (continu process);
+endwhil
+stop
+@enduml

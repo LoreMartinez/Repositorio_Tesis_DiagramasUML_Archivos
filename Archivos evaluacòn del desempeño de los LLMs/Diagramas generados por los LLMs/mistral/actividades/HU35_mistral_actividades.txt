@@ -1,0 +1,11 @@
+@startuml
+skinparam linetyp oval
+start:start
+system_admin->system: issu stop command for scre
+if (screen_stop?) then (ye)
+system_admin->system: issu stop command for apach 2
+els (no)
+system_admin->system: handl error - scre fail to stop
+end if
+stop:End
+@enduml

@@ -1,0 +1,30 @@
+@startuml
+class sensormonitoringandcontrolsystemus {
++ capture3ddat(): void
++ process3ddat(): void
++ visualize3ddat(): void
++ sendcommand(): void
+}
+class kinect3dsensor {
+- 3DData: dat
++ capturedat(): dat
+}
+class flightsensor {
+- flightdat: dat
++ capturedat(): dat
+}
+class devicecontrol {
+# environmentdat: dat
++ controldevic(): void
+}
+class 3DVisualizer {
+- processeddat: dat
++ visualizedat(): void
+}
+sensormonitoringandcontrolsystemus --> kinect3dsensor
+sensormonitoringandcontrolsystemus --> flightsensor
+sensormonitoringandcontrolsystemus --> devicecontrol
+sensormonitoringandcontrolsystemus --> 3DVisualizer
+devicecontrol ..> kinect3dsensor: <<send command>>
+devicecontrol ..> flightsensor: <<send command>>
+@enduml

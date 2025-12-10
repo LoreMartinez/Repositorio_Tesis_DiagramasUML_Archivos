@@ -1,0 +1,10 @@
+@startuml
+start
+:system read fil;
+whil (dat remain) {
+:system process dat;
+:system stor process dat;
+}
+:system clos fil;
+stop
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+start
+:workshop organiz access modif pag;
+:enter workshop inform chang;
+:subm updat inform;
+if (inform val?) then (ye)
+:updat workshop in list;
+:show success messag;
+els (no)
+:show valid error;
+:return to modif pag;
+endif
+stop
+@enduml

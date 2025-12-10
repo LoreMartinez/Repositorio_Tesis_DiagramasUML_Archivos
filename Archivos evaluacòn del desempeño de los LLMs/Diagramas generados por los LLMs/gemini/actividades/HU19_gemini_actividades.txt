@@ -1,0 +1,12 @@
+@startuml
+start
+:system start automat instal of glusterf;
+if (instal is success?) then (ye)
+:system configur the serv;
+:system configur volum;
+:system expos the servic;
+els (no)
+:system handl instal error;
+endif
+stop
+@enduml

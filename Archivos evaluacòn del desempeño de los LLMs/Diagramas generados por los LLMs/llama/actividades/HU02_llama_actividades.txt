@@ -1,0 +1,9 @@
+@startuml
+start
+:revok entitl
+:remov depend
+:updat pool
+:regener certif
+:verifi complianc
+stop
+@enduml

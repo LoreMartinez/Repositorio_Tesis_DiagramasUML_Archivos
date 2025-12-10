@@ -1,0 +1,43 @@
+@startuml
+class devic {
+- id: string
+- nam: string
+- model: string
+}
+class platform {
+- id: string
+- nam: string
++ devic: [devic]
++ context: [context]
+}
+class context {
+- id: string
+- nam: string
+- platform: #platform
+}
+class program {
+- id: string
+- nam: string
+- platform: #platform
+}
+class kernel {
+- id: string
+- nam: string
++ program: #program
+}
+class memori {
+- id: string
+- typ: string
+- siz: integ
+- platform: #platform
+}
+platform "1" --* devic
+platform "2" --* devic
+platform "3" --* devic
+context "1" --|> platform "1"
+context "2" --|> platform "2"
+program "1" --|> kernel "1"
+program "2" --|| kernel "2"
+memori "1" *-- platform "1"
+memori "2" *-- platform "2"
+@enduml

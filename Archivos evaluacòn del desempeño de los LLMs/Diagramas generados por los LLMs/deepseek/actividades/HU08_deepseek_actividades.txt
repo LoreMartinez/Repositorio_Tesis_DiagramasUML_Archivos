@@ -1,0 +1,9 @@
+@startuml
+start
+:system trigger cod coverag analys;
+:system run unit test;
+:system collect test coverag dat;
+:system verif qualiti threshold;
+:system generat detail report;
+stop
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+start
+:user enter input;
+if (isverboserequir?) then (ye)
+:send verbos prompt for addit inform;
+els (no)
+:enabl verbos mod with detail inform;
+endif
+:system execut command in verbos mod;
+stop
+@enduml

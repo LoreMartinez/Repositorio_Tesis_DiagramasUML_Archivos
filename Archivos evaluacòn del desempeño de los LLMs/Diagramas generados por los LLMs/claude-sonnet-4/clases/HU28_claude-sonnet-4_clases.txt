@@ -1,0 +1,21 @@
+@startuml
+class bankingsystemadministr {
+- nam: string
+- usernam: string
++ registerbank(): bool
++ maintainbankcontrol(): void
+}
+class bank {
+- nam: string
+- locat: string
++ getdetail(): string
+}
+class manag {
+- nam: string
+- employe: string
+- contactinf: string
++ managebank(): void
+}
+bankingsystemadministr --> bank
+bank --> manag
+@enduml

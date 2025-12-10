@@ -1,0 +1,21 @@
+@startuml
+class entiti {
+id: string (-)
+nam: string (+)
+descript: string (+)
+creator: string (+)
+creationd: dat (+)
+stor(): void (+)
+updat(): void (+)
+queri(): void (+)
+delet(): void (+)
+}
+class dao {
+- abstract
+}
+class jpada extend dao {}
+class xmlda extend dao {}
+entiti --|> dao
+jpada +-- entiti
+xmlda +-- entiti
+@enduml

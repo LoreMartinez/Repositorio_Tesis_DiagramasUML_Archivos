@@ -1,0 +1,16 @@
+@startuml
+class applicationus {
+}
+class activityschedul {
+}
+class session {
+- tim: string
+- titl: string
+}
+class venu {
+- nam: string
+}
+applicationus --> activityschedul
+activityschedul "1" *-- "*" session
+session "*" --> "1" venu
+@enduml

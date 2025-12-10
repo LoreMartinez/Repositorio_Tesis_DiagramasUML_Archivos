@@ -1,0 +1,16 @@
+@startuml
+class client {
+}
+class adapt {
++ request(): void
+}
+class target {
++ request(): void
+}
+class adapte {
++ specificrequest(): void
+}
+client --> target
+adapt --|> target
+adapt --> adapte
+@enduml

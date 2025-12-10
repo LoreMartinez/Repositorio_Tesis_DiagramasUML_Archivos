@@ -1,0 +1,35 @@
+@startuml
+class strategygameplay {
++ managecard(): void
++ managecharact(): void
++ manageresourc(): void
++ assignm(): void
++ performact(): void
++ planstrateg(): void
++ achieveobject(): void
++ evaluateoutcom(): void
+}
+class card {
+- environ: string
+- planet: string
++ assigntomiss(): void
+}
+class charact {
+- resourc: string
++ accomplishmiss(): void
+}
+class environ {
++ performact(): void
+}
+class mission {
++ startmiss(): void
++ completemiss(): void
+}
+strategygameplay "1" -- "*" card
+strategygameplay "1" -- "*" charact
+strategygameplay "1" -- "*" environ
+strategygameplay "1" -- "*" mission
+card "1" -- "1" mission
+charact "1" -- "*" mission
+environ "1" -- "*" mission
+@enduml

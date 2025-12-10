@@ -1,0 +1,25 @@
+@startuml
+class h5cudscontain {
+- particl: list<particl>
+- mesh: list<mesh>
+- lattic: list<lattic>
+}
+class particl {
+# id: int
+- posit: point
++ getposit(): point
+}
+class mesh {
+# id: int
+- particl: set<particl>
++ addparticl(particl: particl)
+}
+class lattic {
+# id: int
+- mesh: list<mesh>
++ addmesh(mesh: mesh)
+}
+h5cudscontain "1" --> "*" particl
+h5cudscontain "1" --> "*" mesh
+h5cudscontain "1" --> "*" lattic
+@enduml

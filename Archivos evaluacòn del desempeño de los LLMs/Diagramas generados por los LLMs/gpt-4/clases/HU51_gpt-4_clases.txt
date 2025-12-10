@@ -1,0 +1,19 @@
+@startuml
+class softwaredevelop {
+}
+class logg {
+- fileoutput: string
+- consoleoutput: string
+- androidoutput: string
+- textformat: string
+- severitylevel: string
++ capturemessag(): string
++ filtermessag(): string
+}
+class messag {
+- text: string
+- severitylevel: string
+}
+softwaredevelop --> logg
+logg --> messag
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+start
+:system start to read fil;
+whil (is ther mor dat to read?) is (ye)
+:system read dat from fil;
+:system process dat;
+endwhil (no)
+:system clos fil;
+stop
+@enduml

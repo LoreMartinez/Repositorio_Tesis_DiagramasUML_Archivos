@@ -1,0 +1,16 @@
+@startuml
+start
+:user select fil to import;
+:system read fil dat;
+:system insert dat into hashtabl;
+:system run verif report;
+if (dat verifi correct?) then (ye)
+:system generat search report;
+:system generat status report;
+:user review report;
+els (no)
+:system display verif error;
+:user correct dat issu;
+endif
+stop
+@enduml

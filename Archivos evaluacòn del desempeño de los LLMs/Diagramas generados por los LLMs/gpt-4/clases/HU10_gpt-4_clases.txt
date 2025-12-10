@@ -1,0 +1,11 @@
+@startuml
+class applicationus {
+}
+class activityschedul {
+- session: string
+- tim: tim
+- venu: string
++ viewschedul(): void
+}
+applicationus "1" -- "*" activityschedul
+@enduml

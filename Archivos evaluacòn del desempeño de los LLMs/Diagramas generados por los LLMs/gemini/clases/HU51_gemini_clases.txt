@@ -1,0 +1,28 @@
+@startuml
+class logg {
++ log(messag: messag): void
++ filt(severitylevel: string): void
+}
+class messag {
+- content: string
+- severitylevel: string
+}
+class outputtarget {
+}
+class filetarget {
+}
+class consoletarget {
+}
+class androidtarget {
+}
+class format {
++ converttext(messag: messag): string
+}
+logg "1" o-- "*" outputtarget
+logg --> format
+logg ..> messag
+format ..> messag
+filetarget --|> outputtarget
+consoletarget --|> outputtarget
+androidtarget --|> outputtarget
+@enduml

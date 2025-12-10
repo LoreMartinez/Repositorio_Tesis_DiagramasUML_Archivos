@@ -1,0 +1,50 @@
+@startuml
+class robotoper {
+- operator: string
+- nam: string
++ controlrobot(): void
++ monitorcompon(): void
++ coordinatemov(): void
++ maintainoptimalcondit(): void
+}
+class robot {
+- robot: string
+- status: string
++ oper(): void
++ getcomponentstatus(): string
+}
+class arduin {
+- board: string
+- firmwar: string
++ processcommand(): void
++ sendfeedback(): void
+}
+class manipul {
+- manipulator: string
+- posit: string
+- rang: doubl
++ mov(): void
++ grip(): void
++ rel(): void
+}
+class motor {
+- motor: string
+- spe: doubl
+- direct: string
++ rotat(): void
++ stop(): void
++ setsp(spe: doubl): void
+}
+class powersuppli {
+- voltag: doubl
+- current: doubl
+- batterylevel: int
++ providepow(): void
++ checkbatterystatus(): int
+}
+robotoper "1" --> "1" robot
+robot "1" *-- "1" arduin
+robot "1" *-- "*" manipul
+robot "1" *-- "*" motor
+robot "1" *-- "1" powersuppli
+@enduml

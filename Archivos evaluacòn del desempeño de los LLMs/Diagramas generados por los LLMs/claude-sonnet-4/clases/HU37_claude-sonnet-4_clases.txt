@@ -1,0 +1,21 @@
+@startuml
+class chessplay {
+- nam: string
++ movechesspiec(piec: chesspiec, fromsquar: squar, tosquar: squar): bool
+}
+class chesspiec {
+- color: string
+- typ: string
++ mov(tosquar: squar): bool
+}
+class squar {
+- row: int
+- column: char
+- isoccupi: bool
++ occupysquar(piec: chesspiec): void
++ vacatesquar(): void
+}
+chessplay --> chesspiec
+chesspiec --> squar
+squar "1" -- "0..1" chesspiec
+@enduml

@@ -1,0 +1,13 @@
+@startuml
+start
+:user select review to delet;
+:user initi delet action;
+if (confirm delet?) then (ye)
+:system remov review;
+:system updat user content;
+:display success messag;
+els (no)
+:cancel delet;
+endif
+stop
+@enduml

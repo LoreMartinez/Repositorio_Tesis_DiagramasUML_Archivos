@@ -1,0 +1,31 @@
+@startuml
+class play {
+- usernam: string
+- password: string
++ login(): bool
+}
+class inputbox {
+# inputbox: string
+- id: integ
+- text: string
++ settext(text: string): void
+}
+class gamest {
+# gamescen: scen
+- currentplay: list of play
+- activecharact: list of string
+- stat: string
++ updatesystem(): void
+}
+class updatesystem {
+- inputbox: list of inputbox
+- gamescen: refer to gamest
++ subscrib(inputbox: inputbox): void
+}
+play "1" -- "*" gamescen
+inputbox "#1" -- "*" play "1"
+inputbox "#2" -- "*" play "1"
+updatesystem --.*- inputbox "#1", inputbox "#2"
+play "1" --.*- updatesystem
+updatesystem --.*- gamescen
+@enduml

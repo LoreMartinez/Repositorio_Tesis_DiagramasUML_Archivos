@@ -1,0 +1,23 @@
+@startuml
+start
+:enter comment content;
+if (valid pass?) then (ye)
+:display confirm messag;
+if (post comment) then (ye)
+:subm comment for process;
+if (no error in process) then (ye)
+:success - comment display;
+els
+:error messag display;
+endif
+els
+:retri du to error;
+endif
+els
+:view activ histori;
+endif
+els (no)
+:display feedback messag explain valid failur;
+endif
+stop
+@enduml

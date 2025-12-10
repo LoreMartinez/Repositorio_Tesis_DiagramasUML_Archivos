@@ -1,0 +1,12 @@
+@startuml
+start
+:workshop organiz access modif pag;
+:edit workshop's inform;
+:system valid edit inform;
+if (inform is val?) then (ye)
+:updat workshop list;
+els (no)
+:show error messag;
+endif
+stop
+@enduml

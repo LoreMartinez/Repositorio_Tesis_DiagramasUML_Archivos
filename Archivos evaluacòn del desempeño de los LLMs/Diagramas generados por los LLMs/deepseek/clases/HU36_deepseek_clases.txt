@@ -1,0 +1,19 @@
+@startuml
+class play {
+- usernam: string
+- password: string
+}
+class di {
++ sid: integ = 6
+- roll(): integ
+}
+class entiti {
+*-- die1, die2
++ getrollresult(): (integ, integ)
+:d1(roll()), d2(roll())
+- setresult(d1: integ, d2: integ)
+}
+play --> entiti
+die1 |--> entiti
+die2 |--> entiti
+@enduml

@@ -1,0 +1,20 @@
+@startuml
+class carown {
+- nam: string
++ registerc(car: car): void
+}
+class carregistrationsystem {
++ confirmregistr(car: car, owner: carown): bool
+}
+class car {
+- nam: string
+- wheelcount: int
++ setnam(nam: string): void
++ setwheelcount(count: int): void
++ getnam(): string
++ getwheelcount(): int
+}
+carown -- car
+carown -- carregistrationsystem
+car -- carregistrationsystem
+@enduml

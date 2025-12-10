@@ -1,0 +1,63 @@
+@startuml
+class hospitaladministr {
+- usernam: string
+- password: string
++ registerus(user)
+}
+class user {
+- id: integ
+- nam: string
+- medicalhistori: string
+- allerg: string
+- accessrecord: string
++ updatemedicalhistori(string)
++ addallergi(string)
+- getaccessrecord(): string
+}
+class patient {
+- id: integ
+- medicalrecord: string
+- symptom: string
+- treatment: string
++ updatesymptom(string)
++ addtreat(string)
+- gettreat(): string
+}
+class doctor {
+- id: integ
+- specialt: string
+- schedul: string
++ updatespecialti(string)
++ scheduleappoint(appoint)
+- getschedul(): string
+}
+class appoint {
+- id: integ
+- dat: dat
+- tim: tim
++ cancelappoint()
+- getpati(): patient
+}
+class director {
+- id: integ
+- depart: string
+- employ: list
++ hireemploye(employe)
++ fireemploye(employe)
+- getdepart(): string
+}
+class employe {
+- id: integ
+- rol: rol
+- salari: doubl
++ updatesalari(doubl)
+- getrol(): rol
+}
+hospitaladministr "1" -- "*" director
+user "1" -->* appoint
+appoint "1" -->* patient
+doctor "1" -->* appoint
+patient "1" --> hospitaladministr
+director "1" --* employe
+employe "1" -->* doctor
+@enduml

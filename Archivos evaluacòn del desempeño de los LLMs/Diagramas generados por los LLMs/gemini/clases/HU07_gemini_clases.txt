@@ -1,0 +1,21 @@
+@startuml
+class gam {
++ updaterealtim(): void
+}
+class play {
++ interact(): void
+}
+class charact {
++ updat(): void
+}
+class inputbox {
++ updat(): void
+}
+class gamest {
++ updat(): void
+}
+gam "1" o-- "1..*" play
+gam "1" *-- "1" gamest
+play "1" -- "1..*" charact
+play "1" -- "1" inputbox
+@enduml

@@ -1,0 +1,43 @@
+@startuml
+class user {
+- nam: string
+- email: string
+}
+class stringingmachin {
+- model: string
+- status: string
++ start(): void
++ stop(): void
++ adjusttens(tension: doubl): void
+}
+class racket {
+- brand: string
+- model: string
+- stringpattern: string
+- currenttens: doubl
+}
+class stringreel {
+- typ: string
+- thick: doubl
+- remaininglength: doubl
++ cut(length: doubl): void
+}
+class powersuppli {
+- voltag: doubl
+- ison: bool
++ turnon(): void
++ turnoff(): void
+}
+class stringingsess {
+- dat: dat
+- tension: doubl
+- stringtyp: string
++ startstring(): void
++ completestring(): void
+}
+user "1" --> "*" stringingsess
+stringingsess "*" --> "1" stringingmachin
+stringingsess "*" --> "1" racket
+stringingsess "*" --> "1" stringreel
+stringingmachin "1" --> "1" powersuppli
+@enduml

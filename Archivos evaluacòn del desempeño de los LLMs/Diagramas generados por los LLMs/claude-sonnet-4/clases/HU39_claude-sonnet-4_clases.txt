@@ -1,0 +1,33 @@
+@startuml
+class play {
+- player: string
+- playernam: string
++ jointeam(): bool
++ controlrobot(): bool
++ participateinmatch(): bool
+}
+class team {
+- team: string
+- teamnam: string
+- maxplay: int
++ addplay(): bool
++ collabor(): bool
+}
+class robot {
+- robot: string
+- status: string
++ executecommand(): bool
++ getstatus(): string
+}
+class match {
+- match: string
+- starttim: string
+- status: string
++ startmatch(): bool
++ endmatch(): bool
+}
+play --> team
+play --> robot
+team --> match
+robot --> match
+@enduml

@@ -1,0 +1,11 @@
+@startuml
+user->system: delet review
+system: authent user
+if (authent?) then (ye)
+system: find review
+system: remov review
+system: confirm remov
+els (no)
+system: display error messag
+endif
+@enduml

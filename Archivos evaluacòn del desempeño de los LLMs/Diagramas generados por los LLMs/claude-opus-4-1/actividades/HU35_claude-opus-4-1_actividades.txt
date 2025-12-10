@@ -1,0 +1,20 @@
+@startuml
+start
+:administr initi shutdown process;
+:system attempt to stop scre servic;
+if (scre stop success?) then (ye)
+:system confirm scre shutdown;
+els (no)
+:system log scre shutdown error;
+:administr handl scre error;
+endif
+:system attempt to stop apach 2 servic;
+if (apach 2 stop success?) then (ye)
+:system confirm apach 2 shutdown;
+els (no)
+:system log apach 2 shutdown error;
+:administr handl apach 2 error;
+endif
+:system report shutdown status;
+stop
+@enduml

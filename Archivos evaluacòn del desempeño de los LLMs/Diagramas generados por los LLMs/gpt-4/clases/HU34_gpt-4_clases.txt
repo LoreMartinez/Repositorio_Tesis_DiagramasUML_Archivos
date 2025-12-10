@@ -1,0 +1,20 @@
+@startuml
+class dataprocessingsystemus {
++ executeoper(): void
+}
+class dataset {
+- dat: array
+}
+class oper {
+- typ: string
+# useoper(dataset: dataset): void
+}
+class keybasedaggreg {
+--|> oper
+}
+class customscript {
+--|> oper
+}
+dataprocessingsystemus --> oper
+oper --> dataset
+@enduml

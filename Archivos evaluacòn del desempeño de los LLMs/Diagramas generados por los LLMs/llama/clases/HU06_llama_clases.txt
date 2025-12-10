@@ -1,0 +1,23 @@
+@startuml
+class websocketserv {
+- host: string
+- port: integ
+}
+class btsus {
+- user: string
+- usernam: string
+- email: string
+}
+class crudoper {
++ perform(): void
+}
+class websocketconnect {
+- btsus user
++ establishconnect(): websocketserv
++ closeconnect(): void
+}
+websocketconnect "1" *-- "*" crudoper
+websocketconnect --> websocketserv
+websocketserv --> websocketconnect
+websocketconnect "1" --< crudoper
+@enduml

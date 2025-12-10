@@ -1,0 +1,25 @@
+@startuml
+class datasystemadministr {
++ authenticatecli(): bool
++ manageclientconfigur(): void
++ accesszonet(): zonet
++ updatezonet(): void
++ loaddat(): void
++ maintaindat(): void
+}
+class clientconfigur {
+# configurationdat: string
+}
+class zonet {
+- zonedat: string
++ updatedat(): void
+}
+class dat {
+- datacont: string
++ load(): void
++ maintain(): void
+}
+datasystemadministr --> clientconfigur
+datasystemadministr --> zonet
+datasystemadministr --> dat
+@enduml

@@ -1,0 +1,18 @@
+@startuml
+start
+:play navig gam menu;
+:play select stag;
+:play select charact;
+if (connect to serv?) then (ye)
+:connect to serv;
+els (no)
+:show connect error;
+endif
+:start play the select stag with chos charact;
+repeat until (multiplay match finish)
+if (receiv serv inform?) then (ye)
+:updat gam stat;
+endif
+endrepeat
+stop
+@enduml

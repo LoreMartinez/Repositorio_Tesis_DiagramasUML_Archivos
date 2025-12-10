@@ -1,0 +1,19 @@
+@startuml
+start
+:check storag;
+if (inval) then :show storag error; stop
+els
+:check configur;
+if (inval) then :show config error; stop
+els
+:check scre status;
+if (bad) then :show scre error; stop
+els
+:check celeryd need start;
+if (ye) then :launch celeryd; stop
+els pass
+endif
+endif
+endif
+stop
+@enduml

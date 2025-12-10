@@ -1,0 +1,17 @@
+@startuml
+class applicationus {
++ useappl(): void
+}
+class labelviewhelp {
++ drawpathoncanv(): void
+}
+class canv {
+# displaycont(): void
+}
+class path {
+- styl: string
+}
+applicationus --> labelviewhelp
+labelviewhelp --> canv
+labelviewhelp --> path
+@enduml

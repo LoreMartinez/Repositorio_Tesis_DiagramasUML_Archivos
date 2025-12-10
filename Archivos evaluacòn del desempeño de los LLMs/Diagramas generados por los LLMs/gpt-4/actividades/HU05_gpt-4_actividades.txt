@@ -1,0 +1,13 @@
+@startuml
+start
+:system develop / administr trigger log and process event;
+:start event log;
+:execut macr;
+:run logger;
+:call append;
+:implement formatt;
+:appli convert;
+:finish process event;
+:provid use inform for monitor, debug, and system mainten;
+stop
+@enduml

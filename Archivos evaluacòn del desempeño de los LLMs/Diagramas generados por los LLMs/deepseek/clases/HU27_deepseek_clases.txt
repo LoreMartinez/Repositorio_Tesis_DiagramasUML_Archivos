@@ -1,0 +1,31 @@
+@startuml
+class cashiermanag {
+- usernam: string
+- password: string
++ login(): bool
+}
+class purch {
+- itemnam: string
+- pric: numb
+- recordedbi: cashiermanag
++ recordpurch(): void
++ updatecashregist(): void
+}
+class cashregist {
+- totalbal: numb
+- transactionhistori: list of purch
++ addmoney(numb): void
++ updatebal(): void
++ generatesummari(): void
++ auditlog(): void
+}
+class transactionhistori {
+- purch: list of purch
+- summaryreport: string
++ createsummaryreport(): string
+}
+cashiermanag --|> purch
+purch -|* cashregist
+purch ..> transactionhistori
+purch *-- transactionhistori
+@enduml

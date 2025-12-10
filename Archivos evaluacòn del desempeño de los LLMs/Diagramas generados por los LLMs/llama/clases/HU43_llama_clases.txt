@@ -1,0 +1,18 @@
+@startuml
+class serv {
+- header: map<string, string>
+- status: integ
+- respons: list<respons>
+}
+class respons {
+- dat: object
+- status: integ
+- header: map<string, string>
+}
+class client {
++ receiverespons(respons): void
++ processrespons(respons): bool
+}
+serv "1" -- "*" client
+client "1" --> "*" respons
+@enduml

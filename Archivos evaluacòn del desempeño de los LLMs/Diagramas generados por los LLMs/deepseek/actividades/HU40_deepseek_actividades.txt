@@ -1,0 +1,10 @@
+@startuml
+start
+:user log in (use system's login mechan);
+usuari seleccion invit;
+sistem extra reserv abiert de invit seleccion;
+sistem calcul preci total por invit;
+sistem calcul preci global;
+:mensaj de result envi a usuari;
+stop
+@enduml

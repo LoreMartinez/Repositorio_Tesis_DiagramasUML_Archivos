@@ -1,0 +1,13 @@
+@startuml
+class messagingserveradministr {
+}
+class systemcompon {
++ receivemessag(): messag
++ sendmessag(messag: messag): void
+}
+class messag {
++ dat: string
+}
+messagingserveradministr "1" --> "*" systemcompon
+systemcompon "1" -- "*" messag
+@enduml

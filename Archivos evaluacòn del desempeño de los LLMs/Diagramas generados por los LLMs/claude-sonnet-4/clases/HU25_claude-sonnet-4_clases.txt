@@ -1,0 +1,47 @@
+@startuml
+class dataprocessingsystemus {
+- user: string
+- usernam: string
++ definemapreducejob(): mapreducejob
++ runmapreducejob(): bool
+}
+class mapreducejob {
+- job: string
+- jobnam: string
+- inputdatapath: string
+- outputdatapath: string
++ configur(): bool
++ execut(): bool
++ getstatus(): string
+}
+class mapp {
+- mapper: string
+- mapperlog: string
++ map(): void
++ processinput(): void
+}
+class reduc {
+- reducer: string
+- reducerlog: string
++ reduc(): void
++ aggregateresult(): void
+}
+class combin {
+- combiner: string
+- combinerlog: string
++ combin(): void
++ preaggreg(): void
+}
+class distributeddat {
+- dat: string
+- datas: long
+- locat: string
++ transform(): void
++ aggreg(): void
+}
+dataprocessingsystemus "1" --> "*" mapreducejob
+mapreducejob "1" --> "1" mapp
+mapreducejob "1" --> "1" reduc
+mapreducejob "1" --> "0..1" combin
+mapreducejob "1" --> "*" distributeddat
+@enduml

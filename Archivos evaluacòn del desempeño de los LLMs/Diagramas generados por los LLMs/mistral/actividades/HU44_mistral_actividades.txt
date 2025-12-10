@@ -1,0 +1,12 @@
+@startuml
+start
+:user open hom pag;
+:user navig to profil pag;
+:system valid user's credenti;
+if (val credenti?) then (ye)
+:system display user's dat and edit option;
+els (no)
+:system show error messag and redirect user to login pag;
+endif
+stop
+@enduml

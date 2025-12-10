@@ -1,0 +1,12 @@
+@startuml
+class chessplay {
++ executestrategi(): void
+}
+class piec {
+}
+class squar {
+}
+chessplay --> piec
+piec -- piec: mov
+piec -- squar
+@enduml
